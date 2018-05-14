@@ -15,7 +15,10 @@
 		9DB8396F20AA20610035C0C0 /* PlayerDetailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB8396E20AA20610035C0C0 /* PlayerDetailVC.storyboard */; };
 		9DB8397220AA237F0035C0C0 /* PlaceHolderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB8397120AA237F0035C0C0 /* PlaceHolderModel.swift */; };
 		9DB8397420AA238A0035C0C0 /* PlaceHolderModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB8397320AA238A0035C0C0 /* PlaceHolderModelController.swift */; };
-		9DB8397820AA2A430035C0C0 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB8397720AA2A430035C0C0 /* HomeScreenViewController.swift */; };
+
+		F750B0E420AA2CB400650634 /* PlayerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750B0E320AA2CB400650634 /* PlayerDetailViewController.swift */; };
+		F750B0E620AA2F5B00650634 /* BankDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750B0E520AA2F5B00650634 /* BankDetailViewController.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +32,10 @@
 		9DB8396E20AA20610035C0C0 /* PlayerDetailVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlayerDetailVC.storyboard; sourceTree = "<group>"; };
 		9DB8397120AA237F0035C0C0 /* PlaceHolderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderModel.swift; sourceTree = "<group>"; };
 		9DB8397320AA238A0035C0C0 /* PlaceHolderModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderModelController.swift; sourceTree = "<group>"; };
-		9DB8397720AA2A430035C0C0 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+
+		F750B0E320AA2CB400650634 /* PlayerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailViewController.swift; sourceTree = "<group>"; };
+		F750B0E520AA2F5B00650634 /* BankDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankDetailViewController.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +96,11 @@
 		9DB8396820AA1AFA0035C0C0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9DB8397720AA2A430035C0C0 /* HomeScreenViewController.swift */,
+
+				7DB1B0D720A9E84F0086CC3A /* ViewController.swift */,
+				F750B0E320AA2CB400650634 /* PlayerDetailViewController.swift */,
+				F750B0E520AA2F5B00650634 /* BankDetailViewController.swift */,
+
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -109,9 +119,12 @@
 		9DB8397020AA21900035C0C0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7DB1B0D920A9E84F0086CC3A /* HomeScreen.storyboard */,
-				9DB8396B20AA1E540035C0C0 /* BankDetailVC.storyboard */,
+
+				7DB1B0D920A9E84F0086CC3A /* Main.storyboard */,
+				7DB1B0DE20A9E8520086CC3A /* LaunchScreen.storyboard */,
+
 				9DB8396E20AA20610035C0C0 /* PlayerDetailVC.storyboard */,
+				9DB8396B20AA1E540035C0C0 /* BankDetailVC.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,6 +205,8 @@
 				9DB8397220AA237F0035C0C0 /* PlaceHolderModel.swift in Sources */,
 				9DB8397820AA2A430035C0C0 /* HomeScreenViewController.swift in Sources */,
 				9DB8397420AA238A0035C0C0 /* PlaceHolderModelController.swift in Sources */,
+				F750B0E620AA2F5B00650634 /* BankDetailViewController.swift in Sources */,
+				F750B0E420AA2CB400650634 /* PlayerDetailViewController.swift in Sources */,
 				7DB1B0D620A9E84F0086CC3A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
