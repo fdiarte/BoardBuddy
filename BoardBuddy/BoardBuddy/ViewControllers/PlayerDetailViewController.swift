@@ -16,7 +16,6 @@ class PlayerDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        colorLabelOne.
         // Do any additional setup after loading the view.
     }
 
