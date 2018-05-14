@@ -12,7 +12,6 @@
 		7D6249B720AA3FAD005CB1EF /* Player Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6249B620AA3FAD005CB1EF /* Player Controller.swift */; };
 		7D6249B920AA3FB5005CB1EF /* Banker Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6249B820AA3FB5005CB1EF /* Banker Controller.swift */; };
 		7D6249BB20AA42EC005CB1EF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6249BA20AA42EC005CB1EF /* DataManager.swift */; };
-		7D6249BD20AA4396005CB1EF /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6249BC20AA4396005CB1EF /* Money.swift */; };
 		7DB1B0D620A9E84F0086CC3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB1B0D520A9E84F0086CC3A /* AppDelegate.swift */; };
 		7DB1B0DB20A9E84F0086CC3A /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB1B0D920A9E84F0086CC3A /* HomeScreen.storyboard */; };
 		7DB1B0DD20A9E8520086CC3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DB1B0DC20A9E8520086CC3A /* Assets.xcassets */; };
@@ -32,7 +31,6 @@
 		7D6249B620AA3FAD005CB1EF /* Player Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player Controller.swift"; sourceTree = "<group>"; };
 		7D6249B820AA3FB5005CB1EF /* Banker Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Banker Controller.swift"; sourceTree = "<group>"; };
 		7D6249BA20AA42EC005CB1EF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		7D6249BC20AA4396005CB1EF /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		7DB1B0D220A9E84F0086CC3A /* BoardBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoardBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB1B0D520A9E84F0086CC3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DB1B0DA20A9E84F0086CC3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HomeScreen.storyboard; sourceTree = "<group>"; };
@@ -94,7 +92,6 @@
 				9DB8397120AA237F0035C0C0 /* PlaceHolderModel.swift */,
 				7D6249B220AA3DD6005CB1EF /* Player.swift */,
 				7D6249B420AA3EE6005CB1EF /* Banker.swift */,
-				7D6249BC20AA4396005CB1EF /* Money.swift */,
 				7D6249BA20AA42EC005CB1EF /* DataManager.swift */,
 			);
 			path = Models;
@@ -219,7 +216,6 @@
 				7D6249B720AA3FAD005CB1EF /* Player Controller.swift in Sources */,
 				7D6249B520AA3EE6005CB1EF /* Banker.swift in Sources */,
 				F750B0E620AA2F5B00650634 /* BankDetailViewController.swift in Sources */,
-				7D6249BD20AA4396005CB1EF /* Money.swift in Sources */,
 				F750B0E420AA2CB400650634 /* PlayerDetailViewController.swift in Sources */,
 				7D6249B320AA3DD6005CB1EF /* Player.swift in Sources */,
 				7D6249BB20AA42EC005CB1EF /* DataManager.swift in Sources */,

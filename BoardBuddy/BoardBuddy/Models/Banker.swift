@@ -8,12 +8,12 @@
 
 import UIKit
 
-class Banker {
+class Banker: Codable {
     let name: String
-    var amount: Int
+    var startingAmount: Int
     
-    init(name: String, amount: Int) {
-        self.name = name
-        self.amount = amount
+    init(startingAmount: Int) {
+        self.name = "Banker"
+        self.startingAmount = startingAmount
     }
 }

@@ -18,15 +18,17 @@ class PlayerController {
         players.append(player)
     }
     
-    func requestAmount(amount: Int, from player: Player, requester: Player) {
-        
-    }
-
-    func requestAmount(amount: Int, from banker: Banker, for player: Player) {
-        
-    }
     
-    func payBanker(banker: Banker, amount: Int, player: Player) {
-        
-    }
+    
+//    func requestAmount(amount: Int, from player: Player, requester: Player) {
+//
+//    }
+//
+//    func requestAmount(amount: Int, from banker: Banker, for player: Player) {
+//
+//    }
+//
+//    func payBanker(banker: Banker, amount: Int, player: Player) {
+//
+//    }
 }
