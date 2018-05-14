@@ -8,23 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		7DB1B0D620A9E84F0086CC3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB1B0D520A9E84F0086CC3A /* AppDelegate.swift */; };
-		7DB1B0D820A9E84F0086CC3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB1B0D720A9E84F0086CC3A /* ViewController.swift */; };
-		7DB1B0DB20A9E84F0086CC3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB1B0D920A9E84F0086CC3A /* Main.storyboard */; };
+		7DB1B0DB20A9E84F0086CC3A /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB1B0D920A9E84F0086CC3A /* HomeScreen.storyboard */; };
 		7DB1B0DD20A9E8520086CC3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DB1B0DC20A9E8520086CC3A /* Assets.xcassets */; };
 		7DB1B0E020A9E8520086CC3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB1B0DE20A9E8520086CC3A /* LaunchScreen.storyboard */; };
 		9DB8396D20AA1E540035C0C0 /* BankDetailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB8396B20AA1E540035C0C0 /* BankDetailVC.storyboard */; };
 		9DB8396F20AA20610035C0C0 /* PlayerDetailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB8396E20AA20610035C0C0 /* PlayerDetailVC.storyboard */; };
 		9DB8397220AA237F0035C0C0 /* PlaceHolderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB8397120AA237F0035C0C0 /* PlaceHolderModel.swift */; };
 		9DB8397420AA238A0035C0C0 /* PlaceHolderModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB8397320AA238A0035C0C0 /* PlaceHolderModelController.swift */; };
+
 		F750B0E420AA2CB400650634 /* PlayerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750B0E320AA2CB400650634 /* PlayerDetailViewController.swift */; };
 		F750B0E620AA2F5B00650634 /* BankDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750B0E520AA2F5B00650634 /* BankDetailViewController.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7DB1B0D220A9E84F0086CC3A /* BoardBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoardBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB1B0D520A9E84F0086CC3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7DB1B0D720A9E84F0086CC3A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7DB1B0DA20A9E84F0086CC3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7DB1B0DA20A9E84F0086CC3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HomeScreen.storyboard; sourceTree = "<group>"; };
 		7DB1B0DC20A9E8520086CC3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DB1B0DF20A9E8520086CC3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DB1B0E120A9E8520086CC3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,8 +32,10 @@
 		9DB8396E20AA20610035C0C0 /* PlayerDetailVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlayerDetailVC.storyboard; sourceTree = "<group>"; };
 		9DB8397120AA237F0035C0C0 /* PlaceHolderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderModel.swift; sourceTree = "<group>"; };
 		9DB8397320AA238A0035C0C0 /* PlaceHolderModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderModelController.swift; sourceTree = "<group>"; };
+
 		F750B0E320AA2CB400650634 /* PlayerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailViewController.swift; sourceTree = "<group>"; };
 		F750B0E520AA2F5B00650634 /* BankDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankDetailViewController.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +96,11 @@
 		9DB8396820AA1AFA0035C0C0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+
 				7DB1B0D720A9E84F0086CC3A /* ViewController.swift */,
 				F750B0E320AA2CB400650634 /* PlayerDetailViewController.swift */,
 				F750B0E520AA2F5B00650634 /* BankDetailViewController.swift */,
+
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -104,6 +108,7 @@
 		9DB8396A20AA1B1B0035C0C0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7DB1B0DE20A9E8520086CC3A /* LaunchScreen.storyboard */,
 				7DB1B0D520A9E84F0086CC3A /* AppDelegate.swift */,
 				7DB1B0DC20A9E8520086CC3A /* Assets.xcassets */,
 				7DB1B0E120A9E8520086CC3A /* Info.plist */,
@@ -114,8 +119,10 @@
 		9DB8397020AA21900035C0C0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+
 				7DB1B0D920A9E84F0086CC3A /* Main.storyboard */,
 				7DB1B0DE20A9E8520086CC3A /* LaunchScreen.storyboard */,
+
 				9DB8396E20AA20610035C0C0 /* PlayerDetailVC.storyboard */,
 				9DB8396B20AA1E540035C0C0 /* BankDetailVC.storyboard */,
 			);
@@ -184,7 +191,7 @@
 				7DB1B0DD20A9E8520086CC3A /* Assets.xcassets in Resources */,
 				9DB8396F20AA20610035C0C0 /* PlayerDetailVC.storyboard in Resources */,
 				9DB8396D20AA1E540035C0C0 /* BankDetailVC.storyboard in Resources */,
-				7DB1B0DB20A9E84F0086CC3A /* Main.storyboard in Resources */,
+				7DB1B0DB20A9E84F0086CC3A /* HomeScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,7 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DB8397220AA237F0035C0C0 /* PlaceHolderModel.swift in Sources */,
-				7DB1B0D820A9E84F0086CC3A /* ViewController.swift in Sources */,
+				9DB8397820AA2A430035C0C0 /* HomeScreenViewController.swift in Sources */,
 				9DB8397420AA238A0035C0C0 /* PlaceHolderModelController.swift in Sources */,
 				F750B0E620AA2F5B00650634 /* BankDetailViewController.swift in Sources */,
 				F750B0E420AA2CB400650634 /* PlayerDetailViewController.swift in Sources */,
@@ -207,12 +214,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7DB1B0D920A9E84F0086CC3A /* Main.storyboard */ = {
+		7DB1B0D920A9E84F0086CC3A /* HomeScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				7DB1B0DA20A9E84F0086CC3A /* Base */,
 			);
-			name = Main.storyboard;
+			name = HomeScreen.storyboard;
 			sourceTree = "<group>";
 		};
 		7DB1B0DE20A9E8520086CC3A /* LaunchScreen.storyboard */ = {
@@ -353,8 +360,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZMMAGS7MLV;
-				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
+				DEVELOPMENT_TEAM = 9A24X3MLF7;
+				INFOPLIST_FILE = "$(SRCROOT)/BoardBuddy/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -371,8 +378,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZMMAGS7MLV;
-				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
+				DEVELOPMENT_TEAM = 9A24X3MLF7;
+				INFOPLIST_FILE = "$(SRCROOT)/BoardBuddy/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
