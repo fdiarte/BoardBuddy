@@ -27,7 +27,7 @@
                                         <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <segue destination="9sR-Pr-NL5" kind="show" id="Xvd-39-9Yz"/>
+                                            <segue destination="DMn-Y5-fpM" kind="show" id="Ehj-Hl-qja"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -82,9 +82,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
-                                        <connections>
-                                            <segue destination="DMn-Y5-fpM" kind="show" id="JGG-aw-vGO"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -105,21 +102,28 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
-        <!--PlayerDetailVC-->
+        <!--Test-->
         <scene sceneID="Mht-Ir-hun">
             <objects>
-                <viewControllerPlaceholder storyboardName="PlayerDetailVC" id="DMn-Y5-fpM" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Test" id="DMn-Y5-fpM" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gY3-f1-8gu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="964" y="184"/>
+            <point key="canvasLocation" x="991" y="-72"/>
         </scene>
-        <!--BankDetailVC-->
-        <scene sceneID="4SI-qe-7Tv">
+        <!--View Controller-->
+        <scene sceneID="6MI-fK-WrI">
             <objects>
-                <viewControllerPlaceholder storyboardName="BankDetailVC" id="9sR-Pr-NL5" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PwS-9P-NRq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="c53-9M-lHg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BYE-56-I6o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="1IR-Bv-qcr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jHf-1e-2Lw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="970" y="-16"/>
+            <point key="canvasLocation" x="1039" y="364"/>
         </scene>
     </scenes>
 </document>
