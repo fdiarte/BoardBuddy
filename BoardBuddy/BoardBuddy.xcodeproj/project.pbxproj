@@ -12,6 +12,8 @@
 		7DB1B0DB20A9E84F0086CC3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB1B0D920A9E84F0086CC3A /* Main.storyboard */; };
 		7DB1B0DD20A9E8520086CC3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DB1B0DC20A9E8520086CC3A /* Assets.xcassets */; };
 		7DB1B0E020A9E8520086CC3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB1B0DE20A9E8520086CC3A /* LaunchScreen.storyboard */; };
+		9DB8396D20AA1E540035C0C0 /* BankDetailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB8396B20AA1E540035C0C0 /* BankDetailVC.storyboard */; };
+		9DB8396F20AA20610035C0C0 /* PlayerDetailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB8396E20AA20610035C0C0 /* PlayerDetailVC.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		7DB1B0DC20A9E8520086CC3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DB1B0DF20A9E8520086CC3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DB1B0E120A9E8520086CC3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DB8396C20AA1E540035C0C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/BankDetailVC.storyboard; sourceTree = "<group>"; };
+		9DB8396E20AA20610035C0C0 /* PlayerDetailVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlayerDetailVC.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +43,7 @@
 			isa = PBXGroup;
 			children = (
 				7DB1B0D420A9E84F0086CC3A /* BoardBuddy */,
+				9DB8396A20AA1B1B0035C0C0 /* Resources */,
 				7DB1B0D320A9E84F0086CC3A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,14 +59,47 @@
 		7DB1B0D420A9E84F0086CC3A /* BoardBuddy */ = {
 			isa = PBXGroup;
 			children = (
-				7DB1B0D520A9E84F0086CC3A /* AppDelegate.swift */,
-				7DB1B0D720A9E84F0086CC3A /* ViewController.swift */,
-				7DB1B0D920A9E84F0086CC3A /* Main.storyboard */,
-				7DB1B0DC20A9E8520086CC3A /* Assets.xcassets */,
-				7DB1B0DE20A9E8520086CC3A /* LaunchScreen.storyboard */,
-				7DB1B0E120A9E8520086CC3A /* Info.plist */,
+				9DB8396620AA1ADF0035C0C0 /* Models */,
+				9DB8396720AA1AE60035C0C0 /* ModelControllers */,
+				9DB8396820AA1AFA0035C0C0 /* ViewControllers */,
 			);
 			path = BoardBuddy;
+			sourceTree = "<group>";
+		};
+		9DB8396620AA1ADF0035C0C0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9DB8396720AA1AE60035C0C0 /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelControllers;
+			sourceTree = "<group>";
+		};
+		9DB8396820AA1AFA0035C0C0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7DB1B0D720A9E84F0086CC3A /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9DB8396A20AA1B1B0035C0C0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7DB1B0D520A9E84F0086CC3A /* AppDelegate.swift */,
+				7DB1B0D920A9E84F0086CC3A /* Main.storyboard */,
+				9DB8396B20AA1E540035C0C0 /* BankDetailVC.storyboard */,
+				7DB1B0DC20A9E8520086CC3A /* Assets.xcassets */,
+				7DB1B0DE20A9E8520086CC3A /* LaunchScreen.storyboard */,
+				9DB8396E20AA20610035C0C0 /* PlayerDetailVC.storyboard */,
+				7DB1B0E120A9E8520086CC3A /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +162,8 @@
 			files = (
 				7DB1B0E020A9E8520086CC3A /* LaunchScreen.storyboard in Resources */,
 				7DB1B0DD20A9E8520086CC3A /* Assets.xcassets in Resources */,
+				9DB8396F20AA20610035C0C0 /* PlayerDetailVC.storyboard in Resources */,
+				9DB8396D20AA1E540035C0C0 /* BankDetailVC.storyboard in Resources */,
 				7DB1B0DB20A9E84F0086CC3A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,6 +197,14 @@
 				7DB1B0DF20A9E8520086CC3A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9DB8396B20AA1E540035C0C0 /* BankDetailVC.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9DB8396C20AA1E540035C0C0 /* Base */,
+			);
+			name = BankDetailVC.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -282,7 +330,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZMMAGS7MLV;
-				INFOPLIST_FILE = BoardBuddy/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,7 +348,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZMMAGS7MLV;
-				INFOPLIST_FILE = BoardBuddy/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
