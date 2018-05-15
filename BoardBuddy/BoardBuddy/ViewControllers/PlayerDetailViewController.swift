@@ -17,7 +17,8 @@ class PlayerDetailViewController: UIViewController {
     
     @IBOutlet weak var moneyLabel: UILabel!
     @IBOutlet weak var boardPieceImageView: UIImageView!
-
+    @IBOutlet weak var blurView: UIView!
+    
     var player: Player? {
         didSet {
             updateViews()
@@ -29,8 +30,7 @@ class PlayerDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
-        
-        
+
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -39,17 +39,13 @@ class PlayerDetailViewController: UIViewController {
     
     //MARK: - Methods
     
-    @IBAction func doneButtonPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
     @IBAction func requestFundsButtonPressed(_ sender: Any) {
         print("request funds button pressed")
         
     }
     
     @IBAction func tapGestureTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func updateViews() {

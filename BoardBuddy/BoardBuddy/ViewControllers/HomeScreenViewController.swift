@@ -15,6 +15,7 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var totalAmountLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+   
     
     
     override func viewDidLoad() {
@@ -56,25 +57,20 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        
-        
+
     }
-    
 
+     //MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toPlayerDetailVC" {
+            guard let destinationVC = segue.destination as? PlayerDetailViewController,
+            let cell = sender as? PlayerCollectionViewCell,
+            let indexpath = collectionView.indexPath(for: cell) else {return}
+//            let player = PlayerController.shared.players[indexpath.item]
+//            destinationVC.player = player
+        } else if segue.identifier == "toBankVC" {
+            let bankcVC = BankDetailViewController()
 
-    
-    // MARK: - Navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toPlayerDetailVC" {
-//            guard let destinationVC = segue.destination as? PlayerDetailViewController,
-//            let cell = sender as? PlayerCollectionViewCell,
-//            let indexpath = collectionView.indexPath(for: cell) else {return}
-////            let player = PlayerController.shared.players[indexpath.item]
-////            destinationVC.player = player
-//        } else if segue.identifier == "toBankVC" {
-//            let bankcVC = BankDetailViewController()
-//
-//        }
-//    }
+        }
+    }
 }

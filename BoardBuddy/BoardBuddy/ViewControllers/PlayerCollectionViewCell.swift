@@ -22,6 +22,8 @@ class PlayerCollectionViewCell: UICollectionViewCell {
     
     func updateViews() {
         backgroundColor = Colors.green
+        
+        
     }
     
 }
