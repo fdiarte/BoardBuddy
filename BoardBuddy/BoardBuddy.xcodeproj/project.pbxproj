@@ -16,6 +16,7 @@
 		7DB1B0DB20A9E84F0086CC3A /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB1B0D920A9E84F0086CC3A /* HomeScreen.storyboard */; };
 		7DB1B0DD20A9E8520086CC3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DB1B0DC20A9E8520086CC3A /* Assets.xcassets */; };
 		7DB1B0E020A9E8520086CC3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB1B0DE20A9E8520086CC3A /* LaunchScreen.storyboard */; };
+		9D8A821120AB2ADB0031CBEF /* PlayerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8A821020AB2ADB0031CBEF /* PlayerCollectionViewCell.swift */; };
 		9DB8396D20AA1E540035C0C0 /* BankDetailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB8396B20AA1E540035C0C0 /* BankDetailVC.storyboard */; };
 		9DB8396F20AA20610035C0C0 /* PlayerDetailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB8396E20AA20610035C0C0 /* PlayerDetailVC.storyboard */; };
 		9DB8397A20AA34DC0035C0C0 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB8397920AA34DC0035C0C0 /* HomeScreenViewController.swift */; };
@@ -35,6 +36,7 @@
 		7DB1B0DC20A9E8520086CC3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DB1B0DF20A9E8520086CC3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DB1B0E120A9E8520086CC3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D8A821020AB2ADB0031CBEF /* PlayerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DB8396C20AA1E540035C0C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/BankDetailVC.storyboard; sourceTree = "<group>"; };
 		9DB8396E20AA20610035C0C0 /* PlayerDetailVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlayerDetailVC.storyboard; sourceTree = "<group>"; };
 		9DB8397920AA34DC0035C0C0 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				9DB8397920AA34DC0035C0C0 /* HomeScreenViewController.swift */,
+				9D8A821020AB2ADB0031CBEF /* PlayerCollectionViewCell.swift */,
 				F750B0E320AA2CB400650634 /* PlayerDetailViewController.swift */,
 				F750B0E520AA2F5B00650634 /* BankDetailViewController.swift */,
 			);
@@ -213,6 +216,7 @@
 				7D6249BB20AA42EC005CB1EF /* DataManager.swift in Sources */,
 				7DB1B0D620A9E84F0086CC3A /* AppDelegate.swift in Sources */,
 				9DB8397A20AA34DC0035C0C0 /* HomeScreenViewController.swift in Sources */,
+				9D8A821120AB2ADB0031CBEF /* PlayerCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

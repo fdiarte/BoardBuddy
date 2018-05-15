@@ -25,11 +25,13 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return PlayerController.shared.players.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = UICollectionViewCell()
+        
+        
         return cell
     }
     
