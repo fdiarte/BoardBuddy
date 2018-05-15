@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Bank Detail View Controller-->
         <scene sceneID="1VF-We-ouh">
             <objects>
-                <viewController id="wdR-2c-SpO" sceneMemberID="viewController">
+                <viewController id="wdR-2c-SpO" customClass="BankDetailViewController" customModule="BoardBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EBv-Cd-atd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,17 +23,23 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Request Money"/>
+                                <connections>
+                                    <action selector="requestMoneyButtonPressed:" destination="wdR-2c-SpO" eventType="touchUpInside" id="zUS-zT-jzy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBG-rR-zdA">
                                 <rect key="frame" x="16" y="566" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.59999999999999998" green="0.19607843137254902" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Purchase"/>
+                                <connections>
+                                    <action selector="payBankButtonPressed:" destination="wdR-2c-SpO" eventType="touchUpInside" id="7s3-wx-paV"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="GyY-4w-KVz">
                                 <rect key="frame" x="120" y="60" width="141" height="108"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bank/User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2N-PB-KaD">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2N-PB-KaD">
                                         <rect key="frame" x="0.0" y="0.0" width="141" height="24"/>
                                         <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -64,6 +70,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Adp-ps-wUs"/>
                     </view>
+                    <connections>
+                        <outlet property="bankerImageView" destination="KxL-xI-sc7" id="Lp5-T9-hKk"/>
+                        <outlet property="moneyLabel" destination="md0-e3-epS" id="E6W-n6-QXh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VUC-8Y-Umh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
