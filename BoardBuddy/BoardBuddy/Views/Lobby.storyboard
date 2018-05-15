@@ -28,12 +28,21 @@
                                     <segue destination="L7x-qf-1LB" kind="show" id="hzL-da-206"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOBBY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3A-Yh-Rnj">
+                                <rect key="frame" x="25" y="45" width="325" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1529411765" green="0.18823529410000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Prg-HA-g3Y" firstAttribute="bottom" secondItem="LBw-5F-oTs" secondAttribute="bottom" constant="350" id="9Wb-65-oeW"/>
+                            <constraint firstItem="l3A-Yh-Rnj" firstAttribute="top" secondItem="Prg-HA-g3Y" secondAttribute="top" constant="25" id="GX0-2h-TEI"/>
+                            <constraint firstItem="Prg-HA-g3Y" firstAttribute="trailing" secondItem="l3A-Yh-Rnj" secondAttribute="trailing" constant="25" id="W6K-tv-vN3"/>
                             <constraint firstItem="LBw-5F-oTs" firstAttribute="leading" secondItem="Prg-HA-g3Y" secondAttribute="leading" constant="25" id="WjN-FM-cdk"/>
                             <constraint firstItem="Prg-HA-g3Y" firstAttribute="trailing" secondItem="LBw-5F-oTs" secondAttribute="trailing" constant="25" id="Zd8-8Z-C9r"/>
+                            <constraint firstItem="l3A-Yh-Rnj" firstAttribute="leading" secondItem="Prg-HA-g3Y" secondAttribute="leading" constant="25" id="jdV-fV-ct6"/>
                             <constraint firstItem="LBw-5F-oTs" firstAttribute="top" secondItem="Prg-HA-g3Y" secondAttribute="top" constant="267" id="kHA-E3-WYk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Prg-HA-g3Y"/>

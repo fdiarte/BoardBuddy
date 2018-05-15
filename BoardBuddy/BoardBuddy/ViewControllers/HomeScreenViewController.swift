@@ -16,8 +16,6 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var totalAmountLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self

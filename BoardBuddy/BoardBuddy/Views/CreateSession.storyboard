@@ -28,10 +28,19 @@
                                     <segue destination="YGj-yy-plL" kind="show" id="Sh7-YC-NeD"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creating Session" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSQ-qy-UVf">
+                                <rect key="frame" x="25" y="45" width="325" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1529411765" green="0.18823529410000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Eqt-Mt-v3a" firstAttribute="trailing" secondItem="qSQ-qy-UVf" secondAttribute="trailing" constant="25" id="6QW-ga-PfP"/>
                             <constraint firstItem="Eqt-Mt-v3a" firstAttribute="trailing" secondItem="NOk-bI-Hp8" secondAttribute="trailing" constant="25" id="7cb-Ue-PTR"/>
+                            <constraint firstItem="qSQ-qy-UVf" firstAttribute="leading" secondItem="Eqt-Mt-v3a" secondAttribute="leading" constant="25" id="8Wb-qZ-MzT"/>
+                            <constraint firstItem="qSQ-qy-UVf" firstAttribute="top" secondItem="Eqt-Mt-v3a" secondAttribute="top" constant="25" id="FWQ-A5-bDH"/>
                             <constraint firstItem="Eqt-Mt-v3a" firstAttribute="bottom" secondItem="NOk-bI-Hp8" secondAttribute="bottom" constant="319" id="MeQ-xU-eba"/>
                             <constraint firstItem="NOk-bI-Hp8" firstAttribute="top" secondItem="Eqt-Mt-v3a" secondAttribute="top" constant="298" id="PBu-tC-U82"/>
                             <constraint firstItem="NOk-bI-Hp8" firstAttribute="leading" secondItem="Eqt-Mt-v3a" secondAttribute="leading" constant="25" id="zMf-DS-C02"/>
