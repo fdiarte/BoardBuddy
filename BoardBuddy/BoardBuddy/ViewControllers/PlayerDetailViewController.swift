@@ -38,8 +38,12 @@ class PlayerDetailViewController: UIViewController {
     
     //MARK: - Methods
     
+    @IBAction func doneButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func requestFundsButtonPressed(_ sender: Any) {
-        
+        print("request funds button pressed")
         
     }
     
@@ -51,10 +55,4 @@ class PlayerDetailViewController: UIViewController {
         moneyLabel.text = "\(player.moneyAmount)"
         boardPieceImageView.image = image
     }
-    
-    
-
-
-    
-
 }

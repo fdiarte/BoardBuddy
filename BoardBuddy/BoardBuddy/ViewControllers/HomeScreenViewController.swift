@@ -31,10 +31,9 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         nameLabel.text = "MonopolyLord1241"
         totalAmountLabel.text = "$2300.0"
     }
-    
-    
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return PlayerController.shared.players.count
         return 20
     }
     
@@ -56,8 +55,8 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
             guard let destinationVC = segue.destination as? PlayerDetailViewController,
             let cell = sender as? PlayerCollectionViewCell, 
             let indexpath = collectionView.indexPath(for: cell) else {return}
-            let player = PlayerController.shared.players[indexpath.item]
-            destinationVC.player = player
+//            let player = PlayerController.shared.players[indexpath.item]
+//            destinationVC.player = player
         }
     }
 }
