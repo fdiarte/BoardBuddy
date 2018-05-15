@@ -28,6 +28,7 @@ class PlayerDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
         
         
     }
@@ -49,10 +50,15 @@ class PlayerDetailViewController: UIViewController {
     
     
     func updateViews() {
-        guard let player = player else {return}
-        let image = UIImage(data: player.imageData)
-        nameLabel.text = player.displayName
-        moneyLabel.text = "\(player.moneyAmount)"
-        boardPieceImageView.image = image
+//        guard let player = player else {return}
+//        let image = UIImage(data: player.imageData)
+//        nameLabel.text = player.displayName
+//        moneyLabel.text = "\(player.moneyAmount)"
+//        boardPieceImageView.image = image
+        
+        nameLabel.text = "(MonopolyKing420)"
+        moneyLabel.text = "($1500.00)"
+        boardPieceImageView.image = UIImage(named: "DogIcon")?.withRenderingMode(.alwaysTemplate)
+        boardPieceImageView.tintColor = Colors.mintCreme
     }
 }

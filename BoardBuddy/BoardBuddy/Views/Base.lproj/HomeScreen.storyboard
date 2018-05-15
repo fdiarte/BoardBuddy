@@ -56,26 +56,27 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BiB-5Y-Fve">
                                 <rect key="frame" x="0.0" y="547" width="375" height="120"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gpy-Hi-Iap">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CannonIcon" translatesAutoresizingMaskIntoConstraints="NO" id="gpy-Hi-Iap">
                                         <rect key="frame" x="10" y="8" width="104" height="104"/>
+                                        <color key="tintColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="gpy-Hi-Iap" secondAttribute="height" multiplier="1:1" id="7u9-aL-vrN"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWK-Tn-Brs">
-                                        <rect key="frame" x="122" y="49.5" width="243" height="21"/>
+                                        <rect key="frame" x="134" y="49.5" width="231" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="($1500.00)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="api-vu-OMT">
-                                        <rect key="frame" x="122" y="78.5" width="243" height="26.5"/>
+                                        <rect key="frame" x="134" y="78.5" width="231" height="26.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="textColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(UserName)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQN-F1-5dC">
-                                        <rect key="frame" x="124" y="8" width="241" height="24"/>
+                                        <rect key="frame" x="134" y="8" width="231" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -87,13 +88,13 @@
                                     <constraint firstItem="gpy-Hi-Iap" firstAttribute="top" secondItem="BiB-5Y-Fve" secondAttribute="top" constant="8" id="4Ue-ib-EQh"/>
                                     <constraint firstAttribute="height" constant="120" id="6QG-JQ-YE5"/>
                                     <constraint firstItem="WQN-F1-5dC" firstAttribute="top" secondItem="gpy-Hi-Iap" secondAttribute="top" id="7Ac-bz-Zrh"/>
-                                    <constraint firstItem="WQN-F1-5dC" firstAttribute="leading" secondItem="gpy-Hi-Iap" secondAttribute="trailing" constant="10" id="IfI-Qr-YZc"/>
+                                    <constraint firstItem="WQN-F1-5dC" firstAttribute="leading" secondItem="gpy-Hi-Iap" secondAttribute="trailing" constant="20" id="IfI-Qr-YZc"/>
                                     <constraint firstAttribute="bottom" secondItem="gpy-Hi-Iap" secondAttribute="bottom" constant="8" id="J5p-qK-GIT"/>
                                     <constraint firstItem="gpy-Hi-Iap" firstAttribute="leading" secondItem="BiB-5Y-Fve" secondAttribute="leading" constant="10" id="W53-iM-eHl"/>
-                                    <constraint firstItem="oWK-Tn-Brs" firstAttribute="leading" secondItem="gpy-Hi-Iap" secondAttribute="trailing" constant="8" id="hKS-0c-MkH"/>
+                                    <constraint firstItem="oWK-Tn-Brs" firstAttribute="leading" secondItem="gpy-Hi-Iap" secondAttribute="trailing" constant="20" id="hKS-0c-MkH"/>
                                     <constraint firstItem="oWK-Tn-Brs" firstAttribute="centerY" secondItem="gpy-Hi-Iap" secondAttribute="centerY" id="ksh-D2-i4v"/>
                                     <constraint firstItem="WQN-F1-5dC" firstAttribute="top" secondItem="BiB-5Y-Fve" secondAttribute="top" constant="8" id="oE2-II-d1E"/>
-                                    <constraint firstItem="api-vu-OMT" firstAttribute="leading" secondItem="gpy-Hi-Iap" secondAttribute="trailing" constant="8" id="oI4-Oj-Ud0"/>
+                                    <constraint firstItem="api-vu-OMT" firstAttribute="leading" secondItem="gpy-Hi-Iap" secondAttribute="trailing" constant="20" id="oI4-Oj-Ud0"/>
                                     <constraint firstAttribute="trailing" secondItem="api-vu-OMT" secondAttribute="trailing" constant="10" id="pHD-DY-vbZ"/>
                                     <constraint firstAttribute="bottom" secondItem="api-vu-OMT" secondAttribute="bottom" constant="15" id="qnl-pO-wld"/>
                                     <constraint firstItem="gpy-Hi-Iap" firstAttribute="leading" secondItem="BiB-5Y-Fve" secondAttribute="leading" constant="10" id="sE7-Em-eSH"/>
@@ -207,4 +208,7 @@
             <point key="canvasLocation" x="966" y="-86"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="CannonIcon" width="350" height="350"/>
+    </resources>
 </document>

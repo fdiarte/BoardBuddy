@@ -27,7 +27,9 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     func updateViews() {
 //        guard let user = user else {return}   when we find out who the phones user is
         sessionNameLabel.text = "this session"
-        boardPieceImageView.image = #imageLiteral(resourceName: "Car")
+        boardPieceImageView.image = UIImage(named: "CannonIcon")?.withRenderingMode(.alwaysTemplate)
+        boardPieceImageView.tintColor = Colors.mintCreme
+        
         nameLabel.text = "MonopolyLord1241"
         totalAmountLabel.text = "$2300.0"
     }
@@ -40,9 +42,13 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath) as? PlayerCollectionViewCell
 //        let player = PlayerController.shared.players[indexPath.row]
+        
+        //this is a test! we dont want to set cell properties here.... pass the player to the cell and let the cell update its own properties
+        
         cell?.playerNameLabel.text = "MonopolyKing"
         cell?.playerAmountLabel.text = "$1500.00"
-        cell?.boardPieceImageView.image = #imageLiteral(resourceName: "Car")
+        cell?.boardPieceImageView.image = UIImage(named: "DogIcon")?.withRenderingMode(.alwaysTemplate)
+        cell?.boardPieceImageView.tintColor = Colors.mintCreme
 //        cell?.player = player
         return cell ?? UICollectionViewCell()
     }

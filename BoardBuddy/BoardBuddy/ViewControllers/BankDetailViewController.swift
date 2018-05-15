@@ -19,7 +19,7 @@ class BankDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        updateViews()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -40,9 +40,10 @@ class BankDetailViewController: UIViewController {
     }
     
     func updateViews() {
-        
-        guard let banker = BankerController.shared.banker else {return}
-        moneyLabel.text = "\(banker.startingAmount)"
+//        guard let banker = BankerController.shared.banker else {return}
+//        moneyLabel.text = "\(banker.startingAmount)"
 //        bankerImageView.image = ?
+        bankerImageView.image = UIImage(named: "bank")?.withRenderingMode(.alwaysTemplate)
+        bankerImageView.tintColor = Colors.mintCreme
     }
 }
