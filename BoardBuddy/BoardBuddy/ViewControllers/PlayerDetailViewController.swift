@@ -48,6 +48,9 @@ class PlayerDetailViewController: UIViewController {
         
     }
     
+    @IBAction func tapGestureTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     func updateViews() {
 //        guard let player = player else {return}
