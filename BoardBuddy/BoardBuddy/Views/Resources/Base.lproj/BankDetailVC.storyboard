@@ -18,19 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0b-m1-yX7">
-                                <rect key="frame" x="16" y="536" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0b-m1-yX7">
+                                <rect key="frame" x="0.0" y="607" width="375" height="30"/>
+                                <color key="backgroundColor" red="0.15294117647058825" green="0.80784313725490198" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.23529411759999999" green="0.28235294119999998" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Request Money"/>
                                 <connections>
                                     <action selector="requestMoneyButtonPressed:" destination="wdR-2c-SpO" eventType="touchUpInside" id="zUS-zT-jzy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBG-rR-zdA">
-                                <rect key="frame" x="16" y="566" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.59999999999999998" green="0.19607843137254902" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBG-rR-zdA">
+                                <rect key="frame" x="0.0" y="637" width="375" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.8980392157" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.23529411759999999" green="0.28235294119999998" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Purchase"/>
                                 <connections>
                                     <action selector="payBankButtonPressed:" destination="wdR-2c-SpO" eventType="touchUpInside" id="7s3-wx-paV"/>
@@ -42,13 +42,13 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2N-PB-KaD">
                                         <rect key="frame" x="0.0" y="0.0" width="141" height="24"/>
                                         <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount of Money" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="md0-e3-epS">
                                         <rect key="frame" x="0.0" y="84" width="141" height="24"/>
                                         <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -58,14 +58,20 @@
                                 </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KxL-xI-sc7">
-                                <rect key="frame" x="81" y="235" width="217" height="239"/>
+                                <rect key="frame" x="79" y="309" width="217" height="239"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.23529411759999999" green="0.28235294119999998" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="GyY-4w-KVz" firstAttribute="top" secondItem="Adp-ps-wUs" secondAttribute="top" constant="40" id="IyT-GB-e7Z"/>
+                            <constraint firstItem="Adp-ps-wUs" firstAttribute="bottom" secondItem="hBG-rR-zdA" secondAttribute="bottom" id="MCN-4e-8yu"/>
+                            <constraint firstItem="n0b-m1-yX7" firstAttribute="leading" secondItem="Adp-ps-wUs" secondAttribute="leading" id="UaG-yj-l2t"/>
                             <constraint firstItem="Adp-ps-wUs" firstAttribute="trailing" secondItem="GyY-4w-KVz" secondAttribute="trailing" constant="114" id="WdR-OA-HdS"/>
+                            <constraint firstItem="hBG-rR-zdA" firstAttribute="leading" secondItem="Adp-ps-wUs" secondAttribute="leading" id="kFq-Dq-AMC"/>
+                            <constraint firstItem="hBG-rR-zdA" firstAttribute="top" secondItem="n0b-m1-yX7" secondAttribute="bottom" id="lqE-mK-pfB"/>
+                            <constraint firstItem="Adp-ps-wUs" firstAttribute="trailing" secondItem="hBG-rR-zdA" secondAttribute="trailing" id="oge-dS-0n6"/>
+                            <constraint firstItem="Adp-ps-wUs" firstAttribute="trailing" secondItem="n0b-m1-yX7" secondAttribute="trailing" id="tqQ-8f-ghQ"/>
                             <constraint firstItem="GyY-4w-KVz" firstAttribute="leading" secondItem="Adp-ps-wUs" secondAttribute="leading" constant="120" id="u9F-ef-CAp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Adp-ps-wUs"/>
