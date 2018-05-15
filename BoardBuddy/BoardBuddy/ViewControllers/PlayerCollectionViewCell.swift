@@ -17,7 +17,6 @@ class PlayerCollectionViewCell: UICollectionViewCell {
     }
     
     @IBOutlet weak var boardPieceImageView: UIImageView!
-    
     @IBOutlet weak var playerAmountLabel: UILabel!
     @IBOutlet weak var playerNameLabel: UILabel!
     

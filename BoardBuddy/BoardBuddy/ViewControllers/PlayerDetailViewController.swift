@@ -43,7 +43,7 @@ class PlayerDetailViewController: UIViewController {
     }
     
     @IBAction func requestFundsButtonPressed(_ sender: Any) {
-        
+        print("request funds button pressed")
         
     }
     
@@ -55,10 +55,4 @@ class PlayerDetailViewController: UIViewController {
         moneyLabel.text = "\(player.moneyAmount)"
         boardPieceImageView.image = image
     }
-    
-    
-
-
-    
-
 }
