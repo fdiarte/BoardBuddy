@@ -28,10 +28,19 @@
                                     <segue destination="cRY-jr-MfQ" kind="show" id="xkx-Ie-Db1"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creating Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onr-Hs-bfS">
+                                <rect key="frame" x="25" y="45" width="325" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.98823529409999999" green="1" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1529411765" green="0.18823529410000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="asx-4B-DKZ" firstAttribute="trailing" secondItem="Kfg-oa-lVX" secondAttribute="trailing" constant="25" id="NL7-Qh-IrI"/>
+                            <constraint firstItem="asx-4B-DKZ" firstAttribute="trailing" secondItem="onr-Hs-bfS" secondAttribute="trailing" constant="25" id="Ncd-PW-A0i"/>
+                            <constraint firstItem="onr-Hs-bfS" firstAttribute="leading" secondItem="asx-4B-DKZ" secondAttribute="leading" constant="25" id="Qi9-c0-KlI"/>
+                            <constraint firstItem="onr-Hs-bfS" firstAttribute="top" secondItem="asx-4B-DKZ" secondAttribute="top" constant="25" id="TJ9-zl-Ryy"/>
                             <constraint firstItem="Kfg-oa-lVX" firstAttribute="leading" secondItem="asx-4B-DKZ" secondAttribute="leading" constant="25" id="Y9Z-39-ebj"/>
                             <constraint firstItem="Kfg-oa-lVX" firstAttribute="top" secondItem="asx-4B-DKZ" secondAttribute="top" constant="298" id="ccu-21-tFt"/>
                             <constraint firstItem="asx-4B-DKZ" firstAttribute="bottom" secondItem="Kfg-oa-lVX" secondAttribute="bottom" constant="319" id="wja-w5-Igc"/>
