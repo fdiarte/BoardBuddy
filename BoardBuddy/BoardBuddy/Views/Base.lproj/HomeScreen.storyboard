@@ -30,7 +30,9 @@
                                             <color key="titleColor" red="0.23529411759999999" green="0.28235294119999998" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="9sR-Pr-NL5" kind="show" identifier="toBankDetailVC" id="Xvd-39-9Yz"/>
+                                            <segue destination="9sR-Pr-NL5" kind="popoverPresentation" identifier="toBankDetailVC" popoverAnchorView="hNO-eO-bul" id="Xvd-39-9Yz">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -197,7 +199,7 @@
                 <viewControllerPlaceholder storyboardName="PlayerDetailVC" id="DMn-Y5-fpM" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gY3-f1-8gu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="959" y="93"/>
+            <point key="canvasLocation" x="966" y="292"/>
         </scene>
         <!--BankDetailVC-->
         <scene sceneID="4SI-qe-7Tv">

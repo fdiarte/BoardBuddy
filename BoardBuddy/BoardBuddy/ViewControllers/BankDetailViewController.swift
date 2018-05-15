@@ -31,6 +31,10 @@ class BankDetailViewController: UIViewController {
         print("request funds from bank button pressed")
     }
     
+    @IBAction func tapGestureTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func payBankButtonPressed(_ sender: Any) {
         print("pay bank button pressed")
     }

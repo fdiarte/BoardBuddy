@@ -44,7 +44,7 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
 //        let player = PlayerController.shared.players[indexPath.row]
         
         //this is a test! we dont want to set cell properties here.... pass the player to the cell and let the cell update its own properties
-        
+    
         cell?.playerNameLabel.text = "MonopolyKing"
         cell?.playerAmountLabel.text = "$1500.00"
         cell?.boardPieceImageView.image = UIImage(named: "DogIcon")?.withRenderingMode(.alwaysTemplate)
@@ -53,16 +53,28 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         return cell ?? UICollectionViewCell()
     }
     
+
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
+        
+    }
+    
+
+
     
     // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toPlayerDetailVC" {
-            guard let destinationVC = segue.destination as? PlayerDetailViewController,
-            let cell = sender as? PlayerCollectionViewCell, 
-            let indexpath = collectionView.indexPath(for: cell) else {return}
-//            let player = PlayerController.shared.players[indexpath.item]
-//            destinationVC.player = player
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "toPlayerDetailVC" {
+//            guard let destinationVC = segue.destination as? PlayerDetailViewController,
+//            let cell = sender as? PlayerCollectionViewCell,
+//            let indexpath = collectionView.indexPath(for: cell) else {return}
+////            let player = PlayerController.shared.players[indexpath.item]
+////            destinationVC.player = player
+//        } else if segue.identifier == "toBankVC" {
+//            let bankcVC = BankDetailViewController()
+//
+//        }
+//    }
 }
