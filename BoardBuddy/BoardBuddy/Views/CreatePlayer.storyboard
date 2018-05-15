@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Fs-gx-LQt">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Create Player View Controller-->
+        <scene sceneID="P4P-1h-GFu">
+            <objects>
+                <viewController id="8Fs-gx-LQt" customClass="CreatePlayerViewController" customModule="BoardBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BYQ-xm-XOh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfg-oa-lVX">
+                                <rect key="frame" x="25" y="318" width="325" height="30"/>
+                                <color key="backgroundColor" red="0.1529411765" green="0.80784313730000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Go To Lobby">
+                                    <color key="titleColor" red="0.1529411765" green="0.18823529410000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cRY-jr-MfQ" kind="show" id="xkx-Ie-Db1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1529411765" green="0.18823529410000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="asx-4B-DKZ" firstAttribute="trailing" secondItem="Kfg-oa-lVX" secondAttribute="trailing" constant="25" id="NL7-Qh-IrI"/>
+                            <constraint firstItem="Kfg-oa-lVX" firstAttribute="leading" secondItem="asx-4B-DKZ" secondAttribute="leading" constant="25" id="Y9Z-39-ebj"/>
+                            <constraint firstItem="Kfg-oa-lVX" firstAttribute="top" secondItem="asx-4B-DKZ" secondAttribute="top" constant="298" id="ccu-21-tFt"/>
+                            <constraint firstItem="asx-4B-DKZ" firstAttribute="bottom" secondItem="Kfg-oa-lVX" secondAttribute="bottom" constant="319" id="wja-w5-Igc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="asx-4B-DKZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sEx-5q-pQB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1041" y="-878"/>
+        </scene>
+        <!--Lobby-->
+        <scene sceneID="0fm-oS-C2p">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Lobby" id="cRY-jr-MfQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WAH-es-fZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12" y="-879"/>
+        </scene>
+    </scenes>
+</document>

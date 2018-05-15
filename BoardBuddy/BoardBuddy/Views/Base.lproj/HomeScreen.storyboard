@@ -197,7 +197,7 @@
                 <viewControllerPlaceholder storyboardName="PlayerDetailVC" id="DMn-Y5-fpM" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gY3-f1-8gu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="966" y="292"/>
+            <point key="canvasLocation" x="789" y="272"/>
         </scene>
         <!--BankDetailVC-->
         <scene sceneID="4SI-qe-7Tv">
@@ -205,7 +205,7 @@
                 <viewControllerPlaceholder storyboardName="BankDetailVC" id="9sR-Pr-NL5" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PwS-9P-NRq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="966" y="-86"/>
+            <point key="canvasLocation" x="789" y="-91"/>
         </scene>
     </scenes>
     <resources>
