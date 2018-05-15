@@ -10,6 +10,7 @@ import Foundation
 
 class BankerController {
     static let shared = BankerController()
+    var banker: Banker?
     
     func createBankerWith(startingAmount: Int) -> Banker {
         return Banker(startingAmount: startingAmount)

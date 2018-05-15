@@ -29,20 +29,22 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = UICollectionViewCell()
-        
-        
-        return cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath) as? PlayerCollectionViewCell
+        let player = PlayerController.shared.players[indexPath.row]
+        cell?.player = player
+        return cell ?? UICollectionViewCell()
     }
     
-
+    
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toBankDetailVC" {
-            
-        } else if segue.identifier == "toPlayerDetailVC" {
-            
+        if segue.identifier == "toPlayerDetailVC" {
+            guard let destinationVC = segue.destination as? PlayerDetailViewController,
+            let cell = sender as? PlayerCollectionViewCell,
+            let indexpath = collectionView.indexPath(for: cell) else {return}
+            let player = PlayerController.shared.players[indexpath.item]
+            destinationVC.player = player
         }
     }
 }
