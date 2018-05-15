@@ -35,8 +35,12 @@ class BankDetailViewController: UIViewController {
     @IBAction func payBankButtonPressed(_ sender: Any) {
     }
     
+    @IBAction func doneButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     func updateViews() {
+        
         guard let banker = BankerController.shared.banker else {return}
         moneyLabel.text = "\(banker.startingAmount)"
 //        bankerImageView.image =

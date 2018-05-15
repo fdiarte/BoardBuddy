@@ -38,6 +38,10 @@ class PlayerDetailViewController: UIViewController {
     
     //MARK: - Methods
     
+    @IBAction func doneButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func requestFundsButtonPressed(_ sender: Any) {
         
         
