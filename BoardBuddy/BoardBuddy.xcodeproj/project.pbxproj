@@ -76,7 +76,6 @@
 				9DB8396720AA1AE60035C0C0 /* ModelControllers */,
 				9DB8396820AA1AFA0035C0C0 /* ViewControllers */,
 				9DB8397020AA21900035C0C0 /* Views */,
-				9DB8396E20AA20610035C0C0 /* PlayerDetailVC.storyboard */,
 				9DB8396A20AA1B1B0035C0C0 /* Resources */,
 			);
 			path = BoardBuddy;
@@ -127,6 +126,7 @@
 			children = (
 				7DB1B0D920A9E84F0086CC3A /* HomeScreen.storyboard */,
 				9DB8396B20AA1E540035C0C0 /* BankDetailVC.storyboard */,
+				9DB8396E20AA20610035C0C0 /* PlayerDetailVC.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
