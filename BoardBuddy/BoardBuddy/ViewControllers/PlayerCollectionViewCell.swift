@@ -22,7 +22,7 @@ class PlayerCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var playerNameLabel: UILabel!
     
     func updateViews() {
-        
+        backgroundColor = Colors.green
     }
     
 }
