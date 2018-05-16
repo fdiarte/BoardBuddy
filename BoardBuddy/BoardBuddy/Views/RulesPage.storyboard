@@ -17,14 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="ULJ-2N-5SC">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="49" id="wbs-PA-d3D" customClass="RulesCell" customModule="BoardBuddy" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="49"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="49"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wbs-PA-d3D" id="iim-yj-yiX">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="48.5"/>
@@ -54,7 +49,13 @@
                             <outlet property="delegate" destination="ebs-fX-2JG" id="Uwa-y5-tf8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="riM-gN-R4c"/>
+                    <navigationItem key="navigationItem" id="riM-gN-R4c">
+                        <barButtonItem key="leftBarButtonItem" title="Rate App" id="lQQ-ru-Bwe">
+                            <connections>
+                                <action selector="rateButtonTapped:" destination="ebs-fX-2JG" id="2JN-Gb-9qA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qQg-TV-Yx7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
