@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, PlayerCollectionViewCellDelegate {
 
     @IBOutlet weak var sessionNameLabel: UILabel!
     @IBOutlet weak var boardPieceImageView: UIImageView!
@@ -61,7 +61,7 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath) as? PlayerCollectionViewCell
 
         guard var cellPlayers = players else { return UICollectionViewCell() }
-    
+     
         for player in cellPlayers {
             if player.deviceName == UIDevice.current.name {
                 guard let index = cellPlayers.index(of: player) else { return UICollectionViewCell() }
@@ -78,6 +78,7 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         cell?.boardPieceImageView.image = image
         cell?.boardPieceImageView.tintColor = Colors.mintCreme
         cell?.player = player
+        cell?.delegate = self
         return cell ?? UICollectionViewCell()
     }
     
@@ -86,20 +87,34 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
     }
+    
+    func userTappedCell(_ sender: PlayerCollectionViewCell) {
+        guard let indexPath = collectionView.indexPath(for: sender) else { return }
+        guard var players = players else { return }
+        
+        for player in players {
+            if player.deviceName == UIDevice.current.name {
+                guard let index = players.index(of: player) else { return }
+                players.remove(at: index)
+            }
+        }
+        
+        let player = players[indexPath.row]
+        
+        performSegue(withIdentifier: "toPlayerDetailVC", sender: player)
+    }
 
      //MARK: - Navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toPlayerDetailVC" {
-//            guard let destinationVC = segue.destination as? PlayerDetailViewController,
-//            let cell = sender as? PlayerCollectionViewCell,
-//            let indexpath = collectionView.indexPath(for: cell) else {return}
-////            let player = PlayerController.shared.players[indexpath.item]
-////            destinationVC.player = player
-//        } else if segue.identifier == "toBankVC" {
-//            let bankcVC = BankDetailViewController()
-//
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toPlayerDetailVC" {
+            guard let destinationVC = segue.destination as? PlayerDetailViewController else { return }
+            destinationVC.player = sender as? Player
+            
+        } else if segue.identifier == "toBankVC" {
+            let bankcVC = BankDetailViewController()
+
+        }
+    }
 }
 
 extension HomeScreenViewController: MPCManagerDelegate {
