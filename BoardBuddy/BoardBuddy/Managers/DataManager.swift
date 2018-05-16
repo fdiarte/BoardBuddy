@@ -6,7 +6,7 @@
 //  Copyright © 2018 Francisco Diarte. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class DataManager {
     static let shared = DataManager()
@@ -49,6 +49,22 @@ class DataManager {
             print("Error decoding Banker: \(error.localizedDescription)")
             return nil
         }
+    }
+    
+    func encodeImage(from image: UIImage) -> Data? {
+        guard let imageData: Data = UIImagePNGRepresentation(image) else {
+            print("Cannot convert image to data")
+            return nil
+        }
+        return imageData
+    }
+    
+    func decodeImage(from data: Data) -> UIImage? {
+        guard let image = UIImage(data: data) else {
+            print("Cannot conver data to image")
+            return nil
+        }
+        return image
     }
 }
 

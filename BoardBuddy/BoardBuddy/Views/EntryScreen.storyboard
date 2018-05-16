@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sXg-wo-9lZ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Entry Screen View Controller-->
+        <scene sceneID="r69-7y-U5w">
+            <objects>
+                <viewController id="sXg-wo-9lZ" customClass="EntryScreenViewController" customModule="BoardBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="haO-4z-1uf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z5M-Np-sNt">
+                                <rect key="frame" x="45" y="220" width="285" height="247"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Qay-Zg-Scm">
+                                        <rect key="frame" x="25" y="40" width="240" height="167"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7V-uy-h5t">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="73.5"/>
+                                                <color key="backgroundColor" red="0.1529411765" green="0.80784313730000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Create Session">
+                                                    <color key="titleColor" red="0.23529411759999999" green="0.28235294119999998" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="createButtonTapped:" destination="sXg-wo-9lZ" eventType="touchUpInside" id="oAw-QW-2mu"/>
+                                                    <segue destination="RYT-Cx-uzR" kind="show" id="nVc-lb-VtM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27E-rF-3UJ">
+                                                <rect key="frame" x="0.0" y="93.5" width="240" height="73.5"/>
+                                                <color key="backgroundColor" red="1" green="0.8980392157" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Join Session">
+                                                    <color key="titleColor" red="0.1529411765" green="0.18823529410000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="joinButtonTapped:" destination="sXg-wo-9lZ" eventType="touchUpInside" id="6kj-IP-tsh"/>
+                                                    <segue destination="edI-lK-Jjv" kind="show" id="tMM-dh-8B9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.23529411759999999" green="0.28235294119999998" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Qay-Zg-Scm" secondAttribute="trailing" constant="20" id="DIT-Q5-EtF"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qay-Zg-Scm" secondAttribute="bottom" constant="40" id="Dfu-WR-17c"/>
+                                    <constraint firstItem="Qay-Zg-Scm" firstAttribute="top" secondItem="z5M-Np-sNt" secondAttribute="top" constant="40" id="o3A-si-Mv0"/>
+                                    <constraint firstItem="Qay-Zg-Scm" firstAttribute="leading" secondItem="z5M-Np-sNt" secondAttribute="leading" constant="25" id="yRv-1h-jlt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1529411765" green="0.18823529410000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="b0f-p8-oBP" firstAttribute="trailing" secondItem="z5M-Np-sNt" secondAttribute="trailing" constant="45" id="P26-Ui-Aen"/>
+                            <constraint firstItem="z5M-Np-sNt" firstAttribute="top" secondItem="b0f-p8-oBP" secondAttribute="top" constant="200" id="UU1-gH-1bi"/>
+                            <constraint firstItem="z5M-Np-sNt" firstAttribute="leading" secondItem="b0f-p8-oBP" secondAttribute="leading" constant="45" id="ljJ-fS-Qd4"/>
+                            <constraint firstItem="b0f-p8-oBP" firstAttribute="bottom" secondItem="z5M-Np-sNt" secondAttribute="bottom" constant="200" id="zsd-QT-kU9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="b0f-p8-oBP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SHa-ed-kOC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="112.8" y="151.57421289355324"/>
+        </scene>
+        <!--CreateSession-->
+        <scene sceneID="TWG-hf-e1j">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CreateSession" id="RYT-Cx-uzR" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HAs-u4-v0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1172" y="-95"/>
+        </scene>
+        <!--CreatePlayer-->
+        <scene sceneID="gBH-t6-dBp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CreatePlayer" id="edI-lK-Jjv" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vzh-6N-Z03" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1157" y="283"/>
+        </scene>
+    </scenes>
+</document>
