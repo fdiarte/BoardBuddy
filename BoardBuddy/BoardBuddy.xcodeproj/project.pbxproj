@@ -25,7 +25,8 @@
 		F750B0E420AA2CB400650634 /* PlayerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750B0E320AA2CB400650634 /* PlayerDetailViewController.swift */; };
 		F750B0E620AA2F5B00650634 /* BankDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750B0E520AA2F5B00650634 /* BankDetailViewController.swift */; };
 		F78DB95220AB4C97006AB041 /* RulesPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F78DB95120AB4C97006AB041 /* RulesPage.storyboard */; };
-		F78DB95420AB4CFE006AB041 /* RulesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DB95320AB4CFE006AB041 /* RulesPageViewController.swift */; };
+		F78DB95E20ACA407006AB041 /* RulesPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DB95D20ACA407006AB041 /* RulesPageTableViewController.swift */; };
+		F78DB96020ACA494006AB041 /* RulesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DB95F20ACA494006AB041 /* RulesCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +50,8 @@
 		F750B0E320AA2CB400650634 /* PlayerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailViewController.swift; sourceTree = "<group>"; };
 		F750B0E520AA2F5B00650634 /* BankDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankDetailViewController.swift; sourceTree = "<group>"; };
 		F78DB95120AB4C97006AB041 /* RulesPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RulesPage.storyboard; sourceTree = "<group>"; };
-		F78DB95320AB4CFE006AB041 /* RulesPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesPageViewController.swift; sourceTree = "<group>"; };
+		F78DB95D20ACA407006AB041 /* RulesPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesPageTableViewController.swift; sourceTree = "<group>"; };
+		F78DB95F20ACA494006AB041 /* RulesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +127,8 @@
 				9D8A821020AB2ADB0031CBEF /* PlayerCollectionViewCell.swift */,
 				F750B0E320AA2CB400650634 /* PlayerDetailViewController.swift */,
 				F750B0E520AA2F5B00650634 /* BankDetailViewController.swift */,
-				F78DB95320AB4CFE006AB041 /* RulesPageViewController.swift */,
+				F78DB95D20ACA407006AB041 /* RulesPageTableViewController.swift */,
+				F78DB95F20ACA494006AB041 /* RulesCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -233,10 +236,11 @@
 				7D6249B920AA3FB5005CB1EF /* Banker Controller.swift in Sources */,
 				7D6249B720AA3FAD005CB1EF /* Player Controller.swift in Sources */,
 				7D6249B520AA3EE6005CB1EF /* Banker.swift in Sources */,
+				F78DB95E20ACA407006AB041 /* RulesPageTableViewController.swift in Sources */,
 				F750B0E620AA2F5B00650634 /* BankDetailViewController.swift in Sources */,
 				F750B0E420AA2CB400650634 /* PlayerDetailViewController.swift in Sources */,
+				F78DB96020ACA494006AB041 /* RulesCell.swift in Sources */,
 				7D6249B320AA3DD6005CB1EF /* Player.swift in Sources */,
-				F78DB95420AB4CFE006AB041 /* RulesPageViewController.swift in Sources */,
 				7D6249BB20AA42EC005CB1EF /* DataManager.swift in Sources */,
 				7DB1B0D620A9E84F0086CC3A /* AppDelegate.swift in Sources */,
 				9DB8397A20AA34DC0035C0C0 /* HomeScreenViewController.swift in Sources */,
