@@ -17,16 +17,16 @@ class EntryScreenViewController: UIViewController {
     }
     
     @IBAction func createButtonTapped(_ sender: Any) {
-        MPCManager.shared.advertiserAssistant.start()
         // Segue to lobby
-        let storyboard = UIStoryboard(name: "Lobby", bundle: nil)
-        let view = storyboard.instantiateViewController(withIdentifier: "lobby")
-        present(view, animated: true, completion: nil)
+//        MPCManager.shared.advertiserAssistant.start()
+//        let storyboard = UIStoryboard(name: "Lobby", bundle: nil)
+//        let view = storyboard.instantiateViewController(withIdentifier: "lobby")
+//        present(view, animated: true, completion: nil)
     }
     
     @IBAction func joinButtonTapped(_ sender: Any) {
-        MPCManager.shared.browser.delegate = self
-        present(MPCManager.shared.browser, animated: true, completion: nil)
+//        MPCManager.shared.browser.delegate = self
+//        present(MPCManager.shared.browser, animated: true, completion: nil)
     }
 }
 
