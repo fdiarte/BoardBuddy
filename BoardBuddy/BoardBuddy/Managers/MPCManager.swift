@@ -32,7 +32,13 @@ class MPCManager: NSObject, MCSessionDelegate {
     override init() {
         super.init()
         
-        peerID = MCPeerID(displayName: UIDevice.current.name)
+        let displayName = PlayerController.shared.players.first?.displayName
+        
+        if let displayName = displayName {
+            peerID = MCPeerID(displayName: displayName)
+        } else {
+            peerID = MCPeerID(displayName: UIDevice.current.name)
+        }
         
         // May need to change
         session = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .required)

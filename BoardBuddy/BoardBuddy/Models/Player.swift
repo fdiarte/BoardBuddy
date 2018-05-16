@@ -19,9 +19,9 @@ class Player: Equatable, Codable {
     var moneyAmount: Int
     var isHost: Bool
     
-    init(displayName: String, imageData: Data, moneyAmount: Int, isHost: Bool) {
+    init(displayName: String, imageData: Data, isHost: Bool) {
         self.displayName = displayName
-        self.moneyAmount = moneyAmount
+        self.moneyAmount = 1500
         self.isHost = isHost
         self.imageData = imageData
     }
