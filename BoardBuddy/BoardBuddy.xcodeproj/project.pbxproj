@@ -29,7 +29,6 @@
 		9D8A822120AB91760031CBEF /* Lobby.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D8A822020AB91760031CBEF /* Lobby.storyboard */; };
 		9D8A822320AB92B60031CBEF /* CreateSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8A822220AB92B60031CBEF /* CreateSessionViewController.swift */; };
 		9D8A822520AB92C00031CBEF /* CreatePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8A822420AB92C00031CBEF /* CreatePlayerViewController.swift */; };
-		9D8A822720AB92C90031CBEF /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8A822620AB92C90031CBEF /* LobbyViewController.swift */; };
 		9DB8396D20AA1E540035C0C0 /* BankDetailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB8396B20AA1E540035C0C0 /* BankDetailVC.storyboard */; };
 		9DB8396F20AA20610035C0C0 /* PlayerDetailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB8396E20AA20610035C0C0 /* PlayerDetailVC.storyboard */; };
 		9DB8397A20AA34DC0035C0C0 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB8397920AA34DC0035C0C0 /* HomeScreenViewController.swift */; };
@@ -64,7 +63,6 @@
 		9D8A822020AB91760031CBEF /* Lobby.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lobby.storyboard; sourceTree = "<group>"; };
 		9D8A822220AB92B60031CBEF /* CreateSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSessionViewController.swift; sourceTree = "<group>"; };
 		9D8A822420AB92C00031CBEF /* CreatePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerViewController.swift; sourceTree = "<group>"; };
-		9D8A822620AB92C90031CBEF /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 		9DB8396C20AA1E540035C0C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/BankDetailVC.storyboard; sourceTree = "<group>"; };
 		9DB8396E20AA20610035C0C0 /* PlayerDetailVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlayerDetailVC.storyboard; sourceTree = "<group>"; };
 		9DB8397920AA34DC0035C0C0 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 				9D8A821A20AB90040031CBEF /* EntryScreenViewController.swift */,
 				9D8A822220AB92B60031CBEF /* CreateSessionViewController.swift */,
 				9D8A822420AB92C00031CBEF /* CreatePlayerViewController.swift */,
-				9D8A822620AB92C90031CBEF /* LobbyViewController.swift */,
 				7D7A8FBA20AB99CA0030F414 /* LobbyTableViewController.swift */,
 				9DB8397920AA34DC0035C0C0 /* HomeScreenViewController.swift */,
 				9D8A821020AB2ADB0031CBEF /* PlayerCollectionViewCell.swift */,
@@ -290,7 +287,6 @@
 				7D6249BB20AA42EC005CB1EF /* DataManager.swift in Sources */,
 				7DB1B0D620A9E84F0086CC3A /* AppDelegate.swift in Sources */,
 				9DB8397A20AA34DC0035C0C0 /* HomeScreenViewController.swift in Sources */,
-				9D8A822720AB92C90031CBEF /* LobbyViewController.swift in Sources */,
 				9D8A821120AB2ADB0031CBEF /* PlayerCollectionViewCell.swift in Sources */,
 				9D8A821B20AB90040031CBEF /* EntryScreenViewController.swift in Sources */,
 			);

@@ -130,19 +130,19 @@
                                                     <rect key="frame" x="84" y="16" width="196" height="67"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="(userName)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbS-jO-AB6">
-                                                            <rect key="frame" x="0.0" y="0.0" width="91" height="29.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="91" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.96862745098039216" green="1" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqF-2e-Zl0">
-                                                            <rect key="frame" x="0.0" y="29.5" width="44.5" height="17"/>
+                                                            <rect key="frame" x="0.0" y="20.5" width="44.5" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" red="0.98823529409999999" green="1" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="(amount)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTz-Fg-OJD">
-                                                            <rect key="frame" x="0.0" y="46.5" width="70.5" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="37.5" width="70.5" height="29.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.1529411765" green="0.80784313730000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -169,12 +169,28 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FD3-oY-Qx2">
+                                <rect key="frame" x="5" y="22" width="32" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="23O-1h-TsK"/>
+                                    <constraint firstAttribute="height" constant="27" id="By1-wI-RPL"/>
+                                </constraints>
+                                <color key="tintColor" red="0.1529411765" green="0.18823529410000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="hamburger"/>
+                                <connections>
+                                    <action selector="hamburgerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0IB-aX-x5c"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="FD3-oY-Qx2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="2" id="7g7-fF-6vq"/>
                             <constraint firstItem="8jW-4v-qYO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9ZN-tm-Lk8"/>
+                            <constraint firstItem="FD3-oY-Qx2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="AvL-pW-K0N"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bQE-hz-U92" secondAttribute="trailing" id="BAy-Ut-wAJ"/>
                             <constraint firstItem="BiB-5Y-Fve" firstAttribute="top" secondItem="pCi-Rc-UZC" secondAttribute="bottom" id="DdE-Zn-Yzf"/>
+                            <constraint firstItem="FD3-oY-Qx2" firstAttribute="centerY" secondItem="bQE-hz-U92" secondAttribute="centerY" id="ERy-Yh-z57"/>
+                            <constraint firstItem="8jW-4v-qYO" firstAttribute="top" secondItem="FD3-oY-Qx2" secondAttribute="bottom" constant="1" id="FvD-c2-Pus"/>
                             <constraint firstItem="8jW-4v-qYO" firstAttribute="top" secondItem="bQE-hz-U92" secondAttribute="bottom" id="HQB-69-N31"/>
                             <constraint firstItem="pCi-Rc-UZC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="MLC-lx-ggP"/>
                             <constraint firstItem="BiB-5Y-Fve" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Mpn-TP-Te5"/>
@@ -219,5 +235,6 @@
     </scenes>
     <resources>
         <image name="CannonIcon" width="350" height="350"/>
+        <image name="hamburger" width="48" height="48"/>
     </resources>
 </document>

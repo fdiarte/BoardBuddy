@@ -23,6 +23,13 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         updateViews()
     }
     
+    
+    @IBAction func hamburgerButtonPressed(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "RulesPage", bundle: nil)
+        let view = storyBoard.instantiateViewController(withIdentifier: "rules")
+        present(view, animated: true, completion: nil)
+    }
+    
     func updateViews() {
 //        guard let user = user else {return}   when we find out who the phones user is
         sessionNameLabel.text = "this session"
