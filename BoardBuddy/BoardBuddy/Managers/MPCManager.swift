@@ -12,6 +12,8 @@ import MultipeerConnectivity
 protocol MPCManagerDelegate {
     func playerJoinedSession()
     func playerRecieved(from data: Data)
+    func infoRecieved(from data: Data)
+    func playersArrayRecieved(from data: Data)
 }
 
 class MPCManager: NSObject, MCSessionDelegate {
@@ -73,8 +75,9 @@ class MPCManager: NSObject, MCSessionDelegate {
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         // turn data to person object
         print("recieved person")
-        
+        delegate?.infoRecieved(from: data)
         delegate?.playerRecieved(from: data)
+        delegate?.playersArrayRecieved(from: data)
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
@@ -96,6 +99,24 @@ class MPCManager: NSObject, MCSessionDelegate {
             try session.send(data, toPeers: session.connectedPeers, with: .reliable)
         } catch {
             print("Cant send player: \(error.localizedDescription)")
+        }
+    }
+    
+    func sendInfo(info: SendingInfo) {
+        guard let data = DataManager.shared.encodeSendingInfo(from: info) else { return }
+        do {
+            try session.send(data, toPeers: session.connectedPeers, with: .reliable)
+        } catch {
+            print("Cant send info: \(error.localizedDescription)")
+        }
+    }
+    
+    func sendPlayers(players: [Player]) {
+        guard let data = DataManager.shared.encodePlayers(from: players) else { return }
+        do {
+            try session.send(data, toPeers: session.connectedPeers, with: .reliable)
+        } catch {
+            print("Cant send players \(error.localizedDescription)")
         }
     }
     

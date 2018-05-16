@@ -83,16 +83,28 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Lobby" id="dWp-QG-bXI">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Start Game" id="DkD-NV-hLy">
+                        <barButtonItem key="rightBarButtonItem" title="Start Game" id="DkD-NV-hLy">
                             <connections>
-                                <segue destination="L7x-qf-1LB" kind="presentation" id="sFc-zD-qJB"/>
+                                <action selector="startGameButtonTapped:" destination="Fqr-sk-faL" id="AQK-as-aW0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="startGameButton" destination="DkD-NV-hLy" id="Vx3-cJ-aTr"/>
+                        <segue destination="EgI-2S-46x" kind="presentation" identifier="toHomeVC" id="JgD-Su-WaX"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zs1-6B-cSM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="545" y="463"/>
+            <point key="canvasLocation" x="622" y="550"/>
+        </scene>
+        <!--HomeScreen-->
+        <scene sceneID="c6Z-oS-nJU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HomeScreen" id="EgI-2S-46x" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1QA-eS-fhB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1260" y="550"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rw1-ma-h0T">

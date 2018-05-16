@@ -9,12 +9,22 @@
 import UIKit
 
 class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
+  
+    @IBOutlet weak var startGameButton: UIBarButtonItem!
     
     var players = PlayerController.shared.players
+
+//    var isMatchReadyToStart: Int? {
+//        didSet {
+//            self.performSegue(withIdentifier: "toHomeVC", sender: self.players)
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        MPCManager.shared.delegate = self     
+        MPCManager.shared.delegate = self
+        
+        startGameButton.isEnabled = false
     }
     
 
@@ -29,8 +39,18 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath)
         cell.textLabel?.text = MPCManager.shared.currentGamePeers[indexPath.row].displayName
-
+        cell.selectionStyle = .none
         return cell
+    }
+    
+    func checkNumberOfPlayers() {
+        if players.count > 1 {
+            startGameButton.isEnabled = true
+            checkForHost()
+        } else {
+            startGameButton.isEnabled = false
+            checkForHost()
+        }
     }
     
     func playerJoinedSession() {
@@ -39,11 +59,46 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
         }
     }
     
+    func checkForHost() {
+        if self.players.first?.isHost == true {
+            startGameButton.isEnabled = true
+        } else {
+            startGameButton.isEnabled = false
+        }
+    }
+    
+    func playersArrayRecieved(from data: Data) {
+        guard let decondedPlayers = DataManager.shared.decodePlayers(from: data) else { return }
+        self.players = decondedPlayers
+        
+       self.performSegue(withIdentifier: "toHomeVC", sender: self.players)
+    }
+    
     func playerRecieved(from data: Data) {
         guard let decodedPlayer = DataManager.shared.decodePlayer(from: data) else { return }
         players.append(decodedPlayer)
         for player in players {
             print("Player Name: \(player.displayName)")
+            print("Bool: \(player.isHost)")
         }
+        checkNumberOfPlayers()
+    }
+    
+    func infoRecieved(from data: Data) {
+//        guard let decodedInfo = DataManager.shared.decodeSendingInfo(from: data) else { return }
+//        isMatchReadyToStart = decodedInfo.didSendInfo
+    }
+    
+    @IBAction func startGameButtonTapped(_ sender: UIBarButtonItem) {
+//        let info = SendingInfo(didSendInfo: 1)
+//        MPCManager.shared.sendInfo(info: info)
+        MPCManager.shared.sendPlayers(players: players)
+        
+        self.performSegue(withIdentifier: "toHomeVC", sender: self.players)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destinationVC = segue.destination as? HomeScreenViewController else { return }
+        destinationVC.players = sender as? [Player]
     }
 }

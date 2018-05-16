@@ -15,6 +15,8 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var totalAmountLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    var players: [Player]?
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,31 +33,51 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func updateViews() {
-//        guard let user = user else {return}   when we find out who the phones user is
-        sessionNameLabel.text = "this session"
-        boardPieceImageView.image = UIImage(named: "CannonIcon")?.withRenderingMode(.alwaysTemplate)
+        var bottomPlayer: Player?
+        guard let players = players else { return }
+        for player in players {
+            if player.deviceName == UIDevice.current.name {
+                bottomPlayer = player
+            }
+        }
+        
+        guard let currentPlayer = bottomPlayer else { return }
+        guard let playerImage = UIImage(data: currentPlayer.imageData) else { return }
+
+        sessionNameLabel.text = "Board Buddy"
+        boardPieceImageView.image = playerImage
         boardPieceImageView.tintColor = Colors.mintCreme
         
-        nameLabel.text = "MonopolyLord1241"
-        totalAmountLabel.text = "$2300.0"
+        nameLabel.text = currentPlayer.displayName
+        totalAmountLabel.text = "$ \(currentPlayer.moneyAmount)"
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return PlayerController.shared.players.count
-        return 20
+        guard let players = players else { return 0 }
+        return players.count - 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath) as? PlayerCollectionViewCell
-//        let player = PlayerController.shared.players[indexPath.row]
-        
+
+        guard var cellPlayers = players else { return UICollectionViewCell() }
+    
+        for player in cellPlayers {
+            if player.deviceName == UIDevice.current.name {
+                guard let index = cellPlayers.index(of: player) else { return UICollectionViewCell() }
+                cellPlayers.remove(at: index)
+            }
+        }
+
+        let player = cellPlayers[indexPath.row]
+        guard let image = UIImage(data: player.imageData) else { return UICollectionViewCell() }
         //this is a test! we dont want to set cell properties here.... pass the player to the cell and let the cell update its own properties
     
-        cell?.playerNameLabel.text = "MonopolyKing"
-        cell?.playerAmountLabel.text = "$1500.00"
-        cell?.boardPieceImageView.image = UIImage(named: "DogIcon")?.withRenderingMode(.alwaysTemplate)
+        cell?.playerNameLabel.text = player.displayName
+        cell?.playerAmountLabel.text = "$ \(player.moneyAmount)"
+        cell?.boardPieceImageView.image = image
         cell?.boardPieceImageView.tintColor = Colors.mintCreme
-//        cell?.player = player
+        cell?.player = player
         return cell ?? UICollectionViewCell()
     }
     
@@ -66,16 +88,32 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     }
 
      //MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toPlayerDetailVC" {
-            guard let destinationVC = segue.destination as? PlayerDetailViewController,
-            let cell = sender as? PlayerCollectionViewCell,
-            let indexpath = collectionView.indexPath(for: cell) else {return}
-//            let player = PlayerController.shared.players[indexpath.item]
-//            destinationVC.player = player
-        } else if segue.identifier == "toBankVC" {
-            let bankcVC = BankDetailViewController()
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "toPlayerDetailVC" {
+//            guard let destinationVC = segue.destination as? PlayerDetailViewController,
+//            let cell = sender as? PlayerCollectionViewCell,
+//            let indexpath = collectionView.indexPath(for: cell) else {return}
+////            let player = PlayerController.shared.players[indexpath.item]
+////            destinationVC.player = player
+//        } else if segue.identifier == "toBankVC" {
+//            let bankcVC = BankDetailViewController()
+//
+//        }
+//    }
+}
 
-        }
+extension HomeScreenViewController: MPCManagerDelegate {
+    
+    func playerJoinedSession() {
+    }
+    
+    func playerRecieved(from data: Data) {
+    }
+    
+    func infoRecieved(from data: Data) {
+    }
+    
+    func playersArrayRecieved(from data: Data) {
+        print("Recieved players from home")
     }
 }

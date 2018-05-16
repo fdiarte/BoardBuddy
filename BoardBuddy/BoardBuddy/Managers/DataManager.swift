@@ -66,6 +66,47 @@ class DataManager {
         }
         return image
     }
+    
+    func encodeSendingInfo(from info: SendingInfo) -> Data? {
+        do {
+            let encodedInfo = try JSONEncoder().encode(info)
+            return encodedInfo
+        } catch {
+            print("Cant convert info to data")
+            return nil
+        }
+    }
+    
+    func decodeSendingInfo(from data: Data) -> SendingInfo? {
+        do {
+            let info = try JSONDecoder().decode(SendingInfo.self, from: data)
+            return info
+        } catch {
+            print("Cant decode info: \(error)")
+            return nil
+        }
+    }
+    
+    func encodePlayers(from players: [Player]) -> Data? {
+        do {
+            let encodedPlayers = try JSONEncoder().encode(players)
+            return encodedPlayers
+        } catch {
+            print("Couldnt encode players")
+            return nil
+        }
+    }
+    
+    func decodePlayers(from data: Data) -> [Player]? {
+        do {
+            let decodedPlayers = try JSONDecoder().decode([Player].self, from: data)
+            return decodedPlayers
+        } catch {
+            print("Couldnt decode players")
+            return nil
+        }
+    }
+    
 }
 
 

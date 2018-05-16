@@ -18,12 +18,14 @@ class Player: Equatable, Codable {
     let imageData: Data
     var moneyAmount: Int
     var isHost: Bool
+    let deviceName: String
     
     init(displayName: String, imageData: Data, isHost: Bool) {
         self.displayName = displayName
         self.moneyAmount = 1500
         self.isHost = isHost
         self.imageData = imageData
+        self.deviceName = UIDevice.current.name
     }
 }
 
