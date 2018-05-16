@@ -154,6 +154,10 @@ class CreatePlayerViewController: UIViewController, UITextFieldDelegate {
 }
 
 extension CreatePlayerViewController: MPCManagerDelegate, MCBrowserViewControllerDelegate {
+    func playersArrayRecieved(from data: Data) {
+    }
+    func infoRecieved(from data: Data) {
+    }
     func playerRecieved(from data: Data) {
     }
     
