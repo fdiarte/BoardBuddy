@@ -13,9 +13,14 @@ class PlayerController {
     
     var players: [Player] = []
     
-    func createNewPlayerWithName(displayName: String, imageData: Data, moneyAmount: Int, isHost: Bool) {
-        let player = Player(displayName: displayName, imageData: imageData, moneyAmount: moneyAmount, isHost: isHost)
-        players.append(player)
+    func createNewPlayerWithName(displayName: String, image: UIImage, isHost: Bool) {
+        
+        let imageData = DataManager.shared.encodeImage(from: image)
+        guard let data = imageData else { return }
+        let newPlayer = Player(displayName: displayName, imageData: data, isHost: isHost)
+        players.append(newPlayer)
+        
+        print("Player created")
     }
     
     

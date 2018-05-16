@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MultipeerConnectivity
 
 class CreatePlayerViewController: UIViewController, UITextFieldDelegate {
     
@@ -30,6 +31,7 @@ class CreatePlayerViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         setupObjects()
         playerNameTextField.delegate = self
+        MPCManager.shared.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil);
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil);
     }
@@ -112,14 +114,13 @@ class CreatePlayerViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func readyButtonPressed(_ sender: Any) {
-        guard let image = playerImage, let name = playerNameTextField.text, !name.isEmpty else {return}
-        print("ready!")
-        //create player
         
-        //transition to lobby
-        let storyboard = UIStoryboard(name: "Lobby", bundle: nil)
-        let view = storyboard.instantiateViewController(withIdentifier: "lobby")
-        present(view, animated: true, completion: nil)
+        //create player
+        guard let image = playerImage, let name = playerNameTextField.text, !name.isEmpty else {return}
+        PlayerController.shared.createNewPlayerWithName(displayName: name, image: image, isHost: false)
+        
+        MPCManager.shared.browser.delegate = self
+        present(MPCManager.shared.browser, animated: true, completion: nil)
     }
     
     func highlight(Button button: UIButton) {
@@ -139,5 +140,22 @@ class CreatePlayerViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+    }
+}
+
+extension CreatePlayerViewController: MPCManagerDelegate, MCBrowserViewControllerDelegate {
+    func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+
+    func playerJoinedSession() {
+        //transition to lobby
+        let storyboard = UIStoryboard(name: "Lobby", bundle: nil)
+        let view = storyboard.instantiateViewController(withIdentifier: "lobby")
+        present(view, animated: true, completion: nil)
     }
 }
