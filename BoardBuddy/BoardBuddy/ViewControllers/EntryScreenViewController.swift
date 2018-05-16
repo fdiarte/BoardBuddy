@@ -17,29 +17,9 @@ class EntryScreenViewController: UIViewController {
     }
     
     @IBAction func createButtonTapped(_ sender: Any) {
-        // Segue to lobby
-//        MPCManager.shared.advertiserAssistant.start()
-//        let storyboard = UIStoryboard(name: "Lobby", bundle: nil)
-//        let view = storyboard.instantiateViewController(withIdentifier: "lobby")
-//        present(view, animated: true, completion: nil)
     }
     
     @IBAction func joinButtonTapped(_ sender: Any) {
-//        MPCManager.shared.browser.delegate = self
-//        present(MPCManager.shared.browser, animated: true, completion: nil)
     }
 }
 
-extension EntryScreenViewController: MCBrowserViewControllerDelegate {
-    func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
-        dismiss(animated: true, completion: nil)
-        let storyboard = UIStoryboard(name: "Lobby", bundle: nil)
-        let view = storyboard.instantiateViewController(withIdentifier: "lobby")
-        present(view, animated: true, completion: nil)
-    }
-    
-    func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
-        dismiss(animated: true, completion: nil)
-        // Segue to lobby
-    }
-}

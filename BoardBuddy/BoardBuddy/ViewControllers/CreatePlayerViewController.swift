@@ -31,7 +31,8 @@ class CreatePlayerViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         setupObjects()
         playerNameTextField.delegate = self
-        MPCManager.shared.delegate = self
+        
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil);
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil);
     }
@@ -114,12 +115,14 @@ class CreatePlayerViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func readyButtonPressed(_ sender: Any) {
-        guard let image = playerImage, let name = playerNameTextField.text, !name.isEmpty else { presentAlert() ; return}
+        guard let image = playerImage, let name = playerNameTextField.text, !name.isEmpty else { presentAlert() ; return }
+        
         
          //create player
         PlayerController.shared.createNewPlayerWithName(displayName: name, image: image, isHost: false)
-        
+        MPCManager.shared.delegate = self
         MPCManager.shared.browser.delegate = self
+        
         present(MPCManager.shared.browser, animated: true, completion: nil)
     }
     
@@ -151,6 +154,9 @@ class CreatePlayerViewController: UIViewController, UITextFieldDelegate {
 }
 
 extension CreatePlayerViewController: MPCManagerDelegate, MCBrowserViewControllerDelegate {
+    func playerRecieved(from data: Data) {
+    }
+    
     func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
         dismiss(animated: true, completion: nil)
     }
@@ -161,6 +167,8 @@ extension CreatePlayerViewController: MPCManagerDelegate, MCBrowserViewControlle
 
     func playerJoinedSession() {
         //transition to lobby
+        MPCManager.shared.sendPerson(player: PlayerController.shared.players.first!)
+        dismiss(animated: true, completion: nil)
         let storyboard = UIStoryboard(name: "Lobby", bundle: nil)
         let view = storyboard.instantiateViewController(withIdentifier: "lobby")
         present(view, animated: true, completion: nil)
