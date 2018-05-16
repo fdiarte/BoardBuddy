@@ -10,10 +10,13 @@ import UIKit
 
 class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
     
+    var players = PlayerController.shared.players
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        MPCManager.shared.delegate = self
+        MPCManager.shared.delegate = self     
     }
+    
 
     // MARK: - Table view data source
 
@@ -35,16 +38,12 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
             self.tableView.reloadData()
         }
     }
- 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func playerRecieved(from data: Data) {
+        guard let decodedPlayer = DataManager.shared.decodePlayer(from: data) else { return }
+        players.append(decodedPlayer)
+        for player in players {
+            print("Player Name: \(player.displayName)")
+        }
     }
-    */
-
 }

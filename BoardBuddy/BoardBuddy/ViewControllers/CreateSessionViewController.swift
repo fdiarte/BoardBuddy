@@ -125,8 +125,11 @@ class CreateSessionViewController: UIViewController, UITextFieldDelegate {
     @IBAction func createSessionButtonTapped(_ sender: Any) {
         guard let sessionName = sessionNameTextField.text, !sessionName.isEmpty, let moneyAmount = moneyPerPlayerTextField.text, !moneyAmount.isEmpty, let image = playerImage else { presentAlert(); return}
         //create session
-        
         //create player
+        
+        PlayerController.shared.createNewPlayerWithName(displayName: sessionName, image: image, isHost: true)
+        
+        MPCManager.shared.advertiserAssistant.start()
         
         //push Lobby
         let storyboard = UIStoryboard(name: "Lobby", bundle: nil)
@@ -141,3 +144,4 @@ class CreateSessionViewController: UIViewController, UITextFieldDelegate {
         present(alert, animated: true, completion: nil)
     }
 }
+

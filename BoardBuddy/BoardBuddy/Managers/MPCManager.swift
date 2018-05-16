@@ -11,6 +11,7 @@ import MultipeerConnectivity
 
 protocol MPCManagerDelegate {
     func playerJoinedSession()
+    func playerRecieved(from data: Data)
 }
 
 class MPCManager: NSObject, MCSessionDelegate {
@@ -27,6 +28,7 @@ class MPCManager: NSObject, MCSessionDelegate {
     var advertiser: MCNearbyServiceAdvertiser!
     var advertiserAssistant: MCAdvertiserAssistant!
     var currentGamePeers = [MCPeerID]()
+    var currentPlayers = [Player]()
     
     // MARK: - Manager Initializer
     override init() {
@@ -70,6 +72,9 @@ class MPCManager: NSObject, MCSessionDelegate {
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         // turn data to person object
+        print("recieved person")
+        
+        delegate?.playerRecieved(from: data)
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
@@ -83,4 +88,15 @@ class MPCManager: NSObject, MCSessionDelegate {
     func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
         // Nothing to do here
     }
+    
+    
+    func sendPerson(player: Player) {
+        guard let data = DataManager.shared.encodePlayer(player: player) else { print("nothing here"); return }
+        do {
+            try session.send(data, toPeers: session.connectedPeers, with: .reliable)
+        } catch {
+            print("Cant send player: \(error.localizedDescription)")
+        }
+    }
+    
 }
