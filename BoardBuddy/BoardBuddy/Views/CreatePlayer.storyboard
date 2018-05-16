@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,46 +20,202 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfg-oa-lVX">
-                                <rect key="frame" x="25" y="318" width="325" height="30"/>
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <color key="backgroundColor" red="0.1529411765" green="0.80784313730000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Go To Lobby">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Byo-Ol-mpj"/>
+                                </constraints>
+                                <state key="normal" title="Ready">
                                     <color key="titleColor" red="0.1529411765" green="0.18823529410000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cRY-jr-MfQ" kind="show" id="xkx-Ie-Db1"/>
+                                    <action selector="readyButtonPressed:" destination="8Fs-gx-LQt" eventType="touchUpInside" id="3cv-c5-Zsd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creating Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onr-Hs-bfS">
-                                <rect key="frame" x="25" y="45" width="325" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onr-Hs-bfS">
+                                <rect key="frame" x="25" y="45" width="325" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.98823529409999999" green="1" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQt-ws-OBb">
+                                <rect key="frame" x="50" y="115.5" width="275" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ef-aB-RNa">
+                                <rect key="frame" x="50" y="156" width="275" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Board Piece" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xk-RW-J5P">
+                                <rect key="frame" x="50" y="211" width="275" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="cgb-bB-asM">
+                                <rect key="frame" x="25" y="281.5" width="325" height="230"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="JzF-Fy-mBd">
+                                        <rect key="frame" x="47.5" y="0.0" width="230" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLC-mc-xbM">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="yLC-mc-xbM" secondAttribute="height" multiplier="1:1" id="5y7-U7-3nm"/>
+                                                    <constraint firstAttribute="width" constant="60" id="BYJ-Hm-6gA"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button" image="BootIcon"/>
+                                                <connections>
+                                                    <action selector="bootButtonPressed:" destination="8Fs-gx-LQt" eventType="touchUpInside" id="rJu-NM-yyK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0PU-rg-dMs">
+                                                <rect key="frame" x="85" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="Utg-Qb-ija"/>
+                                                    <constraint firstAttribute="width" secondItem="0PU-rg-dMs" secondAttribute="height" multiplier="1:1" id="tmE-DN-QzE"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="CannonIcon"/>
+                                                <connections>
+                                                    <action selector="cannonButtonPressed:" destination="8Fs-gx-LQt" eventType="touchUpInside" id="b1b-Pr-5wZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWz-Bl-aOq">
+                                                <rect key="frame" x="170" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="Df8-yU-7BI"/>
+                                                    <constraint firstAttribute="width" secondItem="XWz-Bl-aOq" secondAttribute="height" multiplier="1:1" id="xed-Re-47m"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="DogIcon"/>
+                                                <connections>
+                                                    <action selector="dogButtonPressed:" destination="8Fs-gx-LQt" eventType="touchUpInside" id="7Lp-Q8-MNX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="drN-GF-39r">
+                                        <rect key="frame" x="47.5" y="85" width="230" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6FZ-LW-dyx">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="6FZ-LW-dyx" secondAttribute="height" multiplier="1:1" id="WB3-TZ-oZc"/>
+                                                    <constraint firstAttribute="width" constant="60" id="yWD-yB-Wrh"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="MoneyBagIcon"/>
+                                                <connections>
+                                                    <action selector="moneyBagButtonPressed:" destination="8Fs-gx-LQt" eventType="touchUpInside" id="IFb-f0-BBR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8T-8P-5uY">
+                                                <rect key="frame" x="85" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="b8T-8P-5uY" secondAttribute="height" multiplier="1:1" id="WSd-j6-3mq"/>
+                                                    <constraint firstAttribute="width" constant="60" id="WaX-En-WdZ"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="RaceCar"/>
+                                                <connections>
+                                                    <action selector="raceCarButtonPressed:" destination="8Fs-gx-LQt" eventType="touchUpInside" id="I7r-S1-5F4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1J-tg-6nH">
+                                                <rect key="frame" x="170" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="4jf-4U-etd"/>
+                                                    <constraint firstAttribute="width" secondItem="L1J-tg-6nH" secondAttribute="height" multiplier="1:1" id="afT-R1-Wji"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="ThimbleIcon"/>
+                                                <connections>
+                                                    <action selector="thimbleButtonPressed:" destination="8Fs-gx-LQt" eventType="touchUpInside" id="zNK-pZ-DDy"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="TUi-DA-Pac">
+                                        <rect key="frame" x="90" y="170" width="145" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocY-kL-MhB">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="ocY-kL-MhB" secondAttribute="height" multiplier="1:1" id="93Q-Le-abL"/>
+                                                    <constraint firstAttribute="width" constant="60" id="HHP-fx-RLh"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="Wheelbarrow"/>
+                                                <connections>
+                                                    <action selector="wheelBarrowButtonPressed:" destination="8Fs-gx-LQt" eventType="touchUpInside" id="MAu-sb-rqd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65H-8S-NMK">
+                                                <rect key="frame" x="85" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="65H-8S-NMK" secondAttribute="height" multiplier="1:1" id="4UR-or-zMO"/>
+                                                    <constraint firstAttribute="width" constant="60" id="E1L-7L-NZn"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="TophatIcon "/>
+                                                <connections>
+                                                    <action selector="topHotButtonPressed:" destination="8Fs-gx-LQt" eventType="touchUpInside" id="J9S-uX-r2v"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="tintColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.1529411765" green="0.18823529410000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="asx-4B-DKZ" firstAttribute="trailing" secondItem="Kfg-oa-lVX" secondAttribute="trailing" constant="25" id="NL7-Qh-IrI"/>
+                            <constraint firstItem="9ef-aB-RNa" firstAttribute="top" secondItem="ZQt-ws-OBb" secondAttribute="bottom" constant="20" id="0tV-2w-Alf"/>
+                            <constraint firstItem="0xk-RW-J5P" firstAttribute="leading" secondItem="asx-4B-DKZ" secondAttribute="leading" constant="50" id="49s-fm-0Jy"/>
+                            <constraint firstItem="ZQt-ws-OBb" firstAttribute="leading" secondItem="asx-4B-DKZ" secondAttribute="leading" constant="50" id="7AR-xO-7eu"/>
+                            <constraint firstItem="asx-4B-DKZ" firstAttribute="trailing" secondItem="ZQt-ws-OBb" secondAttribute="trailing" constant="50" id="Fe6-Xc-fNA"/>
+                            <constraint firstItem="cgb-bB-asM" firstAttribute="top" secondItem="0xk-RW-J5P" secondAttribute="bottom" constant="50" id="H2D-tV-ykF"/>
+                            <constraint firstItem="ZQt-ws-OBb" firstAttribute="top" secondItem="onr-Hs-bfS" secondAttribute="bottom" constant="50" id="HE3-eq-4gn"/>
+                            <constraint firstItem="asx-4B-DKZ" firstAttribute="trailing" secondItem="Kfg-oa-lVX" secondAttribute="trailing" id="NL7-Qh-IrI"/>
                             <constraint firstItem="asx-4B-DKZ" firstAttribute="trailing" secondItem="onr-Hs-bfS" secondAttribute="trailing" constant="25" id="Ncd-PW-A0i"/>
+                            <constraint firstItem="asx-4B-DKZ" firstAttribute="trailing" secondItem="9ef-aB-RNa" secondAttribute="trailing" constant="50" id="O3s-gY-fni"/>
+                            <constraint firstItem="asx-4B-DKZ" firstAttribute="bottom" secondItem="Kfg-oa-lVX" secondAttribute="bottom" id="Ozl-AF-WwT"/>
                             <constraint firstItem="onr-Hs-bfS" firstAttribute="leading" secondItem="asx-4B-DKZ" secondAttribute="leading" constant="25" id="Qi9-c0-KlI"/>
                             <constraint firstItem="onr-Hs-bfS" firstAttribute="top" secondItem="asx-4B-DKZ" secondAttribute="top" constant="25" id="TJ9-zl-Ryy"/>
-                            <constraint firstItem="Kfg-oa-lVX" firstAttribute="leading" secondItem="asx-4B-DKZ" secondAttribute="leading" constant="25" id="Y9Z-39-ebj"/>
-                            <constraint firstItem="Kfg-oa-lVX" firstAttribute="top" secondItem="asx-4B-DKZ" secondAttribute="top" constant="298" id="ccu-21-tFt"/>
-                            <constraint firstItem="asx-4B-DKZ" firstAttribute="bottom" secondItem="Kfg-oa-lVX" secondAttribute="bottom" constant="319" id="wja-w5-Igc"/>
+                            <constraint firstItem="asx-4B-DKZ" firstAttribute="trailing" secondItem="cgb-bB-asM" secondAttribute="trailing" constant="25" id="Vx9-ke-tY2"/>
+                            <constraint firstItem="0xk-RW-J5P" firstAttribute="top" secondItem="9ef-aB-RNa" secondAttribute="bottom" constant="25" id="WKU-dJ-PGT"/>
+                            <constraint firstItem="Kfg-oa-lVX" firstAttribute="leading" secondItem="asx-4B-DKZ" secondAttribute="leading" id="Y9Z-39-ebj"/>
+                            <constraint firstItem="cgb-bB-asM" firstAttribute="leading" secondItem="asx-4B-DKZ" secondAttribute="leading" constant="25" id="enS-xp-OAV"/>
+                            <constraint firstItem="asx-4B-DKZ" firstAttribute="trailing" secondItem="0xk-RW-J5P" secondAttribute="trailing" constant="50" id="i5P-1I-SXi"/>
+                            <constraint firstItem="9ef-aB-RNa" firstAttribute="leading" secondItem="asx-4B-DKZ" secondAttribute="leading" constant="50" id="tG7-hA-Yll"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="asx-4B-DKZ"/>
                     </view>
+                    <connections>
+                        <outlet property="bootButton" destination="yLC-mc-xbM" id="Ngg-EF-qw9"/>
+                        <outlet property="cannonButton" destination="0PU-rg-dMs" id="4H5-Q8-moD"/>
+                        <outlet property="carButton" destination="b8T-8P-5uY" id="nor-8d-q9h"/>
+                        <outlet property="dogButton" destination="XWz-Bl-aOq" id="HSe-bF-F2T"/>
+                        <outlet property="hatButton" destination="65H-8S-NMK" id="DVE-jB-rSx"/>
+                        <outlet property="moneyButton" destination="6FZ-LW-dyx" id="bvZ-HJ-QIE"/>
+                        <outlet property="playerNameTextField" destination="9ef-aB-RNa" id="7hq-Ix-cs1"/>
+                        <outlet property="thimbleButton" destination="L1J-tg-6nH" id="RCr-F3-4es"/>
+                        <outlet property="wheelBarrowButton" destination="ocY-kL-MhB" id="ePo-qo-EQB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEx-5q-pQB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1041" y="-878"/>
-        </scene>
-        <!--Lobby-->
-        <scene sceneID="0fm-oS-C2p">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Lobby" id="cRY-jr-MfQ" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WAH-es-fZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="12" y="-879"/>
+            <point key="canvasLocation" x="-1042.4000000000001" y="-878.41079460269873"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BootIcon" width="350" height="350"/>
+        <image name="CannonIcon" width="350" height="350"/>
+        <image name="DogIcon" width="350" height="350"/>
+        <image name="MoneyBagIcon" width="350" height="350"/>
+        <image name="RaceCar" width="600" height="600"/>
+        <image name="ThimbleIcon" width="350" height="350"/>
+        <image name="TophatIcon " width="350" height="350"/>
+        <image name="Wheelbarrow" width="350" height="350"/>
+    </resources>
 </document>
