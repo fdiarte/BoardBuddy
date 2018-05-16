@@ -114,13 +114,20 @@ class CreatePlayerViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func readyButtonPressed(_ sender: Any) {
+        guard let image = playerImage, let name = playerNameTextField.text, !name.isEmpty else { presentAlert() ; return}
         
-        //create player
-        guard let image = playerImage, let name = playerNameTextField.text, !name.isEmpty else {return}
+         //create player
         PlayerController.shared.createNewPlayerWithName(displayName: name, image: image, isHost: false)
         
         MPCManager.shared.browser.delegate = self
         present(MPCManager.shared.browser, animated: true, completion: nil)
+    }
+    
+    func presentAlert() {
+        let alert = UIAlertController(title: "Uh Oh", message: "Make sure all fields have a value", preferredStyle: .alert)
+        let dismiss = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
+        alert.addAction(dismiss)
+        present(alert, animated: true, completion: nil)
     }
     
     func highlight(Button button: UIButton) {
