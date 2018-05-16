@@ -19,18 +19,13 @@ class PlayerDetailViewController: UIViewController {
     @IBOutlet weak var boardPieceImageView: UIImageView!
     @IBOutlet weak var blurView: UIView!
     
-    var player: Player? {
-        didSet {
-            updateViews()
-        }
-    }
+    var player: Player? 
     
     //MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
-
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -41,7 +36,7 @@ class PlayerDetailViewController: UIViewController {
     
     @IBAction func requestFundsButtonPressed(_ sender: Any) {
         print("request funds button pressed")
-        
+        guard let player = player else { return }
     }
     
     @IBAction func tapGestureTapped(_ sender: Any) {
@@ -49,15 +44,12 @@ class PlayerDetailViewController: UIViewController {
     }
     
     func updateViews() {
-//        guard let player = player else {return}
-//        let image = UIImage(data: player.imageData)
-//        nameLabel.text = player.displayName
-//        moneyLabel.text = "\(player.moneyAmount)"
-//        boardPieceImageView.image = image
+        guard let player = player else { return }
+        guard let image = UIImage(data: player.imageData) else { return }
+        nameLabel.text = player.displayName
+        moneyLabel.text = "\(player.moneyAmount)"
+        boardPieceImageView.image = image
         
-        nameLabel.text = "(MonopolyKing420)"
-        moneyLabel.text = "($1500.00)"
-        boardPieceImageView.image = UIImage(named: "DogIcon")?.withRenderingMode(.alwaysTemplate)
         boardPieceImageView.tintColor = Colors.mintCreme
     }
 }

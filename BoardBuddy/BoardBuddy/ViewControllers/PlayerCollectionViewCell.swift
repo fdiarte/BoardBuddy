@@ -8,11 +8,22 @@
 
 import UIKit
 
+protocol PlayerCollectionViewCellDelegate: class {
+    func userTappedCell(_ sender: PlayerCollectionViewCell)
+}
+
+
 class PlayerCollectionViewCell: UICollectionViewCell {
+    
+    weak var delegate: PlayerCollectionViewCellDelegate?
     
     var player: Player? {
         didSet {
             updateViews()
+            
+            let tap = UITapGestureRecognizer(target: self, action: #selector(userTappedCell))
+            tap.delegate = self as? UIGestureRecognizerDelegate
+            addGestureRecognizer(tap)
         }
     }
     
@@ -22,8 +33,9 @@ class PlayerCollectionViewCell: UICollectionViewCell {
     
     func updateViews() {
         backgroundColor = Colors.green
-        
-        
     }
     
+    @objc func userTappedCell() {
+        delegate?.userTappedCell(self)
+    }
 }
