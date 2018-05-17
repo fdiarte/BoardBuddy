@@ -35,7 +35,7 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
         return MPCManager.shared.currentGamePeers.count
     }
 
-    
+   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath) as? LobbyCell else {return UITableViewCell()}
         
