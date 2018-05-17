@@ -8,28 +8,66 @@
 
 import UIKit
 
-class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, PlayerCollectionViewCellDelegate {
-
+class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, PlayerCollectionViewCellDelegate, SlideInMenuViewControllerDelegate {
+    
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var sessionNameLabel: UILabel!
     @IBOutlet weak var boardPieceImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var totalAmountLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var blackView: UIView!
     
+
     var players: [Player]?
    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
+        updateContainerView()
         updateViews()
+
     }
     
+    func updateContainerView() {
+    
+ 
+        blackView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        blackView.alpha = 0
+        containerView.frame = CGRect(x: 0, y: -(view.frame.height), width: view.frame.width, height: view.frame.height * 0.35)
+        containerView.alpha = 0
+    }
     
     @IBAction func hamburgerButtonPressed(_ sender: Any) {
-        let storyBoard = UIStoryboard(name: "RulesPage", bundle: nil)
-        let view = storyBoard.instantiateViewController(withIdentifier: "rules")
-        present(view, animated: true, completion: nil)
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseOut], animations: {
+            self.blackView.alpha = 1
+            self.containerView.alpha = 2
+            self.containerView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height * 0.35)
+        }) { (success) in
+        }
+    }
+    
+    @IBAction func dismissView(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseOut], animations: {
+            self.blackView.alpha = 0
+            self.containerView.frame = CGRect(x: 0, y: -(self.view.frame.height), width: self.view.frame.width, height: self.view.frame.height * 0.35)
+            self.containerView.alpha = 0
+        }) { (success) in
+        }
+    }
+    
+    func settingTapped(settingNumber: Int) {
+        dismissView(self)
+        if settingNumber == 0 {
+            let rulesPage = RulesPageTableViewController()
+            let navController = UINavigationController(rootViewController: rulesPage)
+            self.present(navController, animated: true, completion: nil)
+        } else if settingNumber == 1 {
+            
+        } else if settingNumber == 2 {
+            
+        }
     }
     
     func updateViews() {
@@ -109,10 +147,9 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         if segue.identifier == "toPlayerDetailVC" {
             guard let destinationVC = segue.destination as? PlayerDetailViewController else { return }
             destinationVC.player = sender as? Player
-            
-        } else if segue.identifier == "toBankVC" {
-            let bankcVC = BankDetailViewController()
-
+        } else if segue.identifier == "ToSlideInMenuVC" {
+            let destinationVC = segue.destination as? SlideInMenuViewController
+            destinationVC?.delegate = self
         }
     }
 }
