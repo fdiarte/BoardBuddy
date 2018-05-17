@@ -35,6 +35,7 @@
 		9DB8397A20AA34DC0035C0C0 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB8397920AA34DC0035C0C0 /* HomeScreenViewController.swift */; };
 		F750B0E420AA2CB400650634 /* PlayerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750B0E320AA2CB400650634 /* PlayerDetailViewController.swift */; };
 		F750B0E620AA2F5B00650634 /* BankDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750B0E520AA2F5B00650634 /* BankDetailViewController.swift */; };
+		F779512A20ADDD5E0081CD97 /* LobbyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F779512920ADDD5E0081CD97 /* LobbyCell.swift */; };
 		F78DB95220AB4C97006AB041 /* RulesPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F78DB95120AB4C97006AB041 /* RulesPage.storyboard */; };
 		F78DB95E20ACA407006AB041 /* RulesPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DB95D20ACA407006AB041 /* RulesPageTableViewController.swift */; };
 		F78DB96020ACA494006AB041 /* RulesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DB95F20ACA494006AB041 /* RulesCell.swift */; };
@@ -71,6 +72,7 @@
 		9DB8397920AA34DC0035C0C0 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		F750B0E320AA2CB400650634 /* PlayerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailViewController.swift; sourceTree = "<group>"; };
 		F750B0E520AA2F5B00650634 /* BankDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankDetailViewController.swift; sourceTree = "<group>"; };
+		F779512920ADDD5E0081CD97 /* LobbyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyCell.swift; sourceTree = "<group>"; };
 		F78DB95120AB4C97006AB041 /* RulesPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RulesPage.storyboard; sourceTree = "<group>"; };
 		F78DB95D20ACA407006AB041 /* RulesPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesPageTableViewController.swift; sourceTree = "<group>"; };
 		F78DB95F20ACA494006AB041 /* RulesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesCell.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				F750B0E520AA2F5B00650634 /* BankDetailViewController.swift */,
 				F78DB95D20ACA407006AB041 /* RulesPageTableViewController.swift */,
 				F78DB95F20ACA494006AB041 /* RulesCell.swift */,
+				F779512920ADDD5E0081CD97 /* LobbyCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				7DB1B0D620A9E84F0086CC3A /* AppDelegate.swift in Sources */,
 				9DB8397A20AA34DC0035C0C0 /* HomeScreenViewController.swift in Sources */,
 				9D8A821120AB2ADB0031CBEF /* PlayerCollectionViewCell.swift in Sources */,
+				F779512A20ADDD5E0081CD97 /* LobbyCell.swift in Sources */,
 				9D8A821B20AB90040031CBEF /* EntryScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
