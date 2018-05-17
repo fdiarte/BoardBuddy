@@ -37,9 +37,10 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath)
-        cell.textLabel?.text = MPCManager.shared.currentGamePeers[indexPath.row].displayName
-        cell.selectionStyle = .none
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath) as? LobbyCell else {return UITableViewCell()}
+        
+        cell.userNameLabel.text = MPCManager.shared.currentGamePeers[indexPath.row].displayName
+      
         return cell
     }
     
