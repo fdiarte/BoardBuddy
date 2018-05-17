@@ -120,4 +120,32 @@ class MPCManager: NSObject, MCSessionDelegate {
         }
     }
     
+    func sendRequestFunds(request: RequestFunds, to playerToSend: Player) {
+        guard let data = DataManager.shared.encodeRequest(request: request) else { return }
+        var connectedPeers: [MCPeerID] = []
+        let peerIDAsString: String = playerToSend.displayName
+        let peerID: MCPeerID = MCPeerID(displayName: peerIDAsString)
+        connectedPeers.append(peerID)
+        
+        do {
+            try session.send(data, toPeers: connectedPeers, with: .reliable)
+        } catch {
+            print("Cant send request for funds: \(error.localizedDescription)")
+        }
+    }
+    
+    func sendAcceptedFunds(acceptedFunds: AcceptFunds, to playerToSend: Player) {
+        guard let data = DataManager.shared.encodeAcceptFunds(acceptFunds: acceptedFunds) else { return }
+        var connectedPeers: [MCPeerID] = []
+        let peerIDAsString: String = playerToSend.displayName
+        let peerID: MCPeerID = MCPeerID(displayName: peerIDAsString)
+        connectedPeers.append(peerID)
+        
+        do {
+            try session.send(data, toPeers: connectedPeers, with: .reliable)
+        } catch {
+            print("Cant send accepted funds: \(error.localizedDescription)")
+        }
+    }
+    
 }
