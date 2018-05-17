@@ -15,7 +15,4 @@ class LobbyCell: UITableViewCell {
     @IBOutlet weak var userNameLabel: UILabel!
     
     
-    
-    
-    
 }
