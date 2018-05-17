@@ -58,16 +58,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.15294117647058825" green="0.18823529411764706" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="w0C-Fj-msH">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Q3c-uG-fkk">
+                                    <rect key="frame" x="169" y="4" width="37" height="37"/>
+                                    <color key="color" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </activityIndicatorView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.19" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Q3c-uG-fkk" firstAttribute="centerX" secondItem="w0C-Fj-msH" secondAttribute="centerX" id="U6G-A6-u61"/>
+                                <constraint firstItem="Q3c-uG-fkk" firstAttribute="centerY" secondItem="w0C-Fj-msH" secondAttribute="centerY" id="mqg-q8-WYH"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="playerCell" rowHeight="73" id="dKb-Gx-cFs" customClass="LobbyCell" customModule="BoardBuddy" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="73"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="73"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dKb-Gx-cFs" id="Q7P-Kb-FaW">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="72.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userNameLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdK-Jf-ovS">
-                                            <rect key="frame" x="127" y="26" width="120" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="userNameLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdK-Jf-ovS">
+                                            <rect key="frame" x="35" y="26" width="120" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -99,6 +114,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="ViewForActivityIndicator" destination="w0C-Fj-msH" id="IVR-35-eBJ"/>
+                        <outlet property="activityIndicator" destination="Q3c-uG-fkk" id="ddM-wS-Yfw"/>
                         <outlet property="startGameButton" destination="DkD-NV-hLy" id="Vx3-cJ-aTr"/>
                         <segue destination="EgI-2S-46x" kind="presentation" identifier="toHomeVC" id="JgD-Su-WaX"/>
                     </connections>

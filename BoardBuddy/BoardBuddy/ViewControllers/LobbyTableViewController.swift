@@ -10,7 +10,10 @@ import UIKit
 
 class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
   
+    @IBOutlet weak var ViewForActivityIndicator: UIView!
     @IBOutlet weak var startGameButton: UIBarButtonItem!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var players = PlayerController.shared.players
 
@@ -25,6 +28,7 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
         MPCManager.shared.delegate = self
         
         startGameButton.isEnabled = false
+        
     }
     
 
@@ -47,10 +51,15 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
     func checkNumberOfPlayers() {
         if players.count > 1 {
             startGameButton.isEnabled = true
+            activityIndicator.stopAnimating()
+            ViewForActivityIndicator.frame.size.height -= 44
             checkForHost()
+            tableView.reloadData()
         } else {
             startGameButton.isEnabled = false
             checkForHost()
+            activityIndicator.startAnimating()
+            
         }
     }
     
@@ -103,3 +112,6 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
         destinationVC.players = sender as? [Player]
     }
 }
+
+
+
