@@ -64,9 +64,9 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
             let navController = UINavigationController(rootViewController: rulesPage)
             self.present(navController, animated: true, completion: nil)
         } else if settingNumber == 1 {
-            
+            //leave match
         } else if settingNumber == 2 {
-            
+            //cancel match
         }
     }
     

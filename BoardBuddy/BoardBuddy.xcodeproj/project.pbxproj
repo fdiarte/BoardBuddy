@@ -40,7 +40,6 @@
 		F750B0E420AA2CB400650634 /* PlayerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750B0E320AA2CB400650634 /* PlayerDetailViewController.swift */; };
 		F750B0E620AA2F5B00650634 /* BankDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750B0E520AA2F5B00650634 /* BankDetailViewController.swift */; };
 		F779512A20ADDD5E0081CD97 /* LobbyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F779512920ADDD5E0081CD97 /* LobbyCell.swift */; };
-		F78DB95220AB4C97006AB041 /* RulesPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F78DB95120AB4C97006AB041 /* RulesPage.storyboard */; };
 		F78DB95E20ACA407006AB041 /* RulesPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DB95D20ACA407006AB041 /* RulesPageTableViewController.swift */; };
 		F78DB96020ACA494006AB041 /* RulesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78DB95F20ACA494006AB041 /* RulesCell.swift */; };
 /* End PBXBuildFile section */
@@ -81,7 +80,6 @@
 		F750B0E320AA2CB400650634 /* PlayerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailViewController.swift; sourceTree = "<group>"; };
 		F750B0E520AA2F5B00650634 /* BankDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankDetailViewController.swift; sourceTree = "<group>"; };
 		F779512920ADDD5E0081CD97 /* LobbyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyCell.swift; sourceTree = "<group>"; };
-		F78DB95120AB4C97006AB041 /* RulesPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RulesPage.storyboard; sourceTree = "<group>"; };
 		F78DB95D20ACA407006AB041 /* RulesPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesPageTableViewController.swift; sourceTree = "<group>"; };
 		F78DB95F20ACA494006AB041 /* RulesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,7 +206,6 @@
 				7DB1B0D920A9E84F0086CC3A /* HomeScreen.storyboard */,
 				9DB8396B20AA1E540035C0C0 /* BankDetailVC.storyboard */,
 				9DB8396E20AA20610035C0C0 /* PlayerDetailVC.storyboard */,
-				F78DB95120AB4C97006AB041 /* RulesPage.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -273,7 +270,6 @@
 			files = (
 				7DB1B0E020A9E8520086CC3A /* LaunchScreen.storyboard in Resources */,
 				7DB1B0DD20A9E8520086CC3A /* Assets.xcassets in Resources */,
-				F78DB95220AB4C97006AB041 /* RulesPage.storyboard in Resources */,
 				9DB8396F20AA20610035C0C0 /* PlayerDetailVC.storyboard in Resources */,
 				9DB8396D20AA1E540035C0C0 /* BankDetailVC.storyboard in Resources */,
 				9D8A821D20AB90E20031CBEF /* CreateSession.storyboard in Resources */,
