@@ -10,10 +10,15 @@ import UIKit
 import MultipeerConnectivity
 
 class EntryScreenViewController: UIViewController {
-
+    @IBOutlet weak var createSessionButton: UIButton!
+    
+    
+    @IBOutlet weak var joinSessionButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        createSessionButton.layer.cornerRadius = 20
+        joinSessionButton.layer.cornerRadius = 20
     }
     
     @IBAction func createButtonTapped(_ sender: Any) {

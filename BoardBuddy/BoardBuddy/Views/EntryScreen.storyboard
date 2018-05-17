@@ -67,6 +67,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b0f-p8-oBP"/>
                     </view>
+                    <connections>
+                        <outlet property="createSessionButton" destination="H7V-uy-h5t" id="fwk-dO-1q3"/>
+                        <outlet property="joinSessionButton" destination="27E-rF-3UJ" id="XWK-I3-8OY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHa-ed-kOC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
