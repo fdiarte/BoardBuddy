@@ -107,6 +107,48 @@ class DataManager {
         }
     }
     
+    func encodeRequest(request: RequestFunds) -> Data? {
+        do {
+            let encodedRequest = try JSONEncoder().encode(request)
+            return encodedRequest
+        } catch {
+            print("Couldnt encode request")
+            return nil
+        }
+    }
+    
+    func decodeRequest(from data: Data) -> RequestFunds? {
+        do {
+            let decodedRequest = try JSONDecoder().decode(RequestFunds.self, from: data)
+            return decodedRequest
+        } catch {
+            print("Couldnt decode request")
+            return nil
+        }
+    }
+    
+    func encodeAcceptFunds(acceptFunds: AcceptFunds) -> Data? {
+        do {
+            let encodedAcceptRequest = try JSONEncoder().encode(acceptFunds)
+            return encodedAcceptRequest
+        } catch {
+            print("Couldnt encode accept request")
+            return nil
+        }
+    }
+    
+    func decodeAcceptFunds(from data: Data) -> AcceptFunds? {
+        do {
+            let decodeAcceptFunds = try JSONDecoder().decode(AcceptFunds.self, from: data)
+            return decodeAcceptFunds
+        } catch {
+            print("Couldnt decode accept request")
+            return nil
+        }
+    }
+    
+    
+    
 }
 
 

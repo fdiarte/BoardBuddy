@@ -20,6 +20,8 @@
 		7DB1B0DD20A9E8520086CC3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DB1B0DC20A9E8520086CC3A /* Assets.xcassets */; };
 		7DB1B0E020A9E8520086CC3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB1B0DE20A9E8520086CC3A /* LaunchScreen.storyboard */; };
 		7DFB5EC820ACCD6300C6C67D /* SendingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB5EC720ACCD6300C6C67D /* SendingInfo.swift */; };
+		7DFB5ED220ADDDEC00C6C67D /* RequestFunds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB5ED120ADDDEC00C6C67D /* RequestFunds.swift */; };
+		7DFB5ED420ADDDF800C6C67D /* AcceptFunds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB5ED320ADDDF800C6C67D /* AcceptFunds.swift */; };
 		9D8A821120AB2ADB0031CBEF /* PlayerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8A821020AB2ADB0031CBEF /* PlayerCollectionViewCell.swift */; };
 		9D8A821420AB37DF0031CBEF /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8A821320AB37DF0031CBEF /* ColorExtensions.swift */; };
 		9D8A821720AB3A390031CBEF /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 9D8A821620AB3A390031CBEF /* Images */; };
@@ -57,6 +59,8 @@
 		7DB1B0DF20A9E8520086CC3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DB1B0E120A9E8520086CC3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DFB5EC720ACCD6300C6C67D /* SendingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingInfo.swift; sourceTree = "<group>"; };
+		7DFB5ED120ADDDEC00C6C67D /* RequestFunds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFunds.swift; sourceTree = "<group>"; };
+		7DFB5ED320ADDDF800C6C67D /* AcceptFunds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptFunds.swift; sourceTree = "<group>"; };
 		9D8A821020AB2ADB0031CBEF /* PlayerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCollectionViewCell.swift; sourceTree = "<group>"; };
 		9D8A821320AB37DF0031CBEF /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		9D8A821620AB3A390031CBEF /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 				7D6249B220AA3DD6005CB1EF /* Player.swift */,
 				7D6249B420AA3EE6005CB1EF /* Banker.swift */,
 				7DFB5EC720ACCD6300C6C67D /* SendingInfo.swift */,
+				7DFB5ED120ADDDEC00C6C67D /* RequestFunds.swift */,
+				7DFB5ED320ADDDF800C6C67D /* AcceptFunds.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,6 +290,7 @@
 				7D6249B920AA3FB5005CB1EF /* Banker Controller.swift in Sources */,
 				7D7A8FBB20AB99CA0030F414 /* LobbyTableViewController.swift in Sources */,
 				7D6249B720AA3FAD005CB1EF /* Player Controller.swift in Sources */,
+				7DFB5ED220ADDDEC00C6C67D /* RequestFunds.swift in Sources */,
 				7D6249B520AA3EE6005CB1EF /* Banker.swift in Sources */,
 				F78DB95E20ACA407006AB041 /* RulesPageTableViewController.swift in Sources */,
 				F750B0E620AA2F5B00650634 /* BankDetailViewController.swift in Sources */,
@@ -294,6 +301,7 @@
 				7D6249B320AA3DD6005CB1EF /* Player.swift in Sources */,
 				7DFB5EC820ACCD6300C6C67D /* SendingInfo.swift in Sources */,
 				9D8A822320AB92B60031CBEF /* CreateSessionViewController.swift in Sources */,
+				7DFB5ED420ADDDF800C6C67D /* AcceptFunds.swift in Sources */,
 				9D8A822520AB92C00031CBEF /* CreatePlayerViewController.swift in Sources */,
 				7D6249BB20AA42EC005CB1EF /* DataManager.swift in Sources */,
 				7DB1B0D620A9E84F0086CC3A /* AppDelegate.swift in Sources */,
