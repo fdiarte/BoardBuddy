@@ -10,7 +10,30 @@ import UIKit
 
 class RulesCell: UITableViewCell {
 
-    @IBOutlet weak var rulesLabel: UILabel!
-    
 
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupCell()
+        
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    var rules: String? {
+        didSet {
+            updateViews()
+        }
+    }
+    
+    func setupCell() {
+        self.textLabel?.numberOfLines = 0
+    }
+    
+    func updateViews() {
+        guard let rules = rules else {return}
+
+        self.textLabel?.text = rules
+    }
 }
