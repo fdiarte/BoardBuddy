@@ -32,6 +32,8 @@
 		9D8A822120AB91760031CBEF /* Lobby.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D8A822020AB91760031CBEF /* Lobby.storyboard */; };
 		9D8A822320AB92B60031CBEF /* CreateSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8A822220AB92B60031CBEF /* CreateSessionViewController.swift */; };
 		9D8A822520AB92C00031CBEF /* CreatePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8A822420AB92C00031CBEF /* CreatePlayerViewController.swift */; };
+		9DB6172420ADD7D000B87C6C /* SlideInMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB6172320ADD7D000B87C6C /* SlideInMenuViewController.swift */; };
+		9DB6172620ADDBAB00B87C6C /* SlideMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB6172520ADDBAB00B87C6C /* SlideMenuCollectionViewCell.swift */; };
 		9DB8396D20AA1E540035C0C0 /* BankDetailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB8396B20AA1E540035C0C0 /* BankDetailVC.storyboard */; };
 		9DB8396F20AA20610035C0C0 /* PlayerDetailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB8396E20AA20610035C0C0 /* PlayerDetailVC.storyboard */; };
 		9DB8397A20AA34DC0035C0C0 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB8397920AA34DC0035C0C0 /* HomeScreenViewController.swift */; };
@@ -71,6 +73,8 @@
 		9D8A822020AB91760031CBEF /* Lobby.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lobby.storyboard; sourceTree = "<group>"; };
 		9D8A822220AB92B60031CBEF /* CreateSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSessionViewController.swift; sourceTree = "<group>"; };
 		9D8A822420AB92C00031CBEF /* CreatePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerViewController.swift; sourceTree = "<group>"; };
+		9DB6172320ADD7D000B87C6C /* SlideInMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInMenuViewController.swift; sourceTree = "<group>"; };
+		9DB6172520ADDBAB00B87C6C /* SlideMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DB8396C20AA1E540035C0C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/BankDetailVC.storyboard; sourceTree = "<group>"; };
 		9DB8396E20AA20610035C0C0 /* PlayerDetailVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlayerDetailVC.storyboard; sourceTree = "<group>"; };
 		9DB8397920AA34DC0035C0C0 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +173,8 @@
 				9D8A822420AB92C00031CBEF /* CreatePlayerViewController.swift */,
 				7D7A8FBA20AB99CA0030F414 /* LobbyTableViewController.swift */,
 				9DB8397920AA34DC0035C0C0 /* HomeScreenViewController.swift */,
+				9DB6172320ADD7D000B87C6C /* SlideInMenuViewController.swift */,
+				9DB6172520ADDBAB00B87C6C /* SlideMenuCollectionViewCell.swift */,
 				9D8A821020AB2ADB0031CBEF /* PlayerCollectionViewCell.swift */,
 				F750B0E320AA2CB400650634 /* PlayerDetailViewController.swift */,
 				F750B0E520AA2F5B00650634 /* BankDetailViewController.swift */,
@@ -296,6 +302,7 @@
 				F750B0E620AA2F5B00650634 /* BankDetailViewController.swift in Sources */,
 				7D6249DA20AB6F9C005CB1EF /* MPCManager.swift in Sources */,
 				F750B0E420AA2CB400650634 /* PlayerDetailViewController.swift in Sources */,
+				9DB6172420ADD7D000B87C6C /* SlideInMenuViewController.swift in Sources */,
 				F78DB96020ACA494006AB041 /* RulesCell.swift in Sources */,
 				7D7A8FB920AB82730030F414 /* AnimatedLabel.swift in Sources */,
 				7D6249B320AA3DD6005CB1EF /* Player.swift in Sources */,
@@ -303,6 +310,7 @@
 				9D8A822320AB92B60031CBEF /* CreateSessionViewController.swift in Sources */,
 				7DFB5ED420ADDDF800C6C67D /* AcceptFunds.swift in Sources */,
 				9D8A822520AB92C00031CBEF /* CreatePlayerViewController.swift in Sources */,
+				9DB6172620ADDBAB00B87C6C /* SlideMenuCollectionViewCell.swift in Sources */,
 				7D6249BB20AA42EC005CB1EF /* DataManager.swift in Sources */,
 				7DB1B0D620A9E84F0086CC3A /* AppDelegate.swift in Sources */,
 				9DB8397A20AA34DC0035C0C0 /* HomeScreenViewController.swift in Sources */,
