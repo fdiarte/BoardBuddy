@@ -287,7 +287,6 @@
 				7D7A8FB920AB82730030F414 /* AnimatedLabel.swift in Sources */,
 				7D6249B320AA3DD6005CB1EF /* Player.swift in Sources */,
 				9D8A822320AB92B60031CBEF /* CreateSessionViewController.swift in Sources */,
-				F78DB95420AB4CFE006AB041 /* RulesPageViewController.swift in Sources */,
 				9D8A822520AB92C00031CBEF /* CreatePlayerViewController.swift in Sources */,
 				7D6249BB20AA42EC005CB1EF /* DataManager.swift in Sources */,
 				7DB1B0D620A9E84F0086CC3A /* AppDelegate.swift in Sources */,
@@ -446,7 +445,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9A24X3MLF7;
+				DEVELOPMENT_TEAM = 4X5NURS3PH;
 				INFOPLIST_FILE = "$(SRCROOT)/BoardBuddy/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -464,7 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9A24X3MLF7;
+				DEVELOPMENT_TEAM = 4X5NURS3PH;
 				INFOPLIST_FILE = "$(SRCROOT)/BoardBuddy/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
