@@ -20,6 +20,7 @@ class RulesPageTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.backgroundColor = Colors.blue
         setupNavBar()
         tableView.register(RulesCell.self, forCellReuseIdentifier: "rulesCell")
         for (key, value) in ruleSections {
@@ -40,15 +41,23 @@ class RulesPageTableViewController: UITableViewController {
     @objc func rateUsButtonTapped() {
         SKStoreReviewController.requestReview()
     }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return emptyArray.count
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return emptyArray[section].sectionObject.count
+    }
+    
+    override  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return emptyArray[section].sectionName
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = RulesCell(style: UITableViewCellStyle.value1, reuseIdentifier: "rulesCell")
         tableView.dequeueReusableCell(withIdentifier: "rulesCell", for: indexPath)
         cell.rules = emptyArray[indexPath.section].sectionObject[indexPath.row]
+        cell.backgroundColor = UIColor(red: 38/255, green: 47/255, blue: 69/255, alpha: 1)
         return cell
     }
     
