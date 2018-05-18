@@ -33,7 +33,7 @@ class RulesCell: UITableViewCell {
     
     func updateViews() {
         guard let rules = rules else {return}
-
+        self.textLabel?.textColor = UIColor.white
         self.textLabel?.text = rules
     }
 }
