@@ -120,6 +120,7 @@ class DataManager {
     func decodeRequest(from data: Data) -> RequestFunds? {
         do {
             let decodedRequest = try JSONDecoder().decode(RequestFunds.self, from: data)
+            print("Successfully decoded request")
             return decodedRequest
         } catch {
             print("Couldnt decode request")

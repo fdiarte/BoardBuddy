@@ -15,6 +15,7 @@
 		7D6249DA20AB6F9C005CB1EF /* MPCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6249D920AB6F9C005CB1EF /* MPCManager.swift */; };
 		7D7A8FB920AB82730030F414 /* AnimatedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7A8FB820AB82730030F414 /* AnimatedLabel.swift */; };
 		7D7A8FBB20AB99CA0030F414 /* LobbyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7A8FBA20AB99CA0030F414 /* LobbyTableViewController.swift */; };
+		7DA3F11A20AF32CA009E46BB /* InfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA3F11920AF32CA009E46BB /* InfoController.swift */; };
 		7DB1B0D620A9E84F0086CC3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB1B0D520A9E84F0086CC3A /* AppDelegate.swift */; };
 		7DB1B0DB20A9E84F0086CC3A /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB1B0D920A9E84F0086CC3A /* HomeScreen.storyboard */; };
 		7DB1B0DD20A9E8520086CC3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DB1B0DC20A9E8520086CC3A /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		7D6249D920AB6F9C005CB1EF /* MPCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCManager.swift; sourceTree = "<group>"; };
 		7D7A8FB820AB82730030F414 /* AnimatedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedLabel.swift; sourceTree = "<group>"; };
 		7D7A8FBA20AB99CA0030F414 /* LobbyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyTableViewController.swift; sourceTree = "<group>"; };
+		7DA3F11920AF32CA009E46BB /* InfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoController.swift; sourceTree = "<group>"; };
 		7DB1B0D220A9E84F0086CC3A /* BoardBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoardBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB1B0D520A9E84F0086CC3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DB1B0DA20A9E84F0086CC3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HomeScreen.storyboard; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			children = (
 				7D6249B620AA3FAD005CB1EF /* Player Controller.swift */,
 				7D6249B820AA3FB5005CB1EF /* Banker Controller.swift */,
+				7DA3F11920AF32CA009E46BB /* InfoController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D8A821420AB37DF0031CBEF /* ColorExtensions.swift in Sources */,
+				7DA3F11A20AF32CA009E46BB /* InfoController.swift in Sources */,
 				7D6249B920AA3FB5005CB1EF /* Banker Controller.swift in Sources */,
 				7D7A8FBB20AB99CA0030F414 /* LobbyTableViewController.swift in Sources */,
 				7D6249B720AA3FAD005CB1EF /* Player Controller.swift in Sources */,
