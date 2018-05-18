@@ -14,6 +14,8 @@ protocol MPCManagerDelegate {
     func playerRecieved(from data: Data)
     func infoRecieved(from data: Data)
     func playersArrayRecieved(from data: Data)
+    func requestFundsRecieved(from data: Data)
+    func acceptedFundsRecieved(from data: Data)
 }
 
 class MPCManager: NSObject, MCSessionDelegate {
@@ -78,6 +80,8 @@ class MPCManager: NSObject, MCSessionDelegate {
         delegate?.infoRecieved(from: data)
         delegate?.playerRecieved(from: data)
         delegate?.playersArrayRecieved(from: data)
+        delegate?.requestFundsRecieved(from: data)
+        delegate?.acceptedFundsRecieved(from: data)
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
@@ -122,13 +126,16 @@ class MPCManager: NSObject, MCSessionDelegate {
     
     func sendRequestFunds(request: RequestFunds, to playerToSend: Player) {
         guard let data = DataManager.shared.encodeRequest(request: request) else { return }
-        var connectedPeers: [MCPeerID] = []
-        let peerIDAsString: String = playerToSend.displayName
-        let peerID: MCPeerID = MCPeerID(displayName: peerIDAsString)
-        connectedPeers.append(peerID)
+        var index = 0
+        for (arrayIndex,peer) in currentGamePeers.enumerated() {
+            if playerToSend.displayName == peer.displayName {
+                index = arrayIndex
+            }
+        }
         
         do {
-            try session.send(data, toPeers: connectedPeers, with: .reliable)
+            try session.send(data, toPeers: [currentGamePeers[index]], with: .reliable)
+            print("Successfully sent info")
         } catch {
             print("Cant send request for funds: \(error.localizedDescription)")
         }
@@ -136,13 +143,16 @@ class MPCManager: NSObject, MCSessionDelegate {
     
     func sendAcceptedFunds(acceptedFunds: AcceptFunds, to playerToSend: Player) {
         guard let data = DataManager.shared.encodeAcceptFunds(acceptFunds: acceptedFunds) else { return }
-        var connectedPeers: [MCPeerID] = []
-        let peerIDAsString: String = playerToSend.displayName
-        let peerID: MCPeerID = MCPeerID(displayName: peerIDAsString)
-        connectedPeers.append(peerID)
+  
+        var index = 0
+        for (arrayIndex,peer) in currentGamePeers.enumerated() {
+            if playerToSend.displayName == peer.displayName {
+                index = arrayIndex
+            }
+        }
         
         do {
-            try session.send(data, toPeers: connectedPeers, with: .reliable)
+            try session.send(data, toPeers: [currentGamePeers[index + 1]], with: .reliable)
         } catch {
             print("Cant send accepted funds: \(error.localizedDescription)")
         }

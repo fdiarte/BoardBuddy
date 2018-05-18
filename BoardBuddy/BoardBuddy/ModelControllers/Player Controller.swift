@@ -24,19 +24,19 @@ class PlayerController {
         print("Player created")
     }
     
-    func requestAmount(amount: Int, from player: Player, requester: Player) {
-
-    }
-
-    func requestAmount(amount: Int, from banker: Banker, for player: Player) {
-
-    }
-
-    func payBanker(banker: Banker, amount: Int, player: Player) {
-
-    }
-    
-    func getMoney(player: Player, amount: Int) {
-        
-    }
+//    func requestAmount(amount: Int, from player: Player, requester: Player) {
+//
+//    }
+//
+//    func requestAmount(amount: Int, from banker: Banker, for player: Player) {
+//
+//    }
+//
+//    func payBanker(banker: Banker, amount: Int, player: Player) {
+//
+//    }
+//
+//    func getMoney(player: Player, amount: Int) {
+//
+//    }
 }

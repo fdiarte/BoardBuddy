@@ -81,7 +81,7 @@
                                         <color key="textColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="($1500.00)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="api-vu-OMT">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="($1500.00)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="api-vu-OMT" customClass="AnimatedLabel" customModule="BoardBuddy" customModuleProvider="target">
                                         <rect key="frame" x="134" y="78.5" width="231" height="26.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="textColor" red="0.1529411765" green="0.80784313730000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -142,19 +142,19 @@
                                                     <rect key="frame" x="84" y="16" width="196" height="67"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="(userName)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbS-jO-AB6">
-                                                            <rect key="frame" x="0.0" y="0.0" width="91" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="91" height="29.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.96862745098039216" green="1" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqF-2e-Zl0">
-                                                            <rect key="frame" x="0.0" y="20.5" width="44.5" height="17"/>
+                                                            <rect key="frame" x="0.0" y="29.5" width="44.5" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" red="0.98823529409999999" green="1" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="(amount)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTz-Fg-OJD">
-                                                            <rect key="frame" x="0.0" y="37.5" width="70.5" height="29.5"/>
+                                                            <rect key="frame" x="0.0" y="46.5" width="70.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.1529411765" green="0.80784313730000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -225,8 +225,8 @@
                         <outlet property="collectionView" destination="pCi-Rc-UZC" id="sGf-cf-uCM"/>
                         <outlet property="containerView" destination="UFD-UG-jQp" id="kPG-Cd-xJd"/>
                         <outlet property="nameLabel" destination="WQN-F1-5dC" id="3kP-s3-h57"/>
+                        <outlet property="playerMoneyLabel" destination="api-vu-OMT" id="QKp-j5-4H6"/>
                         <outlet property="sessionNameLabel" destination="bQE-hz-U92" id="iTR-jI-OLB"/>
-                        <outlet property="totalAmountLabel" destination="api-vu-OMT" id="EnR-nx-VqY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -318,6 +318,7 @@
                             <constraint firstAttribute="trailing" secondItem="svN-n1-a8V" secondAttribute="trailing" id="set-hY-NbM"/>
                             <constraint firstItem="svN-n1-a8V" firstAttribute="top" secondItem="Daf-8P-xgB" secondAttribute="top" constant="40" id="xmR-rZ-P19"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="Bh1-Uc-ltj"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="svN-n1-a8V" id="pnX-uJ-SuB"/>

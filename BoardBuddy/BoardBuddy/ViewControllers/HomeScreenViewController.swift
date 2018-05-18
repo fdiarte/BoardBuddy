@@ -14,7 +14,9 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var sessionNameLabel: UILabel!
     @IBOutlet weak var boardPieceImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var totalAmountLabel: UILabel!
+   
+    @IBOutlet weak var playerMoneyLabel: AnimatedLabel!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var blackView: UIView!
     
@@ -25,6 +27,7 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
+        MPCManager.shared.delegate = self
         updateContainerView()
         updateViews()
 
@@ -87,7 +90,7 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         boardPieceImageView.tintColor = Colors.mintCreme
         
         nameLabel.text = currentPlayer.displayName
-        totalAmountLabel.text = "$ \(currentPlayer.moneyAmount)"
+        playerMoneyLabel.text = "$ \(currentPlayer.moneyAmount)"
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -156,10 +159,58 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
 
 extension HomeScreenViewController: MPCManagerDelegate {
     
+    func requestFundsRecieved(from data: Data) {
+        guard let fundsRequest = DataManager.shared.decodeRequest(from: data) else { return }
+        let requester = fundsRequest.player
+        let amountRequesting = fundsRequest.amount
+        
+        createRequestFundsAlert(requester: requester, amount: amountRequesting, payer: requester)
+    }
+    
+    func acceptedFundsRecieved(from data: Data) {
+        guard let acceptedFunds = DataManager.shared.decodeAcceptFunds(from: data) else { return }
+        
+        if acceptedFunds.didAccept == true {
+            let amountRecieved = acceptedFunds.amount
+            let payer = acceptedFunds.payer
+            
+            guard var players = self.players else { return }
+            guard let index = players.index(of: payer) else { return }
+            players.remove(at: index)
+            payer.moneyAmount -= amountRecieved
+            players.append(payer)
+            
+            for player in players {
+                if player.deviceName == UIDevice.current.name {
+                    let previousAmount = player.moneyAmount
+                    let newAmount = player.moneyAmount + amountRecieved
+                    player.moneyAmount += amountRecieved
+                    DispatchQueue.main.async {
+                        MPCManager.shared.sendPlayers(players: players)
+                        self.playerMoneyLabel.count(from: Float(previousAmount), to: Float(newAmount))
+                    }
+                }
+            }
+        }
+    }
+    
     func playerJoinedSession() {
     }
     
     func playerRecieved(from data: Data) {
+        guard let playerRecieved = DataManager.shared.decodePlayer(from: data) else { return }
+        guard var players = players else { return }
+        
+        for (index,player) in players.enumerated() {
+            if playerRecieved.deviceName == player.deviceName {
+                DispatchQueue.main.async {
+                    players.remove(at: index)
+                    players.insert(playerRecieved, at: index)
+                    self.players = players
+                    self.collectionView.reloadData()
+                }
+            }
+        }
     }
     
     func infoRecieved(from data: Data) {
@@ -167,5 +218,45 @@ extension HomeScreenViewController: MPCManagerDelegate {
     
     func playersArrayRecieved(from data: Data) {
         print("Recieved players from home")
+        guard let decondedPlayers = DataManager.shared.decodePlayers(from: data) else { return }
+        
+        var oldPlayer: Player?
+        var newPlayer: Player?
+        
+        for player in self.players! {
+            if player.deviceName == UIDevice.current.name {
+                oldPlayer = player
+            }
+        }
+        
+        for player in decondedPlayers {
+            if player.deviceName == UIDevice.current.name {
+                newPlayer = player
+                playerMoneyLabel.count(from: Float((oldPlayer?.moneyAmount)!), to: Float((newPlayer?.moneyAmount)!))
+                DispatchQueue.main.async {
+                    self.players = decondedPlayers
+                    self.collectionView.reloadData()
+                }
+            }
+        }
+        guard let playerToSend = newPlayer else { return }
+        MPCManager.shared.sendPerson(player: playerToSend)
+        self.players = decondedPlayers
+        
+    }
+    
+    func createRequestFundsAlert(requester: Player, amount: Int, payer: Player) {
+        let alert = UIAlertController(title: "\(requester.displayName) is requesting $\(amount) from you", message: nil, preferredStyle: .alert)
+        let denyButton = UIAlertAction(title: "Deny", style: .cancel, handler: nil)
+        let payButton = UIAlertAction(title: "Pay", style: .default) { (_) in
+            // send accepted funds model to player
+            
+            let acceptedFundsRequest = AcceptFundsController.shared.createAcceptedFunds(didAccept: true, amount: amount, from: payer)
+            MPCManager.shared.sendAcceptedFunds(acceptedFunds: acceptedFundsRequest, to: requester)
+            
+        }
+        alert.addAction(denyButton)
+        alert.addAction(payButton)
+        present(alert, animated: true, completion: nil)
     }
 }

@@ -94,6 +94,12 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
         checkNumberOfPlayers()
     }
     
+    func requestFundsRecieved(from data: Data) {
+    }
+    
+    func acceptedFundsRecieved(from data: Data) {
+    }
+    
     func infoRecieved(from data: Data) {
 //        guard let decodedInfo = DataManager.shared.decodeSendingInfo(from: data) else { return }
 //        isMatchReadyToStart = decodedInfo.didSendInfo

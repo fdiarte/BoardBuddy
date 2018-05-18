@@ -11,8 +11,10 @@ import Foundation
 class RequestFunds: Codable {
     
     let amount: Int
+    let player: Player
     
-    init(amount: Int) {
-       self.amount = amount
+    init(player: Player, amount: Int) {
+        self.player = player
+        self.amount = amount
     }
 }
