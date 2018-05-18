@@ -16,12 +16,14 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var players = PlayerController.shared.players
-
+    var rowCount: Int = 0
 //    var isMatchReadyToStart: Int? {
 //        didSet {
 //            self.performSegue(withIdentifier: "toHomeVC", sender: self.players)
 //        }
 //    }
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,13 +40,29 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
         // #warning Incomplete implementation, return the number of rows
         return MPCManager.shared.currentGamePeers.count
     }
-
-   
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if rowCount == 0 || indexPath.row == rowCount {
+            cell.alpha = 0
+            
+            let transform = CATransform3DTranslate(CATransform3DIdentity, -250, 20, 0)
+            cell.layer.transform = transform
+            
+            UIView.animate(withDuration: (1.0)) {
+                cell.alpha = 1.0
+                cell.layer.transform = CATransform3DIdentity
+            }
+            rowCount += 1
+        }
+    }
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath) as? LobbyCell else {return UITableViewCell()}
         
         cell.userNameLabel.text = MPCManager.shared.currentGamePeers[indexPath.row].displayName
-      
+        
         return cell
     }
     
