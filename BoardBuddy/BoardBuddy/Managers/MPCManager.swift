@@ -16,6 +16,8 @@ protocol MPCManagerDelegate {
     func playersArrayRecieved(from data: Data)
     func requestFundsRecieved(from data: Data)
     func acceptedFundsRecieved(from data: Data)
+    func matchEndedRecieved(from data: Data)
+    func sessionNotConnected()
 }
 
 class MPCManager: NSObject, MCSessionDelegate {
@@ -71,6 +73,7 @@ class MPCManager: NSObject, MCSessionDelegate {
             
         default:
             print("Did not connect to session")
+            delegate?.sessionNotConnected()
         }
     }
     
@@ -81,6 +84,7 @@ class MPCManager: NSObject, MCSessionDelegate {
         delegate?.playersArrayRecieved(from: data)
         delegate?.requestFundsRecieved(from: data)
         delegate?.acceptedFundsRecieved(from: data)
+        delegate?.matchEndedRecieved(from: data)
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
@@ -93,6 +97,14 @@ class MPCManager: NSObject, MCSessionDelegate {
     
     func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
         // Nothing to do here
+    }
+    
+    func stopSession() {
+        print("Before ending session: \(session): \(session.connectedPeers.count)")
+        session.disconnect()
+        advertiserAssistant.stop()
+        currentGamePeers.removeAll()
+        print("After ending session: \(session): \(session.connectedPeers.count)")
     }
     
     
@@ -155,6 +167,16 @@ class MPCManager: NSObject, MCSessionDelegate {
             try session.send(data, toPeers: [currentGamePeers[index + 1]], with: .reliable)
         } catch {
             print("Cant send accepted funds: \(error.localizedDescription)")
+        }
+    }
+    
+    func sendMatchEnded(matchEnded: MatchEnded) {
+        guard let data = DataManager.shared.encodeMatchEnd(matchEnd: matchEnded) else { return }
+        
+        do {
+            try session.send(data, toPeers: currentGamePeers, with: .reliable)
+        } catch {
+            print("Cant send match end: \(error.localizedDescription)")
         }
     }
     

@@ -15,3 +15,11 @@ class SendingInfo: Codable {
         self.amountChanged = amountChanged
     }
 }
+
+class MatchEnded: Codable {
+    var isMatchCancelled: BooleanLiteralType
+    
+    init(isMatchCancelled: Bool) {
+        self.isMatchCancelled = isMatchCancelled
+    }
+}

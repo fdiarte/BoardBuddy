@@ -63,6 +63,54 @@ class SlideInMenuViewController: UIViewController, UICollectionViewDelegate, UIC
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         delegate?.settingTapped(settingNumber: indexPath.row)
-        print("tapped \(indexPath.row)")
+        if indexPath.row == 0 {
+            print("Rules Tapped")
+        } else if indexPath.row == 1 {
+            print("Leave Match Tapped")
+            createLeaveMatchAlert()
+        } else {
+            print("Cancel Match Tapped")
+            createEndMatchAlert()
+        }
+    }
+    
+    func endMatch() {
+        
+//        let matchEnd = MatchEndedController.shared.createMatchEnd()
+//        MPCManager.shared.sendMatchEnded(matchEnded: matchEnd)
+        
+        let storyboard = UIStoryboard(name: "EntryScreen", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "entryScreen")
+        self.present(viewController, animated: true, completion: nil)
+        
+        MPCManager.shared.stopSession()
+    }
+    
+    func createLeaveMatchAlert() {
+        let alert = UIAlertController(title: "Are you sure you want to leave the match?", message: "Leaving the match will end the game.", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let leaveMatchAction = UIAlertAction(title: "Leave Match", style: .destructive) { (_) in
+            // kick people out
+            
+            self.endMatch()
+        }
+        
+        alert.addAction(cancelAction)
+        alert.addAction(leaveMatchAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func createEndMatchAlert() {
+        let alert = UIAlertController(title: "Are you sure you want to cancel the match?", message: nil, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let leaveMatchAction = UIAlertAction(title: "Cancel Match", style: .destructive) { (_) in
+            // kick people out
+            
+            self.endMatch()
+        }
+        
+        alert.addAction(cancelAction)
+        alert.addAction(leaveMatchAction)
+        present(alert, animated: true, completion: nil)
     }
 }
