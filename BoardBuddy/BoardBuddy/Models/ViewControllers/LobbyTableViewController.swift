@@ -9,7 +9,7 @@
 import UIKit
 
 class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
-  
+    
     @IBOutlet weak var ViewForActivityIndicator: UIView!
     @IBOutlet weak var startGameButton: UIBarButtonItem!
     
@@ -17,20 +17,11 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
     
     var players = PlayerController.shared.players
     var rowCount: Int = 0
-//    var isMatchReadyToStart: Int? {
-//        didSet {
-//            self.performSegue(withIdentifier: "toHomeVC", sender: self.players)
-//        }
-//    }
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         MPCManager.shared.delegate = self
-        
         startGameButton.isEnabled = false
-        
     }
     
 
@@ -113,21 +104,18 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
     }
     
     func requestFundsRecieved(from data: Data) {
-    }
-    
+    }    
     func acceptedFundsRecieved(from data: Data) {
     }
-    
     func infoRecieved(from data: Data) {
-//        guard let decodedInfo = DataManager.shared.decodeSendingInfo(from: data) else { return }
-//        isMatchReadyToStart = decodedInfo.didSendInfo
+    }
+    func matchEndedRecieved(from data: Data) {
+    }
+    func sessionNotConnected() {
     }
     
     @IBAction func startGameButtonTapped(_ sender: UIBarButtonItem) {
-//        let info = SendingInfo(didSendInfo: 1)
-//        MPCManager.shared.sendInfo(info: info)
         MPCManager.shared.sendPlayers(players: players)
-        
         self.performSegue(withIdentifier: "toHomeVC", sender: self.players)
     }
     

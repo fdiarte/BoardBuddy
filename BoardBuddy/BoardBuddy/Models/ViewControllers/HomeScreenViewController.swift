@@ -160,9 +160,7 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     @IBAction func userTappedBankButton(_ sender: UIButton) {
-        print("Tapped Bank")
         
-
         performSegue(withIdentifier: "toBankDetailVC", sender: self.players)
         let presentedVC = BankDetailViewController()
         presentedVC.delegate = self
@@ -171,6 +169,7 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
 }
 
 extension HomeScreenViewController: MPCManagerDelegate, BankDeailDelegate {
+
     func playerMoneyDecremented(money: Int) {
         guard let players = players else { return }
         var previousMoney = 0
@@ -234,6 +233,26 @@ extension HomeScreenViewController: MPCManagerDelegate, BankDeailDelegate {
                 }
             }
         }
+    }
+    
+    func matchEndedRecieved(from data: Data) {
+        guard let matchEnded = DataManager.shared.decodeMatchEnd(from: data) else { return }
+        
+        print("Match end recieved")
+        
+        if matchEnded.isMatchCancelled == true {
+            let storyboard = UIStoryboard(name: "EntryScreen", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "entryScreen")
+            self.present(viewController, animated: true, completion: nil)
+        }
+    }
+    
+    func sessionNotConnected() {
+        MPCManager.shared.currentGamePeers.removeAll()
+        
+        let storyboard = UIStoryboard(name: "EntryScreen", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "entryScreen")
+        self.present(viewController, animated: true, completion: nil)
     }
     
     func playerJoinedSession() {

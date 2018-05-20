@@ -148,7 +148,25 @@ class DataManager {
         }
     }
     
+    func encodeMatchEnd(matchEnd: MatchEnded) -> Data? {
+        do {
+            let encodedMatchEnd = try JSONEncoder().encode(matchEnd)
+            return encodedMatchEnd
+        } catch {
+            print("Couldnt encode match end")
+            return nil
+        }
+    }
     
+    func decodeMatchEnd(from data: Data) -> MatchEnded? {
+        do {
+            let decodedMatchEnd = try JSONDecoder().decode(MatchEnded.self, from: data)
+            return decodedMatchEnd
+        } catch {
+            print("Couldnt decode match end")
+            return nil
+        }
+    }
     
 }
 

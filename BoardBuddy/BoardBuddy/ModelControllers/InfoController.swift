@@ -27,3 +27,12 @@ class AcceptFundsController {
         return newAcceptedFunds
     }
 }
+
+class MatchEndedController {
+    static let shared = MatchEndedController()
+    
+    func createMatchEnd() -> MatchEnded {
+        let matchEnd = MatchEnded(isMatchCancelled: true)
+        return matchEnd
+    }
+}
