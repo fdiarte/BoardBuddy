@@ -22,20 +22,19 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     
 
     var players: [Player]?
-   
+    var moneyAmount: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateContainerView()
+        updateViews()
         collectionView.delegate = self
         collectionView.dataSource = self
         MPCManager.shared.delegate = self
-        updateContainerView()
-        updateViews()
-
     }
     
     func updateContainerView() {
     
- 
         blackView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         blackView.alpha = 0
         containerView.frame = CGRect(x: 0, y: -(view.frame.height), width: view.frame.width, height: view.frame.height * 0.35)
@@ -153,11 +152,54 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         } else if segue.identifier == "ToSlideInMenuVC" {
             let destinationVC = segue.destination as? SlideInMenuViewController
             destinationVC?.delegate = self
+        } else if segue.identifier == "toBankDetailVC" {
+            let destinationVC = segue.destination as? BankDetailViewController
+            destinationVC?.players = sender as? [Player]
+            destinationVC?.delegate = self
         }
     }
+    
+    @IBAction func userTappedBankButton(_ sender: UIButton) {
+        print("Tapped Bank")
+        
+
+        performSegue(withIdentifier: "toBankDetailVC", sender: self.players)
+        let presentedVC = BankDetailViewController()
+        presentedVC.delegate = self
+    }
+    
 }
 
-extension HomeScreenViewController: MPCManagerDelegate {
+extension HomeScreenViewController: MPCManagerDelegate, BankDeailDelegate {
+    func playerMoneyDecremented(money: Int) {
+        guard let players = players else { return }
+        var previousMoney = 0
+        var currentMoney = 0
+        
+        for player in players {
+            if player.deviceName == UIDevice.current.name {
+                previousMoney = player.moneyAmount + money
+                currentMoney = player.moneyAmount
+            }
+        }
+        
+        playerMoneyLabel.count(from: Float(previousMoney), to: Float(currentMoney))
+    }
+    
+    func playerMoneyIncremented(money: Int) {
+        guard let players = players else { return }
+        var previousMoney = 0
+        var currentMoney = 0
+        
+        for player in players {
+            if player.deviceName == UIDevice.current.name {
+                previousMoney = player.moneyAmount - money
+                currentMoney = player.moneyAmount
+            }
+        }
+        
+        playerMoneyLabel.count(from: Float(previousMoney), to: Float(currentMoney))
+    }
     
     func requestFundsRecieved(from data: Data) {
         guard let fundsRequest = DataManager.shared.decodeRequest(from: data) else { return }
@@ -219,11 +261,13 @@ extension HomeScreenViewController: MPCManagerDelegate {
     func playersArrayRecieved(from data: Data) {
         print("Recieved players from home")
         guard let decondedPlayers = DataManager.shared.decodePlayers(from: data) else { return }
+        guard let players = players else { return }
         
         var oldPlayer: Player?
         var newPlayer: Player?
         
-        for player in self.players! {
+        
+        for player in players {
             if player.deviceName == UIDevice.current.name {
                 oldPlayer = player
             }
@@ -232,8 +276,8 @@ extension HomeScreenViewController: MPCManagerDelegate {
         for player in decondedPlayers {
             if player.deviceName == UIDevice.current.name {
                 newPlayer = player
-                playerMoneyLabel.count(from: Float((oldPlayer?.moneyAmount)!), to: Float((newPlayer?.moneyAmount)!))
                 DispatchQueue.main.async {
+                    self.playerMoneyLabel.count(from: Float((oldPlayer?.moneyAmount)!), to: Float((newPlayer?.moneyAmount)!))
                     self.players = decondedPlayers
                     self.collectionView.reloadData()
                 }

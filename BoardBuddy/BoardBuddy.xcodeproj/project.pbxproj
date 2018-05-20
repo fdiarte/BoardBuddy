@@ -129,7 +129,6 @@
 				7D6249DB20AB6FA6005CB1EF /* Managers */,
 				9DB8396620AA1ADF0035C0C0 /* Models */,
 				9DB8396720AA1AE60035C0C0 /* ModelControllers */,
-				9DB8396820AA1AFA0035C0C0 /* ViewControllers */,
 				9DB8397020AA21900035C0C0 /* Views */,
 				9DB8396A20AA1B1B0035C0C0 /* Resources */,
 			);
@@ -152,6 +151,7 @@
 				7DFB5EC720ACCD6300C6C67D /* SendingInfo.swift */,
 				7DFB5ED120ADDDEC00C6C67D /* RequestFunds.swift */,
 				7DFB5ED320ADDDF800C6C67D /* AcceptFunds.swift */,
+				9DB8396820AA1AFA0035C0C0 /* ViewControllers */,
 			);
 			path = Models;
 			sourceTree = "<group>";

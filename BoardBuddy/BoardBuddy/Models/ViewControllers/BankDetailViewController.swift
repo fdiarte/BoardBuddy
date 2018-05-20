@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol BankDeailDelegate {
+    func playerMoneyIncremented(money: Int)
+    func playerMoneyDecremented(money: Int)
+}
+
 class BankDetailViewController: UIViewController {
     
     //MARK: - Properties
@@ -16,11 +21,16 @@ class BankDetailViewController: UIViewController {
     @IBOutlet weak var bankerImageView: UIImageView!
     @IBOutlet weak var moneyAmountTextField: UITextField!
     
+    static let shared = BankDetailViewController()
+    var delegate: BankDeailDelegate?
+    var players: [Player]?
+    
     //MARK: - LifeCycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
+
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -54,7 +64,26 @@ class BankDetailViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let withdrawlAction = UIAlertAction(title: "Withdrawl", style: .default) { (_) in
             
-            print("Successfully withdrew money")
+            guard var players = self.players else { return }
+            var currentPlayer: Player?
+            var currentPlayerIndex: Int?
+            
+            for (index,player) in players.enumerated() {
+                if player.deviceName == UIDevice.current.name {
+                    currentPlayer = player
+                    currentPlayerIndex = index
+                }
+            }
+            
+            let moneyToSend =  amountToWithdrawl
+            currentPlayer?.moneyAmount += amountToWithdrawl
+            players.remove(at: currentPlayerIndex!)
+            players.append(currentPlayer!)
+            MPCManager.shared.sendPlayers(players: players)
+            
+            self.delegate?.playerMoneyIncremented(money: moneyToSend)
+            
+            self.dismiss(animated: true, completion: nil)
         }
         
         alert.addAction(cancelAction)
@@ -68,6 +97,25 @@ class BankDetailViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let payAction = UIAlertAction(title: "Pay", style: .default) { (_) in
             
+            guard var players = self.players else { return }
+            var currentPlayer: Player?
+            var currentPlayerIndex: Int?
+            
+            for (index,player) in players.enumerated() {
+                if player.deviceName == UIDevice.current.name {
+                    currentPlayer = player
+                    currentPlayerIndex = index
+                }
+            }
+            
+            let moneyToSend = amountToPay
+            currentPlayer?.moneyAmount -= amountToPay
+            players.remove(at: currentPlayerIndex!)
+            players.append(currentPlayer!)
+            MPCManager.shared.sendPlayers(players: players)
+            
+            self.delegate?.playerMoneyDecremented(money: moneyToSend)
+    
             print("Successfully paid bank")
         }
         
@@ -83,5 +131,10 @@ class BankDetailViewController: UIViewController {
 //        bankerImageView.image = ?
         bankerImageView.image = UIImage(named: "bank")?.withRenderingMode(.alwaysTemplate)
         bankerImageView.tintColor = Colors.mintCreme
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destinationVC = segue.destination as? HomeScreenViewController else { return }
+        destinationVC.moneyAmount = sender as? Int
     }
 }
