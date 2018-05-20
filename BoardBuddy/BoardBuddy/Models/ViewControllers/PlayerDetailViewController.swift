@@ -26,6 +26,7 @@ class PlayerDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)

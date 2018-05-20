@@ -76,7 +76,6 @@ class MPCManager: NSObject, MCSessionDelegate {
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         // turn data to person object
-        print("recieved person")
         delegate?.infoRecieved(from: data)
         delegate?.playerRecieved(from: data)
         delegate?.playersArrayRecieved(from: data)
@@ -108,8 +107,9 @@ class MPCManager: NSObject, MCSessionDelegate {
     
     func sendInfo(info: SendingInfo) {
         guard let data = DataManager.shared.encodeSendingInfo(from: info) else { return }
+        
         do {
-            try session.send(data, toPeers: session.connectedPeers, with: .reliable)
+            try session.send(data, toPeers: [currentGamePeers[0]], with: .reliable)
         } catch {
             print("Cant send info: \(error.localizedDescription)")
         }
