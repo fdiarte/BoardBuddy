@@ -24,9 +24,9 @@ protocol SlideInMenuViewControllerDelegate: class {
 }
 
 class SlideInMenuViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    
+
     var players: [Player]?
-    
+
     @IBOutlet weak var sessionNameLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     weak var delegate: SlideInMenuViewControllerDelegate?
@@ -87,7 +87,7 @@ class SlideInMenuViewController: UIViewController, UICollectionViewDelegate, UIC
         
         MPCManager.shared.stopSession()
     }
-    
+                                                                   
     func leaveMatch() {
         
         guard var players = players else { return }

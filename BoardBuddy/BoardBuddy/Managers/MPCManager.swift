@@ -115,7 +115,6 @@ class MPCManager: NSObject, MCSessionDelegate {
         }
     }
     
-    
     func sendPerson(player: Player) {
         guard let data = DataManager.shared.encodePlayer(player: player) else { print("nothing here"); return }
         do {
