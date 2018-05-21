@@ -179,7 +179,7 @@ extension CreatePlayerViewController: MPCManagerDelegate, MCBrowserViewControlle
 
     func playerJoinedSession() {
         //transition to lobby
-        MPCManager.shared.sendPerson(player: PlayerController.shared.players.first!)
+//        MPCManager.shared.sendPerson(player: PlayerController.shared.players.first!)
         dismiss(animated: true, completion: nil)
         let storyboard = UIStoryboard(name: "Lobby", bundle: nil)
         let view = storyboard.instantiateViewController(withIdentifier: "lobby")

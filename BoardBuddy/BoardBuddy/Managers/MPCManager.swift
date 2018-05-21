@@ -68,6 +68,10 @@ class MPCManager: NSObject, MCSessionDelegate {
             currentGamePeers.append(peerID)
             delegate?.playerJoinedSession()
             
+            for (index,player) in currentGamePeers.enumerated() {
+                print("Player at index: \(index)", player.displayName)
+            }
+            
         case MCSessionState.connecting:
             print("Connecting to session")
             
