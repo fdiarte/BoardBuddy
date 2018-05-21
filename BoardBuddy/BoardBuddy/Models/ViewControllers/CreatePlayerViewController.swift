@@ -31,8 +31,6 @@ class CreatePlayerViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         setupObjects()
         playerNameTextField.delegate = self
-        
-        
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil);
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil);
     }

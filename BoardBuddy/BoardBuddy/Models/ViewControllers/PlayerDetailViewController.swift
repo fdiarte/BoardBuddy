@@ -43,10 +43,12 @@ class PlayerDetailViewController: UIViewController {
     
     @objc func keyboardWillShow() {
         view.addGestureRecognizer(singleTap)
+        view.frame.origin.y = -150
     }
 
     @objc func keyboardWillHide() {
         view.removeGestureRecognizer(singleTap)
+        view.frame.origin.y = 0
     }
     
     @objc func dismissKeyboard() {
