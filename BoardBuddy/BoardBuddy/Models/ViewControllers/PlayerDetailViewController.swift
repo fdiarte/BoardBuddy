@@ -18,6 +18,7 @@ class PlayerDetailViewController: UIViewController {
     @IBOutlet weak var moneyLabel: UILabel!
     @IBOutlet weak var boardPieceImageView: UIImageView!
     @IBOutlet weak var blurView: UIView!
+    let singleTap = UITapGestureRecognizer()
     
     var player: Player?
     
@@ -26,13 +27,30 @@ class PlayerDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
+        singleTap.addTarget(self, action: #selector(dismissKeyboard))
+        singleTap.numberOfTapsRequired = 1
         
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         updateViews()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
     }
     
+    
+    @objc func keyboardWillShow() {
+        view.addGestureRecognizer(singleTap)
+    }
+
+    @objc func keyboardWillHide() {
+        view.removeGestureRecognizer(singleTap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     //MARK: - Methods
     
     @IBAction func requestFundsButtonPressed(_ sender: Any) {
