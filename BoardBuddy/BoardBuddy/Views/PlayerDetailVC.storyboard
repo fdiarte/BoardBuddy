@@ -118,6 +118,7 @@
                         <outlet property="blurView" destination="pfT-rf-pTc" id="a4j-O6-rCc"/>
                         <outlet property="boardPieceImageView" destination="zXh-6Q-ds4" id="H0I-R5-n7o"/>
                         <outlet property="moneyLabel" destination="l1y-af-QMU" id="4vM-Bf-cwZ"/>
+                        <outlet property="moneyRequestTextField" destination="nZL-lW-yAe" id="cco-xf-Mor"/>
                         <outlet property="nameLabel" destination="Juf-yF-aNd" id="Ylt-rt-mrc"/>
                     </connections>
                 </viewController>

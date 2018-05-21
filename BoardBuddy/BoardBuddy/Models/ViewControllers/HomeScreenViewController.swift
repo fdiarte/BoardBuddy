@@ -19,7 +19,6 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var blackView: UIView!
     @IBOutlet weak var bankButton: UIButton!
     
-    
     var players: [Player]?
     var moneyAmount: Int?
     
@@ -123,12 +122,6 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         return cell ?? UICollectionViewCell()
     }
     
-
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-    }
-    
     func userTappedCell(_ sender: PlayerCollectionViewCell) {
         guard let indexPath = collectionView.indexPath(for: sender) else { return }
         guard var players = players else { return }
@@ -168,7 +161,6 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         let presentedVC = BankDetailViewController()
         presentedVC.delegate = self
     }
-    
 }
 
 extension HomeScreenViewController: MPCManagerDelegate, BankDeailDelegate {
@@ -287,7 +279,6 @@ extension HomeScreenViewController: MPCManagerDelegate, BankDeailDelegate {
         
         var oldPlayer: Player?
         var newPlayer: Player?
-        
         
         for player in players {
             if player.deviceName == UIDevice.current.name {
