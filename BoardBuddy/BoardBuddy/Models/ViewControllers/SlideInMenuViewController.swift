@@ -25,6 +25,8 @@ protocol SlideInMenuViewControllerDelegate: class {
 
 class SlideInMenuViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    var players: [Player]?
+    
     @IBOutlet weak var sessionNameLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     weak var delegate: SlideInMenuViewControllerDelegate?
@@ -86,13 +88,36 @@ class SlideInMenuViewController: UIViewController, UICollectionViewDelegate, UIC
         MPCManager.shared.stopSession()
     }
     
+    func leaveMatch() {
+        
+        guard var players = players else { return }
+        var currentPlayer: Player?
+        
+        
+        for (index,player) in players.enumerated() {
+            if player.deviceName == UIDevice.current.name {
+                currentPlayer = player
+                players.remove(at: index)
+            }
+        }
+        
+        guard let player = currentPlayer else { return }
+ 
+        MPCManager.shared.playerDisconnected(player: player)
+        MPCManager.shared.sendPlayers(players: players)
+        
+        let storyboard = UIStoryboard(name: "EntryScreen", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "entryScreen")
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
     func createLeaveMatchAlert() {
-        let alert = UIAlertController(title: "Are you sure you want to leave the match?", message: "Leaving the match will end the game.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Are you sure you want to leave the match?", message: nil, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let leaveMatchAction = UIAlertAction(title: "Leave Match", style: .destructive) { (_) in
-            // kick people out
+            // kick player out
             
-            self.endMatch()
+            self.leaveMatch()
         }
         
         alert.addAction(cancelAction)
