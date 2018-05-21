@@ -15,6 +15,7 @@ class PlayerDetailViewController: UIViewController {
     @IBOutlet weak var colorLabelOne: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
+    @IBOutlet weak var moneyRequestTextField: UITextField!
     @IBOutlet weak var moneyLabel: UILabel!
     @IBOutlet weak var boardPieceImageView: UIImageView!
     @IBOutlet weak var blurView: UIView!
@@ -56,8 +57,10 @@ class PlayerDetailViewController: UIViewController {
     @IBAction func requestFundsButtonPressed(_ sender: Any) {
         print("request funds button pressed")
         guard let player = player else { return }
+        guard let moneyRequestString = moneyRequestTextField.text else { return }
+        guard let moneyRequest = Int(moneyRequestString) else { return }
         
-        let fundsRequst = RequestFundsController.shared.createNewRequestForFunds(from: player, for: 100)
+        let fundsRequst = RequestFundsController.shared.createNewRequestForFunds(from: player, for: moneyRequest)
         MPCManager.shared.sendRequestFunds(request: fundsRequst, to: player)
         dismiss(animated: true, completion: nil)
     }
