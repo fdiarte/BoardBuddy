@@ -118,7 +118,7 @@ class CreateSessionViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func createSessionButtonTapped(_ sender: Any) {
-        guard let sessionName = sessionNameTextField.text, !sessionName.isEmpty, let moneyAmount = moneyPerPlayerTextField.text, !moneyAmount.isEmpty, let image = playerImage else { presentAlert(); return}
+        guard let sessionName = sessionNameTextField.text, !sessionName.isEmpty, let image = playerImage else { presentAlert(); return}
         //create session
         //create player
         
