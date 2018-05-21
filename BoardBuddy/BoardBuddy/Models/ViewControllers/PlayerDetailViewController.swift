@@ -41,6 +41,7 @@ class PlayerDetailViewController: UIViewController {
         
         let fundsRequst = RequestFundsController.shared.createNewRequestForFunds(from: player, for: 100)
         MPCManager.shared.sendRequestFunds(request: fundsRequst, to: player)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func tapGestureTapped(_ sender: Any) {
