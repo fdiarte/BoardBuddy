@@ -107,6 +107,14 @@ class MPCManager: NSObject, MCSessionDelegate {
         print("After ending session: \(session): \(session.connectedPeers.count)")
     }
     
+    func playerDisconnected(player: Player) {
+        for (index,peer) in currentGamePeers.enumerated() {
+            if peer.displayName == player.displayName {
+                currentGamePeers.remove(at: index)
+            }
+        }
+    }
+    
     
     func sendPerson(player: Player) {
         guard let data = DataManager.shared.encodePlayer(player: player) else { print("nothing here"); return }
