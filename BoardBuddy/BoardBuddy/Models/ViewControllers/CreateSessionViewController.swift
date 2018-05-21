@@ -33,8 +33,6 @@ class CreateSessionViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         setupObjects()
         sessionNameTextField.delegate = self
-        moneyPerPlayerTextField.delegate = self
-        playerNameTextField.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
@@ -44,9 +42,6 @@ class CreateSessionViewController: UIViewController, UITextFieldDelegate {
     func setupObjects() {
         singleTap.addTarget(self, action: #selector(disableKeyboard))
         sessionNameTextField.returnKeyType = .done
-        moneyPerPlayerTextField.keyboardType = .numberPad
-        moneyPerPlayerTextField.returnKeyType = .done
-        playerNameTextField.returnKeyType = .done
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

@@ -24,9 +24,9 @@ protocol SlideInMenuViewControllerDelegate: class {
 }
 
 class SlideInMenuViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    
+
     var players: [Player]?
-    
+
     @IBOutlet weak var sessionNameLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     weak var delegate: SlideInMenuViewControllerDelegate?
@@ -88,6 +88,14 @@ class SlideInMenuViewController: UIViewController, UICollectionViewDelegate, UIC
         MPCManager.shared.stopSession()
     }
     
+    func createEndMatchAlert() {
+        let alert = UIAlertController(title: "Are you sure you want to leave the match?", message: "Leaving the match will end the game.", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let leaveMatchAction = UIAlertAction(title: "Leave Match", style: .destructive) { (_) in
+            // kick people out
+            
+            self.endMatch()
+                                                                                         
     func leaveMatch() {
         
         guard var players = players else { return }

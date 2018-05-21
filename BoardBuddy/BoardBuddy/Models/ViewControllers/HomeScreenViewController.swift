@@ -153,6 +153,7 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
             let destinationVC = segue.destination as? SlideInMenuViewController
             destinationVC?.delegate = self
             destinationVC?.players = self.players
+
         } else if segue.identifier == "toBankDetailVC" {
             let destinationVC = segue.destination as? BankDetailViewController
             destinationVC?.players = sender as? [Player]
