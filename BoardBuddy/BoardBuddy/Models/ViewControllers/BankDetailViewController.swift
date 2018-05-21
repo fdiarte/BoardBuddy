@@ -13,7 +13,7 @@ protocol BankDeailDelegate {
     func playerMoneyDecremented(money: Int)
 }
 
-class BankDetailViewController: UIViewController {
+class BankDetailViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - Properties
     
@@ -24,15 +24,32 @@ class BankDetailViewController: UIViewController {
     static let shared = BankDetailViewController()
     var delegate: BankDeailDelegate?
     var players: [Player]?
+    let singleTap = UITapGestureRecognizer()
     
     //MARK: - LifeCycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        singleTap.numberOfTapsRequired = 1
+        singleTap.addTarget(self, action: #selector(dismissKeyboard))
         updateViews()
-
+        moneyAmountTextField.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
-
+    
+    @objc func keyboardWillShow() {
+        view.addGestureRecognizer(singleTap)
+    }
+    
+    @objc func keyboardWillHide() {
+        view.removeGestureRecognizer(singleTap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         updateViews()
@@ -117,6 +134,7 @@ class BankDetailViewController: UIViewController {
             self.delegate?.playerMoneyDecremented(money: moneyToSend)
     
             print("Successfully paid bank")
+            self.dismiss(animated: true, completion: nil)
         }
         
         alert.addAction(cancelAction)

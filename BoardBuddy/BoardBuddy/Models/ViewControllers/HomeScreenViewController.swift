@@ -14,13 +14,12 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var sessionNameLabel: UILabel!
     @IBOutlet weak var boardPieceImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-   
     @IBOutlet weak var playerMoneyLabel: AnimatedLabel!
-    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var blackView: UIView!
+    @IBOutlet weak var bankButton: UIButton!
     
-
+    
     var players: [Player]?
     var moneyAmount: Int?
     
@@ -31,6 +30,8 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         collectionView.delegate = self
         collectionView.dataSource = self
         MPCManager.shared.delegate = self
+        bankButton.layer.cornerRadius = 10
+        
     }
     
     func updateContainerView() {
@@ -99,7 +100,7 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath) as? PlayerCollectionViewCell
-
+        cell?.layer.cornerRadius = 20
         guard var cellPlayers = players else { return UICollectionViewCell() }
      
         for player in cellPlayers {
