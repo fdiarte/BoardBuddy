@@ -17,11 +17,17 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
     
     var players = PlayerController.shared.players
     var rowCount: Int = 0
+    var decodedPlayers: [Player] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         MPCManager.shared.delegate = self
         startGameButton.isEnabled = false
+    }
+    
+    func sendPlayerToHost() {
+        guard let player = players.first else { return }
+        MPCManager.shared.sendPerson(player: player)
     }
     
 
@@ -59,16 +65,17 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
     
     func checkNumberOfPlayers() {
         if players.count > 1 {
-            startGameButton.isEnabled = true
-            activityIndicator.stopAnimating()
-            ViewForActivityIndicator.frame.size.height -= 44
-            checkForHost()
-            tableView.reloadData()
+            DispatchQueue.main.async {
+                self.startGameButton.isEnabled = true
+                self.activityIndicator.stopAnimating()
+                self.ViewForActivityIndicator.frame.size.height -= 44
+                self.checkForHost()
+                self.tableView.reloadData()
+            }
         } else {
             startGameButton.isEnabled = false
             checkForHost()
             activityIndicator.startAnimating()
-            
         }
     }
     
@@ -88,6 +95,7 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
     
     func playersArrayRecieved(from data: Data) {
         guard let decondedPlayers = DataManager.shared.decodePlayers(from: data) else { return }
+        
         self.players = decondedPlayers
         
        self.performSegue(withIdentifier: "toHomeVC", sender: self.players)
@@ -95,12 +103,16 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
     
     func playerRecieved(from data: Data) {
         guard let decodedPlayer = DataManager.shared.decodePlayer(from: data) else { return }
-        players.append(decodedPlayer)
-        for player in players {
-            print("Player Name: \(player.displayName)")
-            print("Bool: \(player.isHost)")
+        if players.last == decodedPlayer {
+            print("Same player")
+            checkNumberOfPlayers()
+        } else {
+            players.append(decodedPlayer)
+            for (index,player) in players.enumerated() {
+                print("Player at index from Lobby: \(index)", player.displayName)
+            }
+            checkNumberOfPlayers()
         }
-        checkNumberOfPlayers()
     }
     
     func requestFundsRecieved(from data: Data) {
@@ -116,6 +128,8 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
     
     @IBAction func startGameButtonTapped(_ sender: UIBarButtonItem) {
         MPCManager.shared.sendPlayers(players: players)
+        
+        
         self.performSegue(withIdentifier: "toHomeVC", sender: self.players)
     }
     
