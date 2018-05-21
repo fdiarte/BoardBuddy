@@ -19,13 +19,14 @@ class PlayerDetailViewController: UIViewController {
     @IBOutlet weak var boardPieceImageView: UIImageView!
     @IBOutlet weak var blurView: UIView!
     
-    var player: Player? 
+    var player: Player?
     
     //MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -37,6 +38,9 @@ class PlayerDetailViewController: UIViewController {
     @IBAction func requestFundsButtonPressed(_ sender: Any) {
         print("request funds button pressed")
         guard let player = player else { return }
+        
+        let fundsRequst = RequestFundsController.shared.createNewRequestForFunds(from: player, for: 100)
+        MPCManager.shared.sendRequestFunds(request: fundsRequst, to: player)
     }
     
     @IBAction func tapGestureTapped(_ sender: Any) {

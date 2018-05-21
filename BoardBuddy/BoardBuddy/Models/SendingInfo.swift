@@ -9,9 +9,17 @@
 import Foundation
 
 class SendingInfo: Codable {
-    var didSendInfo: Int
+    var amountChanged: Int
     
-    init(didSendInfo: Int) {
-        self.didSendInfo = didSendInfo
+    init(amountChanged: Int) {
+        self.amountChanged = amountChanged
+    }
+}
+
+class MatchEnded: Codable {
+    var isMatchCancelled: BooleanLiteralType
+    
+    init(isMatchCancelled: Bool) {
+        self.isMatchCancelled = isMatchCancelled
     }
 }
