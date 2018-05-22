@@ -31,7 +31,6 @@
                                                     <color key="titleColor" red="0.23529411759999999" green="0.28235294119999998" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="createButtonTapped:" destination="sXg-wo-9lZ" eventType="touchUpInside" id="oAw-QW-2mu"/>
                                                     <segue destination="RYT-Cx-uzR" kind="show" id="nVc-lb-VtM"/>
                                                 </connections>
                                             </button>
@@ -42,7 +41,6 @@
                                                     <color key="titleColor" red="0.1529411765" green="0.18823529410000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="joinButtonTapped:" destination="sXg-wo-9lZ" eventType="touchUpInside" id="6kj-IP-tsh"/>
                                                     <segue destination="edI-lK-Jjv" kind="show" id="tMM-dh-8B9"/>
                                                 </connections>
                                             </button>

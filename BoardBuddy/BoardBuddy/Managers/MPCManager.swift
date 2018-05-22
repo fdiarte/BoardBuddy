@@ -175,7 +175,7 @@ class MPCManager: NSObject, MCSessionDelegate {
         }
         
         do {
-            try session.send(data, toPeers: [currentGamePeers[index + 1]], with: .reliable)
+            try session.send(data, toPeers: [currentGamePeers[index]], with: .reliable)
         } catch {
             print("Cant send accepted funds: \(error.localizedDescription)")
         }

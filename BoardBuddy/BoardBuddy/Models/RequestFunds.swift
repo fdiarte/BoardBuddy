@@ -11,10 +11,12 @@ import Foundation
 class RequestFunds: Codable {
     
     let amount: Int
-    let player: Player
+    let playerRequestingFunds: Player
+    let playerToSend: Player
     
-    init(player: Player, amount: Int) {
-        self.player = player
+    init(playerRequestingFunds: Player, playerToSend: Player, amount: Int) {
+        self.playerToSend = playerToSend
+        self.playerRequestingFunds = playerRequestingFunds
         self.amount = amount
     }
 }

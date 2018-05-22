@@ -12,8 +12,8 @@ class RequestFundsController {
     
     static let shared = RequestFundsController()
     
-    func createNewRequestForFunds(from player: Player, for amount: Int) -> RequestFunds {
-        let newRequest = RequestFunds(player: player, amount: amount)
+    func createNewRequestForFunds(playerRequestingFunds: Player, playerToSend: Player, for amount: Int) -> RequestFunds {
+        let newRequest = RequestFunds(playerRequestingFunds: playerRequestingFunds, playerToSend: playerToSend, amount: amount)
         return newRequest
     }
 }

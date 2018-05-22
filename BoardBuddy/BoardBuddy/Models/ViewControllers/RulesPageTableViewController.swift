@@ -10,7 +10,6 @@ import UIKit
 import StoreKit
 class RulesPageTableViewController: UITableViewController {
     
-
     var emptyArray: [Rules] = []
     
     struct Rules {
@@ -58,6 +57,7 @@ class RulesPageTableViewController: UITableViewController {
         tableView.dequeueReusableCell(withIdentifier: "rulesCell", for: indexPath)
         cell.rules = emptyArray[indexPath.section].sectionObject[indexPath.row]
         cell.backgroundColor = UIColor(red: 38/255, green: 47/255, blue: 69/255, alpha: 1)
+        cell.selectionStyle = .none
         return cell
     }
     
