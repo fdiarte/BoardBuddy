@@ -22,6 +22,14 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     var players: [Player]?
     var moneyAmount: Int?
     static let shared = HomeScreenViewController()
+    let colorArray: [UIColor] = [Colors.blue,
+                                 Colors.brown,
+                                 Colors.charcoal,
+                                 Colors.green,
+                                 Colors.gunMetal,
+                                 Colors.lightBlue,
+                                 Colors.limeGreen,
+                                 Colors.mintCreme]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,12 +122,14 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         let player = cellPlayers[indexPath.row]
         guard let image = UIImage(data: player.imageData) else { return UICollectionViewCell() }
     
+        let color = colorArray[indexPath.row]
         cell?.playerNameLabel.text = player.displayName
         cell?.playerAmountLabel.text = "$ \(player.moneyAmount)"
         cell?.boardPieceImageView.image = image
         cell?.boardPieceImageView.tintColor = Colors.mintCreme
         cell?.player = player
         cell?.delegate = self
+        cell?.backgroundColor = color
         return cell ?? UICollectionViewCell()
     }
     

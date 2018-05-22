@@ -18,5 +18,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.statusBarStyle = .lightContent
         return true
     }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        turnOnSleepMode()
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        turnOffSleepMode()
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        turnOnSleepMode()
+    }
+    
+    func turnOffSleepMode() {
+        UIApplication.shared.isIdleTimerDisabled = true
+    }
+    
+    func turnOnSleepMode() {
+        UIApplication.shared.isIdleTimerDisabled = false
+    }
 }
 
