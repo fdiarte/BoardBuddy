@@ -31,26 +31,6 @@ class DataManager {
         }
     }
     
-    func encodeBanker(banker: Banker) -> Data? {
-        do {
-            let encodedBanker = try JSONEncoder().encode(banker)
-            return encodedBanker
-        } catch {
-            print("Error encoding banker: \(error.localizedDescription)")
-            return nil
-        }
-    }
-    
-    func decodBanker(from data: Data) -> Banker? {
-        do {
-            let banker = try JSONDecoder().decode(Banker.self, from: data)
-            return banker
-        } catch {
-            print("Error decoding Banker: \(error.localizedDescription)")
-            return nil
-        }
-    }
-    
     func encodeImage(from image: UIImage) -> Data? {
         guard let imageData: Data = UIImagePNGRepresentation(image) else {
             print("Cannot convert image to data")
@@ -65,26 +45,6 @@ class DataManager {
             return nil
         }
         return image
-    }
-    
-    func encodeSendingInfo(from info: SendingInfo) -> Data? {
-        do {
-            let encodedInfo = try JSONEncoder().encode(info)
-            return encodedInfo
-        } catch {
-            print("Cant convert info to data")
-            return nil
-        }
-    }
-    
-    func decodeSendingInfo(from data: Data) -> SendingInfo? {
-        do {
-            let info = try JSONDecoder().decode(SendingInfo.self, from: data)
-            return info
-        } catch {
-            print("Cant decode info: \(error)")
-            return nil
-        }
     }
     
     func encodePlayers(from players: [Player]) -> Data? {
@@ -167,8 +127,4 @@ class DataManager {
             return nil
         }
     }
-    
 }
-
-
-

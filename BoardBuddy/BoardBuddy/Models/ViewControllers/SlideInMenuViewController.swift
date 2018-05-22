@@ -66,21 +66,14 @@ class SlideInMenuViewController: UIViewController, UICollectionViewDelegate, UIC
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         delegate?.settingTapped(settingNumber: indexPath.row)
         if indexPath.row == 0 {
-            print("Rules Tapped")
         } else if indexPath.row == 1 {
-            print("Leave Match Tapped")
             createLeaveMatchAlert()
         } else {
-            print("Cancel Match Tapped")
             createEndMatchAlert()
         }
     }
     
     func endMatch() {
-        
-//        let matchEnd = MatchEndedController.shared.createMatchEnd()
-//        MPCManager.shared.sendMatchEnded(matchEnded: matchEnd)
-        
         let storyboard = UIStoryboard(name: "EntryScreen", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "entryScreen")
         self.present(viewController, animated: true, completion: nil)
@@ -92,7 +85,6 @@ class SlideInMenuViewController: UIViewController, UICollectionViewDelegate, UIC
         
         guard var players = players else { return }
         var currentPlayer: Player?
-        
         
         for (index,player) in players.enumerated() {
             if player.deviceName == UIDevice.current.name {
@@ -115,8 +107,8 @@ class SlideInMenuViewController: UIViewController, UICollectionViewDelegate, UIC
         let alert = UIAlertController(title: "Are you sure you want to leave the match?", message: nil, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let leaveMatchAction = UIAlertAction(title: "Leave Match", style: .destructive) { (_) in
-            // kick player out
             
+            // kick player out
             self.leaveMatch()
         }
         
@@ -129,8 +121,8 @@ class SlideInMenuViewController: UIViewController, UICollectionViewDelegate, UIC
         let alert = UIAlertController(title: "Are you sure you want to cancel the match?", message: nil, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let leaveMatchAction = UIAlertAction(title: "Cancel Match", style: .destructive) { (_) in
-            // kick people out
             
+            // kick people out
             self.endMatch()
         }
         

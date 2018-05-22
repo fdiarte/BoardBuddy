@@ -16,27 +16,8 @@ class PlayerController {
     func createNewPlayerWithName(displayName: String, image: UIImage, isHost: Bool) {
         
         let imageData = DataManager.shared.encodeImage(from: image)
-        
         guard let data = imageData else { return }
         let newPlayer = Player(displayName: displayName, imageData: data, isHost: isHost)
         players.append(newPlayer)
-        
-        print("Player created")
     }
-    
-//    func requestAmount(amount: Int, from player: Player, requester: Player) {
-//
-//    }
-//
-//    func requestAmount(amount: Int, from banker: Banker, for player: Player) {
-//
-//    }
-//
-//    func payBanker(banker: Banker, amount: Int, player: Player) {
-//
-//    }
-//
-//    func getMoney(player: Player, amount: Int) {
-//
-//    }
 }

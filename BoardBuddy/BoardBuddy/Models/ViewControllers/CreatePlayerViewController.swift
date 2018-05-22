@@ -144,14 +144,12 @@ class CreatePlayerViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
 }
 
 extension CreatePlayerViewController: MPCManagerDelegate, MCBrowserViewControllerDelegate {
+    
     func sessionNotConnected() {
     }    
     func matchEndedRecieved(from data: Data) {
@@ -161,8 +159,6 @@ extension CreatePlayerViewController: MPCManagerDelegate, MCBrowserViewControlle
     func acceptedFundsRecieved(from data: Data) {
     }
     func playersArrayRecieved(from data: Data) {
-    }
-    func infoRecieved(from data: Data) {
     }
     func playerRecieved(from data: Data) {
     }
@@ -176,8 +172,6 @@ extension CreatePlayerViewController: MPCManagerDelegate, MCBrowserViewControlle
     }
 
     func playerJoinedSession() {
-        //transition to lobby
-//        MPCManager.shared.sendPerson(player: PlayerController.shared.players.first!)
         dismiss(animated: true, completion: nil)
         let storyboard = UIStoryboard(name: "Lobby", bundle: nil)
         let view = storyboard.instantiateViewController(withIdentifier: "lobby")

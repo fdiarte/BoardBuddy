@@ -8,14 +8,6 @@
 
 import Foundation
 
-class SendingInfo: Codable {
-    var amountChanged: Int
-    
-    init(amountChanged: Int) {
-        self.amountChanged = amountChanged
-    }
-}
-
 class MatchEnded: Codable {
     var isMatchCancelled: BooleanLiteralType
     

@@ -191,7 +191,6 @@ extension HomeScreenViewController: MPCManagerDelegate, BankDeailDelegate {
                 currentMoney = player.moneyAmount
             }
         }
-        
         playerMoneyLabel.count(from: Float(previousMoney), to: Float(currentMoney))
     }
     
@@ -234,8 +233,6 @@ extension HomeScreenViewController: MPCManagerDelegate, BankDeailDelegate {
     func matchEndedRecieved(from data: Data) {
         guard let matchEnded = DataManager.shared.decodeMatchEnd(from: data) else { return }
         
-        print("Match end recieved")
-        
         if matchEnded.isMatchCancelled == true {
             let storyboard = UIStoryboard(name: "EntryScreen", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "entryScreen")
@@ -270,11 +267,7 @@ extension HomeScreenViewController: MPCManagerDelegate, BankDeailDelegate {
         }
     }
     
-    func infoRecieved(from data: Data) {
-    }
-    
     func playersArrayRecieved(from data: Data) {
-        print("Recieved players from home")
         guard let decondedPlayers = DataManager.shared.decodePlayers(from: data) else { return }
         guard let players = players else { return }
         
@@ -311,7 +304,6 @@ extension HomeScreenViewController: MPCManagerDelegate, BankDeailDelegate {
             
             let acceptedFundsRequest = AcceptFundsController.shared.createAcceptedFunds(didAccept: true, amount: amount, from: payer)
             MPCManager.shared.sendAcceptedFunds(acceptedFunds: acceptedFundsRequest, to: requester)
-            
         }
         alert.addAction(denyButton)
         alert.addAction(payButton)

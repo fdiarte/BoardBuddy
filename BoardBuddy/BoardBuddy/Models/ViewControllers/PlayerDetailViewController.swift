@@ -38,7 +38,6 @@ class PlayerDetailViewController: UIViewController {
         updateViews()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
     }
     
     
@@ -88,7 +87,6 @@ class PlayerDetailViewController: UIViewController {
         nameLabel.text = player.displayName
         moneyLabel.text = "\(player.moneyAmount)"
         boardPieceImageView.image = image
-        
         boardPieceImageView.tintColor = Colors.mintCreme
     }
 }

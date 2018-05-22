@@ -23,11 +23,6 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
         super.viewDidLoad()
         MPCManager.shared.delegate = self
         startGameButton.isEnabled = false
-        
-        
-        activityIndicator.stopAnimating()
-        startGameButton.isEnabled = true
-        
         sendPlayerToHost()
     }
     
@@ -40,7 +35,6 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return MPCManager.shared.currentGamePeers.count
     }
     
@@ -60,12 +54,10 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
         }
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath) as? LobbyCell else {return UITableViewCell()}
         
         cell.userNameLabel.text = MPCManager.shared.currentGamePeers[indexPath.row].displayName
-        
         return cell
     }
     
@@ -111,21 +103,19 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
         guard let decodedPlayer = DataManager.shared.decodePlayer(from: data) else { return }
         if players.last == decodedPlayer {
             print("Same player")
-//            checkNumberOfPlayers()
+            checkNumberOfPlayers()
         } else {
             players.append(decodedPlayer)
             for (index,player) in players.enumerated() {
                 print("Player at index from Lobby: \(index)", player.displayName)
             }
-//            checkNumberOfPlayers()
+            checkNumberOfPlayers()
         }
     }
     
     func requestFundsRecieved(from data: Data) {
     }    
     func acceptedFundsRecieved(from data: Data) {
-    }
-    func infoRecieved(from data: Data) {
     }
     func matchEndedRecieved(from data: Data) {
     }

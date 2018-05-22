@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7D6249B320AA3DD6005CB1EF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6249B220AA3DD6005CB1EF /* Player.swift */; };
-		7D6249B520AA3EE6005CB1EF /* Banker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6249B420AA3EE6005CB1EF /* Banker.swift */; };
 		7D6249B720AA3FAD005CB1EF /* Player Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6249B620AA3FAD005CB1EF /* Player Controller.swift */; };
-		7D6249B920AA3FB5005CB1EF /* Banker Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6249B820AA3FB5005CB1EF /* Banker Controller.swift */; };
 		7D6249BB20AA42EC005CB1EF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6249BA20AA42EC005CB1EF /* DataManager.swift */; };
 		7D6249DA20AB6F9C005CB1EF /* MPCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6249D920AB6F9C005CB1EF /* MPCManager.swift */; };
 		7D7A8FB920AB82730030F414 /* AnimatedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7A8FB820AB82730030F414 /* AnimatedLabel.swift */; };
@@ -47,9 +45,7 @@
 
 /* Begin PBXFileReference section */
 		7D6249B220AA3DD6005CB1EF /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		7D6249B420AA3EE6005CB1EF /* Banker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banker.swift; sourceTree = "<group>"; };
 		7D6249B620AA3FAD005CB1EF /* Player Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player Controller.swift"; sourceTree = "<group>"; };
-		7D6249B820AA3FB5005CB1EF /* Banker Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Banker Controller.swift"; sourceTree = "<group>"; };
 		7D6249BA20AA42EC005CB1EF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		7D6249D920AB6F9C005CB1EF /* MPCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCManager.swift; sourceTree = "<group>"; };
 		7D7A8FB820AB82730030F414 /* AnimatedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedLabel.swift; sourceTree = "<group>"; };
@@ -147,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				7D6249B220AA3DD6005CB1EF /* Player.swift */,
-				7D6249B420AA3EE6005CB1EF /* Banker.swift */,
 				7DFB5EC720ACCD6300C6C67D /* SendingInfo.swift */,
 				7DFB5ED120ADDDEC00C6C67D /* RequestFunds.swift */,
 				7DFB5ED320ADDDF800C6C67D /* AcceptFunds.swift */,
@@ -160,7 +155,6 @@
 			isa = PBXGroup;
 			children = (
 				7D6249B620AA3FAD005CB1EF /* Player Controller.swift */,
-				7D6249B820AA3FB5005CB1EF /* Banker Controller.swift */,
 				7DA3F11920AF32CA009E46BB /* InfoController.swift */,
 			);
 			path = ModelControllers;
@@ -293,11 +287,9 @@
 			files = (
 				9D8A821420AB37DF0031CBEF /* ColorExtensions.swift in Sources */,
 				7DA3F11A20AF32CA009E46BB /* InfoController.swift in Sources */,
-				7D6249B920AA3FB5005CB1EF /* Banker Controller.swift in Sources */,
 				7D7A8FBB20AB99CA0030F414 /* LobbyTableViewController.swift in Sources */,
 				7D6249B720AA3FAD005CB1EF /* Player Controller.swift in Sources */,
 				7DFB5ED220ADDDEC00C6C67D /* RequestFunds.swift in Sources */,
-				7D6249B520AA3EE6005CB1EF /* Banker.swift in Sources */,
 				F78DB95E20ACA407006AB041 /* RulesPageTableViewController.swift in Sources */,
 				F750B0E620AA2F5B00650634 /* BankDetailViewController.swift in Sources */,
 				7D6249DA20AB6F9C005CB1EF /* MPCManager.swift in Sources */,

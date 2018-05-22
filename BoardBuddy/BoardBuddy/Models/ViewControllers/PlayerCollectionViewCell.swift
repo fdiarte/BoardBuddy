@@ -20,7 +20,6 @@ class PlayerCollectionViewCell: UICollectionViewCell {
     var player: Player? {
         didSet {
             updateViews()
-            
             let tap = UITapGestureRecognizer(target: self, action: #selector(userTappedCell))
             tap.delegate = self as? UIGestureRecognizerDelegate
             addGestureRecognizer(tap)
