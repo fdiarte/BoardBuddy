@@ -19,7 +19,6 @@ class PlayerCollectionViewCell: UICollectionViewCell {
     
     var player: Player? {
         didSet {
-            updateViews()
             let tap = UITapGestureRecognizer(target: self, action: #selector(userTappedCell))
             tap.delegate = self as? UIGestureRecognizerDelegate
             addGestureRecognizer(tap)
@@ -29,10 +28,6 @@ class PlayerCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var boardPieceImageView: UIImageView!
     @IBOutlet weak var playerAmountLabel: UILabel!
     @IBOutlet weak var playerNameLabel: UILabel!
-    
-    func updateViews() {
-        backgroundColor = Colors.green
-    }
     
     @objc func userTappedCell() {
         delegate?.userTappedCell(self)
