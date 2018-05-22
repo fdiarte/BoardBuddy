@@ -12,7 +12,6 @@ import MultipeerConnectivity
 protocol MPCManagerDelegate {
     func playerJoinedSession()
     func playerRecieved(from data: Data)
-    func infoRecieved(from data: Data)
     func playersArrayRecieved(from data: Data)
     func requestFundsRecieved(from data: Data)
     func acceptedFundsRecieved(from data: Data)
@@ -34,7 +33,6 @@ class MPCManager: NSObject, MCSessionDelegate {
     var advertiser: MCNearbyServiceAdvertiser!
     var advertiserAssistant: MCAdvertiserAssistant!
     var currentGamePeers = [MCPeerID]()
-    var currentPlayers = [Player]()
     
     // MARK: - Manager Initializer
     override init() {
@@ -83,7 +81,6 @@ class MPCManager: NSObject, MCSessionDelegate {
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         // turn data to person object
-        delegate?.infoRecieved(from: data)
         delegate?.playerRecieved(from: data)
         delegate?.playersArrayRecieved(from: data)
         delegate?.requestFundsRecieved(from: data)
@@ -104,11 +101,9 @@ class MPCManager: NSObject, MCSessionDelegate {
     }
     
     func stopSession() {
-        print("Before ending session: \(session): \(session.connectedPeers.count)")
         session.disconnect()
         advertiserAssistant.stop()
         currentGamePeers.removeAll()
-        print("After ending session: \(session): \(session.connectedPeers.count)")
     }
     
     func playerDisconnected(player: Player) {
@@ -125,16 +120,6 @@ class MPCManager: NSObject, MCSessionDelegate {
             try session.send(data, toPeers: session.connectedPeers, with: .reliable)
         } catch {
             print("Cant send player: \(error.localizedDescription)")
-        }
-    }
-    
-    func sendInfo(info: SendingInfo) {
-        guard let data = DataManager.shared.encodeSendingInfo(from: info) else { return }
-        
-        do {
-            try session.send(data, toPeers: [currentGamePeers[0]], with: .reliable)
-        } catch {
-            print("Cant send info: \(error.localizedDescription)")
         }
     }
     

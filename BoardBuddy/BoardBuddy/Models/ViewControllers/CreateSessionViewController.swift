@@ -119,11 +119,11 @@ class CreateSessionViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func createSessionButtonTapped(_ sender: Any) {
         guard let sessionName = sessionNameTextField.text, !sessionName.isEmpty, let image = playerImage else { presentAlert(); return}
-        //create session
-        //create player
         
+        //create session
         PlayerController.shared.createNewPlayerWithName(displayName: sessionName, image: image, isHost: true)
         
+        //create player
         MPCManager.shared.advertiserAssistant.start()
         
         //push Lobby

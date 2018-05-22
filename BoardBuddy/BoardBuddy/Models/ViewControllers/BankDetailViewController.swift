@@ -107,7 +107,6 @@ class BankDetailViewController: UIViewController, UITextFieldDelegate {
         
         alert.addAction(cancelAction)
         alert.addAction(withdrawlAction)
-        
         present(alert, animated: true, completion: nil)
     }
     
@@ -134,21 +133,15 @@ class BankDetailViewController: UIViewController, UITextFieldDelegate {
             MPCManager.shared.sendPlayers(players: players)
             
             self.delegate?.playerMoneyDecremented(money: moneyToSend)
-    
-            print("Successfully paid bank")
             self.dismiss(animated: true, completion: nil)
         }
         
         alert.addAction(cancelAction)
         alert.addAction(payAction)
-        
         present(alert, animated: true, completion: nil)
     }
     
     func updateViews() {
-//        guard let banker = BankerController.shared.banker else {return}
-//        moneyLabel.text = "\(banker.startingAmount)"
-//        bankerImageView.image = ?
         bankerImageView.image = UIImage(named: "bank")?.withRenderingMode(.alwaysTemplate)
         bankerImageView.tintColor = Colors.mintCreme
     }
