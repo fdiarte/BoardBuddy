@@ -22,6 +22,7 @@ class PlayerDetailViewController: UIViewController {
     let singleTap = UITapGestureRecognizer()
     
     var player: Player?
+    var players: [Player]?
     
     //MARK: - LifeCycle
     
@@ -61,8 +62,18 @@ class PlayerDetailViewController: UIViewController {
         guard let player = player else { return }
         guard let moneyRequestString = moneyRequestTextField.text else { return }
         guard let moneyRequest = Int(moneyRequestString) else { return }
+        guard let players = players else { return }
+        var playerReqestingFunds: Player?
         
-        let fundsRequst = RequestFundsController.shared.createNewRequestForFunds(from: player, for: moneyRequest)
+        for player in players {
+            if player.deviceName == UIDevice.current.name {
+                playerReqestingFunds = player
+            }
+        }
+        
+        guard let playerRequesting = playerReqestingFunds else { return }
+        
+        let fundsRequst = RequestFundsController.shared.createNewRequestForFunds(playerRequestingFunds: playerRequesting, playerToSend: player, for: moneyRequest)
         MPCManager.shared.sendRequestFunds(request: fundsRequst, to: player)
         dismiss(animated: true, completion: nil)
     }

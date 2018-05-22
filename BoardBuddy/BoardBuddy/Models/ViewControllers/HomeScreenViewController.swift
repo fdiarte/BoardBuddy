@@ -30,7 +30,6 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         collectionView.dataSource = self
         MPCManager.shared.delegate = self
         bankButton.layer.cornerRadius = 10
-        
     }
     
     func updateContainerView() {
@@ -143,6 +142,7 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         if segue.identifier == "toPlayerDetailVC" {
             guard let destinationVC = segue.destination as? PlayerDetailViewController else { return }
             destinationVC.player = sender as? Player
+            destinationVC.players = self.players
         } else if segue.identifier == "ToSlideInMenuVC" {
             let destinationVC = segue.destination as? SlideInMenuViewController
             destinationVC?.delegate = self
@@ -197,10 +197,11 @@ extension HomeScreenViewController: MPCManagerDelegate, BankDeailDelegate {
     
     func requestFundsRecieved(from data: Data) {
         guard let fundsRequest = DataManager.shared.decodeRequest(from: data) else { return }
-        let requester = fundsRequest.player
+        let requester = fundsRequest.playerRequestingFunds
+        let payer = fundsRequest.playerToSend
         let amountRequesting = fundsRequest.amount
         
-        createRequestFundsAlert(requester: requester, amount: amountRequesting, payer: requester)
+        createRequestFundsAlert(requester: requester, amount: amountRequesting, payer: payer)
     }
     
     func acceptedFundsRecieved(from data: Data) {
