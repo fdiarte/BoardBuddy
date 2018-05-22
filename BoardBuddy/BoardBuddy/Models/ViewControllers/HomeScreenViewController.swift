@@ -21,6 +21,7 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     
     var players: [Player]?
     var moneyAmount: Int?
+    static let shared = HomeScreenViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,7 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         collectionView.dataSource = self
         MPCManager.shared.delegate = self
         bankButton.layer.cornerRadius = 10
+        UIApplication.shared.statusBarStyle = .default
     }
     
     func updateContainerView() {
@@ -47,6 +49,7 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
             self.containerView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height * 0.35)
         }) { (success) in
         }
+        SlideInMenuViewController.shared.players = self.players
     }
     
     @IBAction func dismissView(_ sender: Any) {
@@ -110,7 +113,6 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
 
         let player = cellPlayers[indexPath.row]
         guard let image = UIImage(data: player.imageData) else { return UICollectionViewCell() }
-        //this is a test! we dont want to set cell properties here.... pass the player to the cell and let the cell update its own properties
     
         cell?.playerNameLabel.text = player.displayName
         cell?.playerAmountLabel.text = "$ \(player.moneyAmount)"
@@ -143,6 +145,7 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
             guard let destinationVC = segue.destination as? PlayerDetailViewController else { return }
             destinationVC.player = sender as? Player
             destinationVC.players = self.players
+            
         } else if segue.identifier == "ToSlideInMenuVC" {
             let destinationVC = segue.destination as? SlideInMenuViewController
             destinationVC?.delegate = self
@@ -156,7 +159,6 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     @IBAction func userTappedBankButton(_ sender: UIButton) {
-        
         performSegue(withIdentifier: "toBankDetailVC", sender: self.players)
         let presentedVC = BankDetailViewController()
         presentedVC.delegate = self

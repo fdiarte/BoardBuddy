@@ -38,7 +38,7 @@
                                 <color key="textColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQt-ws-OBb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQt-ws-OBb">
                                 <rect key="frame" x="50" y="115.5" width="275" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -166,6 +166,17 @@
                                 </subviews>
                                 <color key="tintColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAl-38-P3n">
+                                <rect key="frame" x="25" y="110" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="9DV-69-LSL"/>
+                                    <constraint firstAttribute="height" constant="30" id="b70-5N-dyM"/>
+                                </constraints>
+                                <state key="normal" image="backArrow"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="8Fs-gx-LQt" eventType="touchUpInside" id="9YW-D4-NI1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1529411765" green="0.18823529410000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -187,6 +198,8 @@
                             <constraint firstItem="Kfg-oa-lVX" firstAttribute="leading" secondItem="asx-4B-DKZ" secondAttribute="leading" id="Y9Z-39-ebj"/>
                             <constraint firstItem="cgb-bB-asM" firstAttribute="leading" secondItem="asx-4B-DKZ" secondAttribute="leading" constant="25" id="enS-xp-OAV"/>
                             <constraint firstItem="asx-4B-DKZ" firstAttribute="trailing" secondItem="0xk-RW-J5P" secondAttribute="trailing" constant="50" id="i5P-1I-SXi"/>
+                            <constraint firstItem="9ef-aB-RNa" firstAttribute="top" secondItem="zAl-38-P3n" secondAttribute="bottom" constant="16" id="jFC-ON-zOE"/>
+                            <constraint firstItem="zAl-38-P3n" firstAttribute="leading" secondItem="asx-4B-DKZ" secondAttribute="leading" constant="25" id="qHL-Wm-H3v"/>
                             <constraint firstItem="9ef-aB-RNa" firstAttribute="leading" secondItem="asx-4B-DKZ" secondAttribute="leading" constant="50" id="tG7-hA-Yll"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="asx-4B-DKZ"/>
@@ -217,5 +230,6 @@
         <image name="ThimbleIcon" width="350" height="350"/>
         <image name="TophatIcon " width="350" height="350"/>
         <image name="Wheelbarrow" width="350" height="350"/>
+        <image name="backArrow" width="235" height="179"/>
     </resources>
 </document>

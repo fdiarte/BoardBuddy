@@ -24,6 +24,7 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
         MPCManager.shared.delegate = self
         startGameButton.isEnabled = false
         sendPlayerToHost()
+        UIApplication.shared.statusBarStyle = .default
     }
     
     func sendPlayerToHost() {

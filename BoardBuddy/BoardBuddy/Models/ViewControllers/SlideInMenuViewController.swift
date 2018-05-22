@@ -24,12 +24,13 @@ protocol SlideInMenuViewControllerDelegate: class {
 }
 
 class SlideInMenuViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
+    
     var players: [Player]?
 
     @IBOutlet weak var sessionNameLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     weak var delegate: SlideInMenuViewControllerDelegate?
+    static let shared = SlideInMenuViewController()
 
     let settings: [Setting] = {
         let rules = Setting(name: "Rules", imageName: "rules", number: 1)
@@ -41,7 +42,10 @@ class SlideInMenuViewController: UIViewController, UICollectionViewDelegate, UIC
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -104,6 +108,7 @@ class SlideInMenuViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     func createLeaveMatchAlert() {
+        
         let alert = UIAlertController(title: "Are you sure you want to leave the match?", message: nil, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let leaveMatchAction = UIAlertAction(title: "Leave Match", style: .destructive) { (_) in

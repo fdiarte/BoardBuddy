@@ -13,7 +13,7 @@
         <!--Entry Screen View Controller-->
         <scene sceneID="r69-7y-U5w">
             <objects>
-                <viewController storyboardIdentifier="entryScreen" id="sXg-wo-9lZ" customClass="EntryScreenViewController" customModule="BoardBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="entryScreen" modalTransitionStyle="crossDissolve" id="sXg-wo-9lZ" customClass="EntryScreenViewController" customModule="BoardBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="haO-4z-1uf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

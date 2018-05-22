@@ -36,8 +36,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0b-m1-yX7">
-                                        <rect key="frame" x="0.0" y="290" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="270" width="375" height="40"/>
                                         <color key="backgroundColor" red="0.15294117647058825" green="0.80784313725490198" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="rln-6s-gGo"/>
+                                        </constraints>
                                         <color key="tintColor" red="0.23529411759999999" green="0.28235294119999998" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Request Money"/>
                                         <connections>
@@ -45,8 +48,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBG-rR-zdA">
-                                        <rect key="frame" x="0.0" y="320" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="310" width="375" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.8980392157" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="pb4-Cc-wuM"/>
+                                        </constraints>
                                         <color key="tintColor" red="0.23529411759999999" green="0.28235294119999998" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Purchase"/>
                                         <connections>
@@ -93,7 +99,6 @@
                                     <constraint firstAttribute="height" constant="350" id="hMu-NZ-ADa"/>
                                     <constraint firstItem="hBG-rR-zdA" firstAttribute="leading" secondItem="b1U-6S-Wbv" secondAttribute="leading" id="nVa-Q6-rwF"/>
                                     <constraint firstItem="3TQ-OH-1z6" firstAttribute="leading" secondItem="b1U-6S-Wbv" secondAttribute="leading" constant="90" id="nem-mw-gwb"/>
-                                    <constraint firstItem="n0b-m1-yX7" firstAttribute="top" secondItem="3TQ-OH-1z6" secondAttribute="bottom" constant="30" id="shP-Lx-4RD"/>
                                     <constraint firstItem="2hN-A8-LgO" firstAttribute="leading" secondItem="b1U-6S-Wbv" secondAttribute="leading" constant="8" id="tQc-14-o2R"/>
                                 </constraints>
                             </view>
