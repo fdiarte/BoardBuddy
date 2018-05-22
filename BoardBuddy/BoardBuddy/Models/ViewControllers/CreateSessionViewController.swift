@@ -31,6 +31,7 @@ class CreateSessionViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.shared.statusBarStyle = .lightContent
         setupObjects()
         sessionNameTextField.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -103,6 +104,12 @@ class CreateSessionViewController: UIViewController, UITextFieldDelegate {
         print("hat")
         highlight(Button: hatButton)
         playerImage = #imageLiteral(resourceName: "TophatIcon ")
+    }
+    
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "EntryScreen", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "entryScreen")
+        self.present(viewController, animated: true, completion: nil)
     }
     
     func highlight(Button button: UIButton) {

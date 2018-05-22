@@ -35,8 +35,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tk3-RE-yMd">
-                                        <rect key="frame" x="0.0" y="320" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="310" width="375" height="40"/>
                                         <color key="backgroundColor" red="0.1529411765" green="0.80784313730000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="AXl-4T-JmA"/>
+                                        </constraints>
                                         <state key="normal" title="Request">
                                             <color key="titleColor" red="0.23529411759999999" green="0.28235294119999998" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -83,7 +86,6 @@
                                     <constraint firstAttribute="trailing" secondItem="tk3-RE-yMd" secondAttribute="trailing" id="hG4-fi-Kkf"/>
                                     <constraint firstItem="l1y-af-QMU" firstAttribute="leading" secondItem="UJQ-uv-jTf" secondAttribute="leading" constant="8" id="iLD-P2-DYh"/>
                                     <constraint firstItem="Juf-yF-aNd" firstAttribute="leading" secondItem="UJQ-uv-jTf" secondAttribute="leading" constant="8" id="kLP-Wt-g6K"/>
-                                    <constraint firstItem="tk3-RE-yMd" firstAttribute="top" secondItem="nZL-lW-yAe" secondAttribute="bottom" constant="30" id="mmn-MY-ClU"/>
                                     <constraint firstItem="KUj-S9-NrN" firstAttribute="top" secondItem="zXh-6Q-ds4" secondAttribute="bottom" constant="10" id="mpY-y2-CRE"/>
                                     <constraint firstItem="zXh-6Q-ds4" firstAttribute="top" secondItem="Juf-yF-aNd" secondAttribute="bottom" constant="8" id="xNT-8I-jxo"/>
                                 </constraints>

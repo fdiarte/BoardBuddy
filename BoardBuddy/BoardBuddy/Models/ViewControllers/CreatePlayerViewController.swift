@@ -30,13 +30,13 @@ class CreatePlayerViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupObjects()
+        UIApplication.shared.statusBarStyle = .lightContent
         playerNameTextField.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil);
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil);
     }
     
     //MARK: - Methods
-    
     func setupObjects() {
         playerNameTextField.returnKeyType = .done
         singleTap.addTarget(self, action: #selector(tapGestureTapped))
@@ -115,13 +115,18 @@ class CreatePlayerViewController: UIViewController, UITextFieldDelegate {
     @IBAction func readyButtonPressed(_ sender: Any) {
         guard let image = playerImage, let name = playerNameTextField.text, !name.isEmpty else { presentAlert() ; return }
         
-        
          //create player
         PlayerController.shared.createNewPlayerWithName(displayName: name, image: image, isHost: false)
         MPCManager.shared.delegate = self
         MPCManager.shared.browser.delegate = self
         
         present(MPCManager.shared.browser, animated: true, completion: nil)
+    }
+    
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "EntryScreen", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "entryScreen")
+        self.present(viewController, animated: true, completion: nil)
     }
     
     func presentAlert() {
