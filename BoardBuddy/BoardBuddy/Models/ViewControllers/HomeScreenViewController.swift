@@ -83,23 +83,26 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func updateViews() {
-        var bottomPlayer: Player?
-        guard let players = players else { return }
-        for player in players {
-            if player.deviceName == UIDevice.current.name {
-                bottomPlayer = player
+        
+        DispatchQueue.main.async {
+            var bottomPlayer: Player?
+            guard let players = self.players else { return }
+            for player in players {
+                if player.deviceName == UIDevice.current.name {
+                    bottomPlayer = player
+                }
             }
+            
+            guard let currentPlayer = bottomPlayer else { return }
+            guard let playerImage = UIImage(data: currentPlayer.imageData) else { return }
+            
+            self.sessionNameLabel.text = "Board Buddy"
+            self.boardPieceImageView.image = playerImage
+            self.boardPieceImageView.tintColor = Colors.mintCreme
+            
+            self.nameLabel.text = currentPlayer.displayName
+            self.playerMoneyLabel.text = "$ \(currentPlayer.moneyAmount)"
         }
-        
-        guard let currentPlayer = bottomPlayer else { return }
-        guard let playerImage = UIImage(data: currentPlayer.imageData) else { return }
-
-        sessionNameLabel.text = "Board Buddy"
-        boardPieceImageView.image = playerImage
-        boardPieceImageView.tintColor = Colors.mintCreme
-        
-        nameLabel.text = currentPlayer.displayName
-        playerMoneyLabel.text = "$ \(currentPlayer.moneyAmount)"
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

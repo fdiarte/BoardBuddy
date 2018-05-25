@@ -24,11 +24,14 @@ class EntryScreenViewController: UIViewController {
     }
     
     func setupButtons() {
-        createSessionButton.layer.cornerRadius = 20
-        joinSessionButton.layer.cornerRadius = 20
         
-        createSessionButton.setTitle("Create Session", for: .normal)
-        joinSessionButton.setTitle("Join Session", for: .normal)
+        DispatchQueue.main.async {
+            self.createSessionButton.layer.cornerRadius = 20
+            self.joinSessionButton.layer.cornerRadius = 20
+            
+            self.createSessionButton.setTitle("Create Session", for: .normal)
+            self.joinSessionButton.setTitle("Join Session", for: .normal)
+        }
     }
 }
 
