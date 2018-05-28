@@ -36,3 +36,12 @@ class MatchEndedController {
         return matchEnd
     }
 }
+
+class ReadyInfoController {
+    static let shared = ReadyInfoController()
+    
+    func createReadyInfo() -> ReadyInfo {
+        let readyInfo = ReadyInfo(isPlayerReady: true)
+        return readyInfo
+    }
+}

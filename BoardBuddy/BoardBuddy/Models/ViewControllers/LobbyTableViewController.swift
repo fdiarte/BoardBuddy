@@ -123,6 +123,10 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
     func sessionNotConnected() {
     }
     
+    func readyInfoRecieved(from data: Data) {
+        
+    }
+    
     @IBAction func startGameButtonTapped(_ sender: UIBarButtonItem) {
         
         MPCManager.shared.sendPlayers(players: players)

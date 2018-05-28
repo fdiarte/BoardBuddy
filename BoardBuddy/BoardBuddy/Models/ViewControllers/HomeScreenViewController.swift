@@ -179,6 +179,8 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
 }
 
 extension HomeScreenViewController: MPCManagerDelegate, BankDeailDelegate {
+    func readyInfoRecieved(from data: Data) {
+    }
 
     func playerMoneyDecremented(money: Int) {
         guard let players = players else { return }
