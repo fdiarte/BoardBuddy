@@ -52,6 +52,8 @@ class RulesPageTableViewController: UITableViewController {
     override  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return emptyArray[section].sectionName
     }
+    
+   
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = RulesCell(style: UITableViewCellStyle.value1, reuseIdentifier: "rulesCell")

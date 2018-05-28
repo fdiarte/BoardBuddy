@@ -66,42 +66,50 @@ class CreateSessionViewController: UIViewController, UITextFieldDelegate {
     @IBAction func bootButtonTapped(_ sender: Any) {
         print("boot")
         highlight(Button: bootButton)
+        self.view.endEditing(true)
         playerImage = #imageLiteral(resourceName: "BootIcon")
     }
     @IBAction func cannonButtonTapped(_ sender: Any) {
         print("cannon")
         highlight(Button: cannonButton)
+        self.view.endEditing(true)
         playerImage = #imageLiteral(resourceName: "CannonIcon")
     }
     @IBAction func dogButtonTapped(_ sender: Any) {
         print("dog")
         highlight(Button: dogButton)
+        self.view.endEditing(true)
         playerImage = #imageLiteral(resourceName: "DogIcon")
     }
     @IBAction func moneyButtonTapped(_ sender: Any) {
         print("money")
         highlight(Button: moneyButton)
+        self.view.endEditing(true)
         playerImage = #imageLiteral(resourceName: "MoneyBagIcon")
     }
     @IBAction func carButtonTapped(_ sender: Any) {
         print("car")
         highlight(Button: carButton)
+        self.view.endEditing(true)
         playerImage = #imageLiteral(resourceName: "RaceCar")
     }
     @IBAction func thimbleButtonTapped(_ sender: Any) {
         print("thimble")
         highlight(Button: thimbleButton)
+        self.view.endEditing(true)
         playerImage = #imageLiteral(resourceName: "ThimbleIcon")
     }
     
     @IBAction func wheelbarrowButtonTapped(_ sender: Any) {
         print("wheelbarrow")
         highlight(Button: wheelbarrowButton)
+        self.view.endEditing(true)
         playerImage = #imageLiteral(resourceName: "Wheelbarrow")
     }
     @IBAction func hatButtonTapped(_ sender: Any) {
         print("hat")
         highlight(Button: hatButton)
+        self.view.endEditing(true)
         playerImage = #imageLiteral(resourceName: "TophatIcon ")
     }
     

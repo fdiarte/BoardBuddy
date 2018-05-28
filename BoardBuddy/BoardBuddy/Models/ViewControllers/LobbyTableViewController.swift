@@ -34,7 +34,7 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        if  indexPath.row == rowCount {
+        if rowCount == 0 || indexPath.row == rowCount {
             cell.alpha = 0
             
             let transform = CATransform3DTranslate(CATransform3DIdentity, -250, 20, 0)
