@@ -10,10 +10,13 @@ import UIKit
 
 class Instruction3ViewController: UIViewController {
 
+    @IBOutlet weak var bankerImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        bankerImageView.layer.borderWidth = 2
+        
+        bankerImageView.layer.borderColor = Colors.mintCreme.cgColor
     }
 
 }

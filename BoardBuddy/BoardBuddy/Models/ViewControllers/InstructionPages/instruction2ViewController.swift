@@ -10,9 +10,10 @@ import UIKit
 
 class Instruction2ViewController: UIViewController {
 
+    @IBOutlet weak var lobbyImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        lobbyImageView.layer.borderWidth = 2
+        lobbyImageView.layer.borderColor = Colors.mintCreme.cgColor
     }
 }

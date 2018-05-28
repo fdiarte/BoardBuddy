@@ -41,15 +41,14 @@
                                     <constraint firstAttribute="width" secondItem="wif-hI-Y2F" secondAttribute="height" multiplier="2:1" id="uL8-zE-crb"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OCW-7w-sd9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EntryScreen" translatesAutoresizingMaskIntoConstraints="NO" id="OCW-7w-sd9">
                                 <rect key="frame" x="30" y="50" width="315" height="332"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="OCW-7w-sd9" secondAttribute="height" multiplier="315:332" id="9y4-Sa-RMz"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="n60-Py-fE0">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="In order to start a game, the host needs to create a game session. Other players will then join that session." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="n60-Py-fE0">
                                 <rect key="frame" x="20" y="402" width="335" height="130"/>
-                                <string key="text">This is what you do here. This is what you do here. This is what you do here. This is what you do here. This is what you do here. </string>
                                 <color key="textColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -70,6 +69,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qzb-cR-ozP"/>
                     </view>
+                    <connections>
+                        <outlet property="createOrJoinImageView" destination="OCW-7w-sd9" id="Wnz-ER-f2o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LoH-gk-sti" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -91,12 +93,12 @@
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KJX-ik-5Me">
                                 <rect key="frame" x="20" y="402" width="335" height="130"/>
-                                <string key="text">This is what you do here. This is what you do here. This is what you do here. This is what you do here. This is what you do here. </string>
+                                <string key="text">All players need to tap "Ready" in order for the host to start the game. Make sure all players are in the lobby before the host starts</string>
                                 <color key="textColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f6C-zR-P4O">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lobby" translatesAutoresizingMaskIntoConstraints="NO" id="f6C-zR-P4O">
                                 <rect key="frame" x="30" y="50" width="315" height="332"/>
                             </imageView>
                         </subviews>
@@ -116,6 +118,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="98h-VZ-fv1"/>
                     </view>
+                    <connections>
+                        <outlet property="lobbyImageView" destination="f6C-zR-P4O" id="F5p-ut-4aP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n8q-kM-29v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -137,12 +142,12 @@
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nv6-cn-ggU">
                                 <rect key="frame" x="20" y="402" width="335" height="130"/>
-                                <string key="text">This is what you do here. This is what you do here. This is what you do here. This is what you do here. This is what you do here. </string>
+                                <string key="text">Clicking on the bank button on the main page will show this pop up. enter an amount and you can either request money from, or pay the bank.</string>
                                 <color key="textColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4r4-Ii-Tdw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Banker" translatesAutoresizingMaskIntoConstraints="NO" id="4r4-Ii-Tdw">
                                 <rect key="frame" x="30" y="50" width="315" height="332"/>
                             </imageView>
                         </subviews>
@@ -162,6 +167,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lV5-fd-Eer"/>
                     </view>
+                    <connections>
+                        <outlet property="bankerImageView" destination="4r4-Ii-Tdw" id="fiy-BC-Lia"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XLg-HG-NbN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -181,12 +189,12 @@
                                     <constraint firstAttribute="width" secondItem="xoZ-sl-mfL" secondAttribute="height" multiplier="2:1" id="frA-sJ-9Ys"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zhb-4R-Obg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Player" translatesAutoresizingMaskIntoConstraints="NO" id="zhb-4R-Obg">
                                 <rect key="frame" x="30" y="50" width="315" height="332"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Jdg-Nd-lcQ">
                                 <rect key="frame" x="20" y="402" width="335" height="130"/>
-                                <string key="text">This is what you do here. This is what you do here. This is what you do here. This is what you do here. This is what you do here. </string>
+                                <string key="text">Clicking on a player from the main page will show this pop up. enter an amount to request from the player when they land on your spaces</string>
                                 <color key="textColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -208,6 +216,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YRt-6c-zb4"/>
                     </view>
+                    <connections>
+                        <outlet property="playerImageView" destination="zhb-4R-Obg" id="Wtr-hF-uf4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rzu-4E-jOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -234,15 +245,14 @@
                                     <action selector="gotItButtonPressed:" destination="JdJ-90-Vjc" eventType="touchUpInside" id="IeM-kY-Pnw"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y7b-yz-xEr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alert" translatesAutoresizingMaskIntoConstraints="NO" id="y7b-yz-xEr">
                                 <rect key="frame" x="30" y="50" width="315" height="332"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="y7b-yz-xEr" secondAttribute="height" multiplier="315:332" id="MRn-cJ-PvT"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Tgd-iI-YCg">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="When a player requests money from you, you'll have to either pay or deny that request. " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Tgd-iI-YCg">
                                 <rect key="frame" x="20" y="402" width="335" height="130"/>
-                                <string key="text">This is what you do here. This is what you do here. This is what you do here. This is what you do here. This is what you do here. </string>
                                 <color key="textColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -263,6 +273,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2EF-Px-lIo"/>
                     </view>
+                    <connections>
+                        <outlet property="alertImageView" destination="y7b-yz-xEr" id="4D1-Ln-ik9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDd-rH-lHT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -270,6 +283,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Alert" width="691" height="656"/>
+        <image name="Banker" width="691" height="656"/>
+        <image name="EntryScreen" width="200" height="228"/>
+        <image name="Lobby" width="691" height="656"/>
+        <image name="Player" width="691" height="656"/>
         <image name="handScroll" width="174" height="120"/>
     </resources>
 </document>
