@@ -63,7 +63,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Q3c-uG-fkk">
-                                    <rect key="frame" x="169" y="4" width="37" height="37"/>
+                                    <rect key="frame" x="281.5" y="4" width="37" height="37"/>
                                     <color key="color" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </activityIndicatorView>
                             </subviews>
@@ -74,7 +74,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="playerCell" rowHeight="73" id="dKb-Gx-cFs" customClass="LobbyCell" customModule="BoardBuddy" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="playerCell" rowHeight="73" id="dKb-Gx-cFs" customClass="LobbyCell" customModule="BoardBuddy" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="73"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dKb-Gx-cFs" id="Q7P-Kb-FaW">
@@ -82,7 +82,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="userNameLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdK-Jf-ovS">
-                                            <rect key="frame" x="35" y="26" width="120" height="21"/>
+                                            <rect key="frame" x="35" y="26" width="306" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -107,7 +107,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Lobby" id="dWp-QG-bXI">
-                        <barButtonItem key="rightBarButtonItem" title="Start Game" id="DkD-NV-hLy">
+                        <barButtonItem key="rightBarButtonItem" title="Ready" id="DkD-NV-hLy">
                             <connections>
                                 <action selector="startGameButtonTapped:" destination="Fqr-sk-faL" id="AQK-as-aW0"/>
                             </connections>

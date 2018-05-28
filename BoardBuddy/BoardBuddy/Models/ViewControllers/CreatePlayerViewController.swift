@@ -58,28 +58,33 @@ class CreatePlayerViewController: UIViewController, UITextFieldDelegate {
     @objc func tapGestureTapped() {
         view.endEditing(true)
     }
+    
 
     @IBAction func bootButtonPressed(_ sender: Any) {
         print("boot")
         highlight(Button: bootButton)
+        self.view.endEditing(true)
         playerImage = #imageLiteral(resourceName: "BootIcon")
     }
     
     @IBAction func cannonButtonPressed(_ sender: Any) {
         print("cannon")
         highlight(Button: cannonButton)
+        self.view.endEditing(true)
         playerImage = #imageLiteral(resourceName: "CannonIcon")
         
     }
     @IBAction func dogButtonPressed(_ sender: Any) {
         print("dog")
         highlight(Button: dogButton)
+        self.view.endEditing(true)
         playerImage = #imageLiteral(resourceName: "DogIcon")
         
     }
     @IBAction func moneyBagButtonPressed(_ sender: Any) {
         print("money")
         highlight(Button: moneyButton)
+        self.view.endEditing(true)
         playerImage = #imageLiteral(resourceName: "MoneyBagIcon")
         
     }
@@ -87,6 +92,7 @@ class CreatePlayerViewController: UIViewController, UITextFieldDelegate {
     @IBAction func raceCarButtonPressed(_ sender: Any) {
         print("car")
         highlight(Button: carButton)
+        self.view.endEditing(true)
         playerImage = #imageLiteral(resourceName: "RaceCar")
         
     }
@@ -94,6 +100,7 @@ class CreatePlayerViewController: UIViewController, UITextFieldDelegate {
     @IBAction func thimbleButtonPressed(_ sender: Any) {
         print("thimble")
         highlight(Button: thimbleButton)
+        self.view.endEditing(true)
         playerImage = #imageLiteral(resourceName: "ThimbleIcon")
         
     }
@@ -101,6 +108,7 @@ class CreatePlayerViewController: UIViewController, UITextFieldDelegate {
     @IBAction func wheelBarrowButtonPressed(_ sender: Any) {
         print("wheelbarrow")
         highlight(Button: wheelBarrowButton)
+        self.view.endEditing(true)
         playerImage = #imageLiteral(resourceName: "Wheelbarrow")
         
     }
@@ -108,6 +116,7 @@ class CreatePlayerViewController: UIViewController, UITextFieldDelegate {
     @IBAction func topHotButtonPressed(_ sender: Any) {
         print("hat")
         highlight(Button: hatButton)
+        kself.view.endEditing(true)
         playerImage = #imageLiteral(resourceName: "TophatIcon ")
         
     }
