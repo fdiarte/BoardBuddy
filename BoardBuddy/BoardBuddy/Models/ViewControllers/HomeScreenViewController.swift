@@ -41,6 +41,10 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         bankButton.layer.cornerRadius = 10
         UIApplication.shared.statusBarStyle = .default
     }
+  
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
     
     func updateContainerView() {
     
@@ -102,6 +106,7 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
             
             self.nameLabel.text = currentPlayer.displayName
             self.playerMoneyLabel.text = "$ \(currentPlayer.moneyAmount)"
+            self.bankButton.setTitle("Bank", for: .normal)
         }
     }
 

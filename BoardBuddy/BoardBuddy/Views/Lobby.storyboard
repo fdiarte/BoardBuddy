@@ -63,7 +63,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Q3c-uG-fkk">
-                                    <rect key="frame" x="281.5" y="4" width="37" height="37"/>
+                                    <rect key="frame" x="169" y="4" width="37" height="37"/>
                                     <color key="color" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </activityIndicatorView>
                             </subviews>
@@ -81,16 +81,16 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="72.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="userNameLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdK-Jf-ovS">
-                                            <rect key="frame" x="35" y="26" width="306" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userNameLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdK-Jf-ovS">
+                                            <rect key="frame" x="16" y="26" width="343" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="PdK-Jf-ovS" secondAttribute="trailing" constant="112" id="D1r-Bu-l30"/>
-                                        <constraint firstItem="PdK-Jf-ovS" firstAttribute="leading" secondItem="Q7P-Kb-FaW" secondAttribute="leadingMargin" constant="111" id="HNT-gm-7Nf"/>
+                                        <constraint firstItem="PdK-Jf-ovS" firstAttribute="trailing" secondItem="Q7P-Kb-FaW" secondAttribute="trailingMargin" id="Np8-YU-vgS"/>
+                                        <constraint firstItem="PdK-Jf-ovS" firstAttribute="leading" secondItem="Q7P-Kb-FaW" secondAttribute="leadingMargin" id="Sxl-w9-DVG"/>
                                         <constraint firstItem="PdK-Jf-ovS" firstAttribute="top" secondItem="Q7P-Kb-FaW" secondAttribute="topMargin" constant="15" id="goo-6x-lur"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="PdK-Jf-ovS" secondAttribute="bottom" constant="15" id="wdY-LH-RB3"/>
                                     </constraints>
@@ -107,6 +107,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Lobby" id="dWp-QG-bXI">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Q6M-sQ-iXz">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="Fqr-sk-faL" id="ABz-KA-PSG"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Ready" id="DkD-NV-hLy">
                             <connections>
                                 <action selector="startGameButtonTapped:" destination="Fqr-sk-faL" id="AQK-as-aW0"/>
@@ -116,6 +121,7 @@
                     <connections>
                         <outlet property="ViewForActivityIndicator" destination="w0C-Fj-msH" id="IVR-35-eBJ"/>
                         <outlet property="activityIndicator" destination="Q3c-uG-fkk" id="ddM-wS-Yfw"/>
+                        <outlet property="cancelButton" destination="Q6M-sQ-iXz" id="mbI-qc-Bnr"/>
                         <outlet property="startGameButton" destination="DkD-NV-hLy" id="Vx3-cJ-aTr"/>
                         <segue destination="EgI-2S-46x" kind="presentation" identifier="toHomeVC" id="JgD-Su-WaX"/>
                     </connections>
