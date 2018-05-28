@@ -28,11 +28,13 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
         sendPlayerToHost()
         UIApplication.shared.statusBarStyle = .default
         setupCorrectButton()
+        checkCorrectNumberOfPlayers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         MPCManager.shared.delegate = self
+        checkCorrectNumberOfPlayers()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -43,6 +45,18 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
     func sendPlayerToHost() {
         guard let player = players.first else { return }
         MPCManager.shared.sendPerson(player: player)
+    }
+    
+    func checkCorrectNumberOfPlayers() {
+        print("Players:" ,players.count)
+        if players.count >= 2 {
+            for _ in players {
+                if players.count > 1 {
+                    players.removeLast()
+                }
+            }
+            print("Players: \(players.count)")
+        }
     }
 
     // MARK: - Table view data source
@@ -147,6 +161,7 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
     
     func readyInfoRecieved(from data: Data) {
         guard let readyInfo = DataManager.shared.decodeReadyInfo(from: data) else { return }
+        print(players.count)
         readyPlayers += 1
         checkNumberOfPlayers()
     }
