@@ -16,15 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UIApplication.shared.statusBarStyle = .lightContent
+        turnOffSleepMode()
         return true
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
         turnOnSleepMode()
-    }
-    
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        turnOffSleepMode()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {

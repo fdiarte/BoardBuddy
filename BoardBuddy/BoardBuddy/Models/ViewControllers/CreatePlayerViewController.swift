@@ -116,7 +116,7 @@ class CreatePlayerViewController: UIViewController, UITextFieldDelegate {
     @IBAction func topHotButtonPressed(_ sender: Any) {
         print("hat")
         highlight(Button: hatButton)
-        kself.view.endEditing(true)
+        self.view.endEditing(true)
         playerImage = #imageLiteral(resourceName: "TophatIcon ")
         
     }

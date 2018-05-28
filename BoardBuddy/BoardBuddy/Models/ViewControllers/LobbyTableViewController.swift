@@ -12,26 +12,38 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
     
     @IBOutlet weak var ViewForActivityIndicator: UIView!
     @IBOutlet weak var startGameButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var players = PlayerController.shared.players
     var rowCount: Int = 0
     var decodedPlayers: [Player] = []
+    var readyPlayers = 0
+    var isReadySignal = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         MPCManager.shared.delegate = self
-        startGameButton.isEnabled = false
         sendPlayerToHost()
         UIApplication.shared.statusBarStyle = .default
+        setupCorrectButton()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        MPCManager.shared.delegate = self
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
     
     func sendPlayerToHost() {
         guard let player = players.first else { return }
         MPCManager.shared.sendPerson(player: player)
     }
-    
 
     // MARK: - Table view data source
 
@@ -63,19 +75,22 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
     }
     
     func checkNumberOfPlayers() {
-        if players.count > 1 {
-            DispatchQueue.main.async {
-                self.startGameButton.isEnabled = true
-                self.activityIndicator.stopAnimating()
-                self.ViewForActivityIndicator.frame.size.height -= 44
-                self.checkForHost()
-                self.tableView.reloadData()
+        
+        for player in players {
+            if player.isHost == true {
+                print(readyPlayers)
+                print(players.count)
+                if readyPlayers == players.count - 1 {
+                    DispatchQueue.main.async {
+                        self.startGameButton.isEnabled = true
+                        self.activityIndicator.stopAnimating()
+                        self.ViewForActivityIndicator.frame.size.height -= 44
+                        self.tableView.reloadData()
+                    }
+                }
             }
-        } else {
-            startGameButton.isEnabled = false
-            checkForHost()
-            activityIndicator.startAnimating()
         }
+        
     }
     
     func playerJoinedSession() {
@@ -84,11 +99,17 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
         }
     }
     
-    func checkForHost() {
-        if self.players.first?.isHost == true {
-            startGameButton.isEnabled = true
-        } else {
+    func setupCorrectButton() {
+        guard let currentPlayer = players.first else { return }
+        
+        if currentPlayer.isHost == true {
+            startGameButton.title = "Start Game"
             startGameButton.isEnabled = false
+            cancelButton.isEnabled = true
+        } else {
+            startGameButton.title = "Ready"
+            startGameButton.isEnabled = true
+            cancelButton.isEnabled = false
         }
     }
     
@@ -104,13 +125,11 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
         guard let decodedPlayer = DataManager.shared.decodePlayer(from: data) else { return }
         if players.last == decodedPlayer {
             print("Same player")
-            checkNumberOfPlayers()
         } else {
             players.append(decodedPlayer)
             for (index,player) in players.enumerated() {
                 print("Player at index from Lobby: \(index)", player.displayName)
             }
-            checkNumberOfPlayers()
         }
     }
     
@@ -121,23 +140,51 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
     func matchEndedRecieved(from data: Data) {
     }
     func sessionNotConnected() {
+        let storyboard = UIStoryboard(name: "EntryScreen", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "entryScreen")
+        self.present(viewController, animated: true, completion: nil)
     }
     
     func readyInfoRecieved(from data: Data) {
-        
+        guard let readyInfo = DataManager.shared.decodeReadyInfo(from: data) else { return }
+        readyPlayers += 1
+        checkNumberOfPlayers()
     }
     
     @IBAction func startGameButtonTapped(_ sender: UIBarButtonItem) {
         
-        MPCManager.shared.sendPlayers(players: players)
-        self.performSegue(withIdentifier: "toHomeVC", sender: self.players)
+        guard let currentPlayer = players.first else { return }
+        
+        if currentPlayer.isHost == true {
+            MPCManager.shared.sendPlayers(players: players)
+            self.performSegue(withIdentifier: "toHomeVC", sender: self.players)
+        } else {
+            // Send host ready info
+            let readyInfo = ReadyInfoController.shared.createReadyInfo()
+            MPCManager.shared.sendReadyInfo(readyInfo: readyInfo)
+            startGameButton.isEnabled = false
+        }
     }
+    
+    @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
+        // Stop advertising
+        
+        guard let currentPlayer = players.first else { return }
+        
+        if currentPlayer.isHost == true {
+            MPCManager.shared.stopSession()
+        } else {
+            return
+        }
+        
+        let storyboard = UIStoryboard(name: "EntryScreen", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "entryScreen")
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destinationVC = segue.destination as? HomeScreenViewController else { return }
         destinationVC.players = sender as? [Player]
     }
 }
-
-
-

@@ -23,7 +23,7 @@ protocol MPCManagerDelegate {
 class MPCManager: NSObject, MCSessionDelegate {
     
     // MARK: - Shared Instance
-    static let shared = MPCManager()
+    static var shared = MPCManager()
     
     // MARK: - Properties
     var delegate: MPCManagerDelegate?
@@ -56,6 +56,9 @@ class MPCManager: NSObject, MCSessionDelegate {
         advertiserAssistant = MCAdvertiserAssistant(serviceType: "BoardBuddy", discoveryInfo: nil, session: session)
     }
     
+    deinit {
+        print("Did deinit")
+    }
     
     // MARK: - MCSession delegate functions
     
@@ -104,7 +107,13 @@ class MPCManager: NSObject, MCSessionDelegate {
     func stopSession() {
         session.disconnect()
         advertiserAssistant.stop()
-        currentGamePeers.removeAll()
+        print(currentGamePeers.count)
+        for peer in currentGamePeers {
+            if peer != currentGamePeers.first {
+                guard let index = currentGamePeers.index(of: peer) else { return }
+                currentGamePeers.remove(at: index)
+            }
+        }
     }
     
     func playerDisconnected(player: Player) {
@@ -174,6 +183,16 @@ class MPCManager: NSObject, MCSessionDelegate {
             try session.send(data, toPeers: currentGamePeers, with: .reliable)
         } catch {
             print("Cant send match end: \(error.localizedDescription)")
+        }
+    }
+    
+    func sendReadyInfo(readyInfo: ReadyInfo) {
+        guard let data = DataManager.shared.encodeReadyInfo(readyInfo: readyInfo) else { return }
+        
+        do {
+            try session.send(data, toPeers: session.connectedPeers, with: .reliable)
+        } catch {
+            print("Cant send ready info: \(error.localizedDescription)")
         }
     }
 }
