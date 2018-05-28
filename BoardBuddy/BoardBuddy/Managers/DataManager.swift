@@ -9,6 +9,7 @@
 import UIKit
 
 class DataManager {
+    
     static let shared = DataManager()
     
     func encodePlayer(player: Player) -> Data? {
@@ -124,6 +125,26 @@ class DataManager {
             return decodedMatchEnd
         } catch {
             print("Couldnt decode match end")
+            return nil
+        }
+    }
+    
+    func encodeReadyInfo(readyInfo: ReadyInfo) -> Data? {
+        do {
+            let encodedReadyInfo = try JSONEncoder().encode(readyInfo)
+            return encodedReadyInfo
+        } catch {
+            print("Couldnt encode ready info")
+            return nil
+        }
+    }
+    
+    func decodeReadyInfo(from data: Data) -> ReadyInfo? {
+        do {
+            let decodedReadyInfo = try JSONDecoder().decode(ReadyInfo.self, from: data)
+            return decodedReadyInfo
+        } catch {
+            print("Couldnt decode ready info")
             return nil
         }
     }

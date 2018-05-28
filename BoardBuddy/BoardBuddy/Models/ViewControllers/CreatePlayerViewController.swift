@@ -154,7 +154,8 @@ class CreatePlayerViewController: UIViewController, UITextFieldDelegate {
 }
 
 extension CreatePlayerViewController: MPCManagerDelegate, MCBrowserViewControllerDelegate {
-    
+    func readyInfoRecieved(from data: Data) {
+    }
     func sessionNotConnected() {
     }    
     func matchEndedRecieved(from data: Data) {

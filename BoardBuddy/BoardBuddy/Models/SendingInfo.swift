@@ -9,9 +9,17 @@
 import Foundation
 
 class MatchEnded: Codable {
-    var isMatchCancelled: BooleanLiteralType
+    var isMatchCancelled: Bool
     
     init(isMatchCancelled: Bool) {
         self.isMatchCancelled = isMatchCancelled
+    }
+}
+
+class ReadyInfo: Codable {
+    var isPlayerReady: Bool
+    
+    init(isPlayerReady: Bool) {
+        self.isPlayerReady = isPlayerReady
     }
 }

@@ -17,6 +17,7 @@ protocol MPCManagerDelegate {
     func acceptedFundsRecieved(from data: Data)
     func matchEndedRecieved(from data: Data)
     func sessionNotConnected()
+    func readyInfoRecieved(from data: Data)
 }
 
 class MPCManager: NSObject, MCSessionDelegate {
@@ -25,7 +26,6 @@ class MPCManager: NSObject, MCSessionDelegate {
     static let shared = MPCManager()
     
     // MARK: - Properties
-    
     var delegate: MPCManagerDelegate?
     var session: MCSession!
     var peerID: MCPeerID!
@@ -86,6 +86,7 @@ class MPCManager: NSObject, MCSessionDelegate {
         delegate?.requestFundsRecieved(from: data)
         delegate?.acceptedFundsRecieved(from: data)
         delegate?.matchEndedRecieved(from: data)
+        delegate?.readyInfoRecieved(from: data)
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
@@ -175,5 +176,4 @@ class MPCManager: NSObject, MCSessionDelegate {
             print("Cant send match end: \(error.localizedDescription)")
         }
     }
-    
 }
