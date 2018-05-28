@@ -93,7 +93,7 @@
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KJX-ik-5Me">
                                 <rect key="frame" x="20" y="402" width="335" height="130"/>
-                                <string key="text">All players need to tap "Ready" in order for the host to start the game. Make sure all players are in the lobby before the host starts</string>
+                                <string key="text">All players need to tap "Ready" in order for the host to start the game. Make sure all players are in the lobby before the host starts.</string>
                                 <color key="textColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -142,7 +142,7 @@
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nv6-cn-ggU">
                                 <rect key="frame" x="20" y="402" width="335" height="130"/>
-                                <string key="text">Clicking on the bank button on the main page will show this pop up. enter an amount and you can either request money from, or pay the bank.</string>
+                                <string key="text">Clicking on the "Bank" button on the main page will show this pop up. Enter an amount and you can either request money from, or pay the bank.</string>
                                 <color key="textColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -194,7 +194,7 @@
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Jdg-Nd-lcQ">
                                 <rect key="frame" x="20" y="402" width="335" height="130"/>
-                                <string key="text">Clicking on a player from the main page will show this pop up. enter an amount to request from the player when they land on your spaces</string>
+                                <string key="text">Clicking on a player from the main page will show this pop up. Enter an amount to request from the player when they land on your spaces.</string>
                                 <color key="textColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
