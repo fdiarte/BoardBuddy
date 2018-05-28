@@ -20,11 +20,17 @@ class EntryScreenViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        DispatchQueue.main.async {
+            self.setupButtons()
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         setupButtons()
     }
     
     func setupButtons() {
-        
         DispatchQueue.main.async {
             self.createSessionButton.layer.cornerRadius = 20
             self.joinSessionButton.layer.cornerRadius = 20

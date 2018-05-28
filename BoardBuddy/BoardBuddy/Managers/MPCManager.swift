@@ -55,10 +55,7 @@ class MPCManager: NSObject, MCSessionDelegate {
         browser = MCBrowserViewController(serviceType: "BoardBuddy", session: session)
         advertiserAssistant = MCAdvertiserAssistant(serviceType: "BoardBuddy", discoveryInfo: nil, session: session)
     }
-    
-    deinit {
-        print("Did deinit")
-    }
+
     
     // MARK: - MCSession delegate functions
     

@@ -9,7 +9,6 @@
 import Foundation
 
 class AcceptFunds: Codable {
-    
     let didAccept: Bool
     let amount: Int
     let payer: Player

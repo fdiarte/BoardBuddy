@@ -129,7 +129,7 @@ class CreatePlayerViewController: UIViewController, UITextFieldDelegate {
         MPCManager.shared.delegate = self
         MPCManager.shared.browser.delegate = self
         
-        present(MPCManager.shared.browser, animated: true, completion: nil)
+        present((MPCManager.shared.browser)!, animated: true, completion: nil)
     }
     
     @IBAction func backButtonTapped(_ sender: UIButton) {

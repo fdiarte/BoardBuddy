@@ -254,20 +254,36 @@ extension HomeScreenViewController: MPCManagerDelegate, BankDeailDelegate {
     
     func matchEndedRecieved(from data: Data) {
         guard let matchEnded = DataManager.shared.decodeMatchEnd(from: data) else { return }
-        
+        print("Match Ended Recvieved")
         if matchEnded.isMatchCancelled == true {
             let storyboard = UIStoryboard(name: "EntryScreen", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "entryScreen")
-            self.present(viewController, animated: true, completion: nil)
+            self.present(viewController, animated: true) {
+                for peer in MPCManager.shared.currentGamePeers {
+                    if peer != MPCManager.shared.currentGamePeers.first {
+                        guard let index = MPCManager.shared.currentGamePeers.index(of: peer) else { return }
+                        MPCManager.shared.currentGamePeers.remove(at: index)
+                    }
+                }
+                MPCManager.shared.session.disconnect()
+            }
         }
     }
     
     func sessionNotConnected() {
-        MPCManager.shared.currentGamePeers.removeAll()
+        print("Session Not connected")
         
         let storyboard = UIStoryboard(name: "EntryScreen", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "entryScreen")
-        self.present(viewController, animated: true, completion: nil)
+        self.present(viewController, animated: true) {
+            for peer in MPCManager.shared.currentGamePeers {
+                if peer != MPCManager.shared.currentGamePeers.first {
+                    guard let index = MPCManager.shared.currentGamePeers.index(of: peer) else { return }
+                    MPCManager.shared.currentGamePeers.remove(at: index)
+                }
+            }
+            MPCManager.shared.session.disconnect()
+        }
     }
     
     func playerJoinedSession() {
