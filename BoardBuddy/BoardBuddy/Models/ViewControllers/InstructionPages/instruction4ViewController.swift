@@ -10,10 +10,12 @@ import UIKit
 
 class Instruction4ViewController: UIViewController {
 
+    @IBOutlet weak var playerImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        playerImageView.layer.borderWidth = 2
+        playerImageView.layer.borderColor = Colors.mintCreme.cgColor
     }
 
 }

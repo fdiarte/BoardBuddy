@@ -12,9 +12,15 @@ protocol instructionPagesDelegate: class {
 }
 
 class Instruction5ViewController: UIViewController {
+    @IBOutlet weak var alertImageView: UIImageView!
     
     weak var delegate: instructionPagesDelegate?
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        alertImageView.layer.borderWidth = 2
+        alertImageView.layer.borderColor = Colors.mintCreme.cgColor
+    }
     @IBAction func gotItButtonPressed(_ sender: Any) {
         delegate?.gotItButtonPressed()
     }

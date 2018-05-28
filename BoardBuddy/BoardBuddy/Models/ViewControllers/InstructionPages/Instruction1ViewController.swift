@@ -10,9 +10,11 @@ import UIKit
 
 class Instruction1ViewController: UIViewController {
 
+    @IBOutlet weak var createOrJoinImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        createOrJoinImageView.layer.borderWidth = 2
+        createOrJoinImageView.layer.borderColor = Colors.mintCreme.cgColor
 
-        // Do any additional setup after loading the view.
     }
 }
