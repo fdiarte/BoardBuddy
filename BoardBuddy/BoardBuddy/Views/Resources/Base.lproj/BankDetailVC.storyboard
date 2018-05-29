@@ -104,7 +104,7 @@
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="b1U-6S-Wbv" firstAttribute="bottom" secondItem="Adp-ps-wUs" secondAttribute="bottom" id="Fiv-Ml-A29"/>
+                            <constraint firstItem="b1U-6S-Wbv" firstAttribute="bottom" secondItem="EBv-Cd-atd" secondAttribute="bottom" id="Fiv-Ml-A29"/>
                             <constraint firstItem="b1U-6S-Wbv" firstAttribute="trailing" secondItem="Adp-ps-wUs" secondAttribute="trailing" id="IQb-fd-LY4"/>
                             <constraint firstItem="xsR-1q-4QX" firstAttribute="top" secondItem="EBv-Cd-atd" secondAttribute="top" id="VCB-pN-efH"/>
                             <constraint firstItem="xsR-1q-4QX" firstAttribute="leading" secondItem="Adp-ps-wUs" secondAttribute="leading" id="bml-FZ-ivq"/>

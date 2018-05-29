@@ -119,6 +119,7 @@ class MPCManager: NSObject, MCSessionDelegate {
                 currentGamePeers.remove(at: index)
             }
         }
+        session.disconnect()
     }
     
     func sendPerson(player: Player) {

@@ -140,19 +140,19 @@
                                                     <rect key="frame" x="84" y="16" width="196" height="67"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="(userName)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbS-jO-AB6">
-                                                            <rect key="frame" x="0.0" y="0.0" width="196" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="196" height="29.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.96862745098039216" green="1" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total $" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqF-2e-Zl0">
-                                                            <rect key="frame" x="0.0" y="20.5" width="196" height="17"/>
+                                                            <rect key="frame" x="0.0" y="29.5" width="196" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" red="0.98823529409999999" green="1" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="(amount)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTz-Fg-OJD">
-                                                            <rect key="frame" x="0.0" y="37.5" width="196" height="29.5"/>
+                                                            <rect key="frame" x="0.0" y="46.5" width="196" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.1529411765" green="0.80784313730000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -214,7 +214,7 @@
                             <constraint firstItem="BiB-5Y-Fve" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Mpn-TP-Te5"/>
                             <constraint firstItem="pCi-Rc-UZC" firstAttribute="top" secondItem="8jW-4v-qYO" secondAttribute="bottom" id="NVC-XW-fIk"/>
                             <constraint firstItem="bQE-hz-U92" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Qeg-1S-12i"/>
-                            <constraint firstItem="BiB-5Y-Fve" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="WDD-gH-LRb"/>
+                            <constraint firstItem="BiB-5Y-Fve" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="WDD-gH-LRb"/>
                             <constraint firstItem="8jW-4v-qYO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Wav-SQ-9Cu"/>
                             <constraint firstItem="BiB-5Y-Fve" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eZV-7o-bwf"/>
                             <constraint firstItem="bQE-hz-U92" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="k5m-yU-ggF"/>
