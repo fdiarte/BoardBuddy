@@ -35,8 +35,8 @@ class EntryScreenViewController: UIViewController {
             self.createSessionButton.layer.cornerRadius = 20
             self.joinSessionButton.layer.cornerRadius = 20
             
-            self.createSessionButton.setTitle("Create Session", for: .normal)
-            self.joinSessionButton.setTitle("Join Session", for: .normal)
+            self.createSessionButton.setTitle("Create Game", for: .normal)
+            self.joinSessionButton.setTitle("Find Game", for: .normal)
         }
     }
 }

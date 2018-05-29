@@ -45,3 +45,12 @@ class ReadyInfoController {
         return readyInfo
     }
 }
+
+class PlayerLeftController {
+    static let shared = PlayerLeftController()
+    
+    func createPlayerLeft(player: Player) -> PlayerLeftInfo {
+        let leftInfo = PlayerLeftInfo(didPlayerLeave: true, player: player)
+        return leftInfo
+    }
+}

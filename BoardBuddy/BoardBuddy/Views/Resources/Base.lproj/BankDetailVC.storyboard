@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -87,10 +88,9 @@
                                     <constraint firstItem="k2N-PB-KaD" firstAttribute="top" secondItem="b1U-6S-Wbv" secondAttribute="top" constant="8" id="Ang-gI-biO"/>
                                     <constraint firstItem="k2N-PB-KaD" firstAttribute="leading" secondItem="b1U-6S-Wbv" secondAttribute="leading" constant="8" id="LYL-dw-NoY"/>
                                     <constraint firstItem="KxL-xI-sc7" firstAttribute="centerX" secondItem="b1U-6S-Wbv" secondAttribute="centerX" id="N9C-Yc-rTh"/>
-                                    <constraint firstItem="2hN-A8-LgO" firstAttribute="top" secondItem="KxL-xI-sc7" secondAttribute="bottom" constant="15" id="W7W-wd-tZe"/>
-                                    <constraint firstAttribute="bottom" secondItem="hBG-rR-zdA" secondAttribute="bottom" id="XA4-Od-DVh"/>
+                                    <constraint firstItem="n0b-m1-yX7" firstAttribute="top" secondItem="3TQ-OH-1z6" secondAttribute="bottom" constant="10" id="O1D-dK-BoF"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="hBG-rR-zdA" secondAttribute="bottom" constant="-8" id="XA4-Od-DVh"/>
                                     <constraint firstItem="KxL-xI-sc7" firstAttribute="top" secondItem="k2N-PB-KaD" secondAttribute="bottom" constant="5" id="XLq-sQ-OFe"/>
-                                    <constraint firstItem="3TQ-OH-1z6" firstAttribute="top" secondItem="2hN-A8-LgO" secondAttribute="bottom" constant="5" id="aQL-r7-M6i"/>
                                     <constraint firstAttribute="trailing" secondItem="k2N-PB-KaD" secondAttribute="trailing" constant="8" id="byL-jA-Qk6"/>
                                     <constraint firstAttribute="trailing" secondItem="2hN-A8-LgO" secondAttribute="trailing" constant="8" id="cZR-YM-Oxm"/>
                                     <constraint firstAttribute="trailing" secondItem="n0b-m1-yX7" secondAttribute="trailing" id="cjV-AZ-nx2"/>
@@ -99,6 +99,7 @@
                                     <constraint firstAttribute="height" constant="350" id="hMu-NZ-ADa"/>
                                     <constraint firstItem="hBG-rR-zdA" firstAttribute="leading" secondItem="b1U-6S-Wbv" secondAttribute="leading" id="nVa-Q6-rwF"/>
                                     <constraint firstItem="3TQ-OH-1z6" firstAttribute="leading" secondItem="b1U-6S-Wbv" secondAttribute="leading" constant="90" id="nem-mw-gwb"/>
+                                    <constraint firstItem="3TQ-OH-1z6" firstAttribute="top" secondItem="2hN-A8-LgO" secondAttribute="bottom" constant="5" id="sw0-Uf-0ZS"/>
                                     <constraint firstItem="2hN-A8-LgO" firstAttribute="leading" secondItem="b1U-6S-Wbv" secondAttribute="leading" constant="8" id="tQc-14-o2R"/>
                                 </constraints>
                             </view>

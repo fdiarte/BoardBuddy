@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, PlayerCollectionViewCellDelegate, SlideInMenuViewControllerDelegate {
     
@@ -40,6 +41,7 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         MPCManager.shared.delegate = self
         bankButton.layer.cornerRadius = 10
         UIApplication.shared.statusBarStyle = .default
+        MPCManager.shared.advertiserAssistant.stop()
     }
   
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -184,6 +186,25 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
 }
 
 extension HomeScreenViewController: MPCManagerDelegate, BankDeailDelegate {
+    
+    func playerLeft(from data: Data) {
+        guard let playerLeftInfo = DataManager.shared.decodePlayerLeftInfo(from: data), var players = players else { return }
+        if playerLeftInfo.didPlayerLeave == true {
+            
+            print("Player left")
+            
+            DispatchQueue.main.async {
+                let playerWhoLeft = playerLeftInfo.player
+                guard let index = players.index(of: playerWhoLeft) else { return }
+                players.remove(at: index)
+                
+                self.players = players
+                self.collectionView.reloadData()
+                
+            }
+        }
+    }
+    
     func readyInfoRecieved(from data: Data) {
     }
 
@@ -227,7 +248,7 @@ extension HomeScreenViewController: MPCManagerDelegate, BankDeailDelegate {
     
     func acceptedFundsRecieved(from data: Data) {
         guard let acceptedFunds = DataManager.shared.decodeAcceptFunds(from: data) else { return }
-        
+        AudioServicesPlayAlertSound(1520)
         if acceptedFunds.didAccept == true {
             let amountRecieved = acceptedFunds.amount
             let payer = acceptedFunds.payer
@@ -271,25 +292,16 @@ extension HomeScreenViewController: MPCManagerDelegate, BankDeailDelegate {
     }
     
     func sessionNotConnected() {
-        print("Session Not connected")
         
-        let storyboard = UIStoryboard(name: "EntryScreen", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "entryScreen")
-        self.present(viewController, animated: true) {
-            for peer in MPCManager.shared.currentGamePeers {
-                if peer != MPCManager.shared.currentGamePeers.first {
-                    guard let index = MPCManager.shared.currentGamePeers.index(of: peer) else { return }
-                    MPCManager.shared.currentGamePeers.remove(at: index)
-                }
-            }
-            MPCManager.shared.session.disconnect()
-        }
     }
     
     func playerJoinedSession() {
     }
     
     func playerRecieved(from data: Data) {
+        
+        print("GOT SINGLE PLAYER")
+        
         guard let playerRecieved = DataManager.shared.decodePlayer(from: data) else { return }
         guard var players = players else { return }
         
@@ -306,9 +318,13 @@ extension HomeScreenViewController: MPCManagerDelegate, BankDeailDelegate {
     }
     
     func playersArrayRecieved(from data: Data) {
+        
+        print("GOT PLAYER ARRAY")
+        
         guard let decondedPlayers = DataManager.shared.decodePlayers(from: data) else { return }
         guard let players = players else { return }
         
+
         var oldPlayer: Player?
         var newPlayer: Player?
         
@@ -328,13 +344,17 @@ extension HomeScreenViewController: MPCManagerDelegate, BankDeailDelegate {
                 }
             }
         }
-        guard let playerToSend = newPlayer else { return }
-        MPCManager.shared.sendPerson(player: playerToSend)
-        self.players = decondedPlayers
-        
+        DispatchQueue.main.async {
+            guard let playerToSend = newPlayer else { return }
+            MPCManager.shared.sendPerson(player: playerToSend)
+            self.players = decondedPlayers
+            self.collectionView.reloadData()
+            
+        }
     }
     
     func createRequestFundsAlert(requester: Player, amount: Int, payer: Player) {
+        AudioServicesPlayAlertSound(1520)
         let alert = UIAlertController(title: "\(requester.displayName) is requesting $\(amount) from you", message: nil, preferredStyle: .alert)
         let denyButton = UIAlertAction(title: "Deny", style: .cancel, handler: nil)
         let payButton = UIAlertAction(title: "Pay", style: .default) { (_) in

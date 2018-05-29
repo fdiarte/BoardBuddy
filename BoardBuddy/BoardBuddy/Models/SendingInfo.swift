@@ -23,3 +23,13 @@ class ReadyInfo: Codable {
         self.isPlayerReady = isPlayerReady
     }
 }
+
+class PlayerLeftInfo: Codable {
+    var didPlayerLeave: Bool
+    let player: Player
+    
+    init(didPlayerLeave: Bool, player: Player) {
+        self.didPlayerLeave = didPlayerLeave
+        self.player = player
+    }
+}

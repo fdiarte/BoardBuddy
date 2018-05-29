@@ -9,6 +9,8 @@
 import UIKit
 
 class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
+    func playerLeft(from data: Data) {
+    }
     
     @IBOutlet weak var ViewForActivityIndicator: UIView!
     @IBOutlet weak var startGameButton: UIBarButtonItem!
@@ -28,7 +30,6 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
         sendPlayerToHost()
         UIApplication.shared.statusBarStyle = .default
         setupCorrectButton()
-        checkCorrectNumberOfPlayers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +57,7 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
                 }
             }
             print("Players: \(players.count)")
+            print(players.first?.displayName)
         }
     }
 
@@ -85,6 +87,7 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath) as? LobbyCell else {return UITableViewCell()}
         
         cell.userNameLabel.text = MPCManager.shared.currentGamePeers[indexPath.row].displayName
+        print(players.count)
         return cell
     }
     
@@ -153,6 +156,7 @@ class LobbyTableViewController: UITableViewController, MPCManagerDelegate {
     }
     func matchEndedRecieved(from data: Data) {
     }
+    
     func sessionNotConnected() {
         let storyboard = UIStoryboard(name: "EntryScreen", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "entryScreen")
