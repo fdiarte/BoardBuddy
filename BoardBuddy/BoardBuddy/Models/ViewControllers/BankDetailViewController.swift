@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 protocol BankDeailDelegate {
     func playerMoneyIncremented(money: Int)
@@ -40,7 +41,7 @@ class BankDetailViewController: UIViewController, UITextFieldDelegate {
     
     @objc func keyboardWillShow() {
         view.addGestureRecognizer(singleTap)
-        view.frame.origin.y = -150
+        view.frame.origin.y = -175
     }
     
     @objc func keyboardWillHide() {
@@ -84,6 +85,7 @@ class BankDetailViewController: UIViewController, UITextFieldDelegate {
         let withdrawlAction = UIAlertAction(title: "Withdrawl", style: .default) { (_) in
             
             guard var players = self.players else { return }
+            AudioServicesPlayAlertSound(1520)
             var currentPlayer: Player?
             var currentPlayerIndex: Int?
             
@@ -116,6 +118,7 @@ class BankDetailViewController: UIViewController, UITextFieldDelegate {
         let payAction = UIAlertAction(title: "Pay", style: .default) { (_) in
             
             guard var players = self.players else { return }
+            AudioServicesPlayAlertSound(1520)
             var currentPlayer: Player?
             var currentPlayerIndex: Int?
             

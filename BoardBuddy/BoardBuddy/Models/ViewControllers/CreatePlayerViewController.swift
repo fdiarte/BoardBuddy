@@ -163,12 +163,14 @@ class CreatePlayerViewController: UIViewController, UITextFieldDelegate {
 }
 
 extension CreatePlayerViewController: MPCManagerDelegate, MCBrowserViewControllerDelegate {
+    func playerLeft(from data: Data) {
+    }
     func readyInfoRecieved(from data: Data) {
     }
     func sessionNotConnected() {
-    }    
+    }
     func matchEndedRecieved(from data: Data) {
-    }    
+    }
     func requestFundsRecieved(from data: Data) {
     }
     func acceptedFundsRecieved(from data: Data) {

@@ -18,6 +18,7 @@ protocol MPCManagerDelegate {
     func matchEndedRecieved(from data: Data)
     func sessionNotConnected()
     func readyInfoRecieved(from data: Data)
+    func playerLeft(from data: Data)
 }
 
 class MPCManager: NSObject, MCSessionDelegate {
@@ -66,13 +67,9 @@ class MPCManager: NSObject, MCSessionDelegate {
             currentGamePeers.append(peerID)
             delegate?.playerJoinedSession()
             
-            for (index,player) in currentGamePeers.enumerated() {
-                print("Player at index: \(index)", player.displayName)
-            }
-            
         case MCSessionState.connecting:
             print("Connecting to session")
-            
+      
         default:
             print("Did not connect to session")
             delegate?.sessionNotConnected()
@@ -87,6 +84,7 @@ class MPCManager: NSObject, MCSessionDelegate {
         delegate?.acceptedFundsRecieved(from: data)
         delegate?.matchEndedRecieved(from: data)
         delegate?.readyInfoRecieved(from: data)
+        delegate?.playerLeft(from: data)
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
@@ -132,11 +130,13 @@ class MPCManager: NSObject, MCSessionDelegate {
     }
     
     func sendPlayers(players: [Player]) {
-        guard let data = DataManager.shared.encodePlayers(from: players) else { return }
+        guard let data = DataManager.shared.encodePlayers(from: players) else { print("Error encoding players"); return }
         do {
             try session.send(data, toPeers: session.connectedPeers, with: .reliable)
+            print("Successfully sent players")
+            print(session.connectedPeers)
         } catch {
-            print("Cant send players \(error.localizedDescription)")
+            print("Cant send players \(error.localizedDescription): \(error)")
         }
     }
     
@@ -178,7 +178,8 @@ class MPCManager: NSObject, MCSessionDelegate {
         guard let data = DataManager.shared.encodeMatchEnd(matchEnd: matchEnded) else { return }
         
         do {
-            try session.send(data, toPeers: currentGamePeers, with: .reliable)
+            try session.send(data, toPeers: session.connectedPeers, with: .reliable)
+            print(session.connectedPeers)
         } catch {
             print("Cant send match end: \(error.localizedDescription)")
         }
@@ -186,6 +187,16 @@ class MPCManager: NSObject, MCSessionDelegate {
     
     func sendReadyInfo(readyInfo: ReadyInfo) {
         guard let data = DataManager.shared.encodeReadyInfo(readyInfo: readyInfo) else { return }
+        
+        do {
+            try session.send(data, toPeers: session.connectedPeers, with: .reliable)
+        } catch {
+            print("Cant send ready info: \(error.localizedDescription)")
+        }
+    }
+    
+    func sendPlayerLeftInfo(playerLeftInfo: PlayerLeftInfo) {
+        guard let data = DataManager.shared.encodePlayerLeftInfo(playerLeftInfo: playerLeftInfo) else { return }
         
         do {
             try session.send(data, toPeers: session.connectedPeers, with: .reliable)

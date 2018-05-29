@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJQ-uv-jTf">
-                                <rect key="frame" x="0.0" y="317" width="375" height="350"/>
+                                <rect key="frame" x="0.0" y="267" width="375" height="400"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Money Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1y-af-QMU">
                                         <rect key="frame" x="8" y="8" width="359" height="24"/>
@@ -35,7 +36,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tk3-RE-yMd">
-                                        <rect key="frame" x="0.0" y="310" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="360" width="375" height="40"/>
                                         <color key="backgroundColor" red="0.1529411765" green="0.80784313730000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="AXl-4T-JmA"/>
@@ -75,14 +76,14 @@
                                     <constraint firstItem="l1y-af-QMU" firstAttribute="top" secondItem="UJQ-uv-jTf" secondAttribute="top" constant="8" id="5QO-WI-flj"/>
                                     <constraint firstItem="tk3-RE-yMd" firstAttribute="leading" secondItem="UJQ-uv-jTf" secondAttribute="leading" id="6by-Yh-2ks"/>
                                     <constraint firstAttribute="trailing" secondItem="Juf-yF-aNd" secondAttribute="trailing" constant="8" id="7dI-Ei-CcJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="tk3-RE-yMd" secondAttribute="bottom" id="DId-fg-zqI"/>
                                     <constraint firstAttribute="trailing" secondItem="KUj-S9-NrN" secondAttribute="trailing" constant="8" id="GIl-y6-NEF"/>
                                     <constraint firstItem="nZL-lW-yAe" firstAttribute="top" secondItem="KUj-S9-NrN" secondAttribute="bottom" constant="5" id="H7Z-ga-pu0"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="tk3-RE-yMd" secondAttribute="bottom" constant="-8" id="LF5-br-mQv"/>
                                     <constraint firstItem="Juf-yF-aNd" firstAttribute="top" secondItem="l1y-af-QMU" secondAttribute="bottom" constant="8" id="NdD-21-Fy7"/>
                                     <constraint firstAttribute="trailing" secondItem="l1y-af-QMU" secondAttribute="trailing" constant="8" id="Npp-8k-Beg"/>
                                     <constraint firstItem="nZL-lW-yAe" firstAttribute="leading" secondItem="UJQ-uv-jTf" secondAttribute="leading" constant="90" id="QvB-ic-dBd"/>
                                     <constraint firstItem="zXh-6Q-ds4" firstAttribute="centerX" secondItem="UJQ-uv-jTf" secondAttribute="centerX" id="ZPF-f5-UQ8"/>
-                                    <constraint firstAttribute="height" constant="350" id="d0h-Ir-Fve"/>
+                                    <constraint firstAttribute="height" constant="400" id="d0h-Ir-Fve"/>
                                     <constraint firstAttribute="trailing" secondItem="tk3-RE-yMd" secondAttribute="trailing" id="hG4-fi-Kkf"/>
                                     <constraint firstItem="l1y-af-QMU" firstAttribute="leading" secondItem="UJQ-uv-jTf" secondAttribute="leading" constant="8" id="iLD-P2-DYh"/>
                                     <constraint firstItem="Juf-yF-aNd" firstAttribute="leading" secondItem="UJQ-uv-jTf" secondAttribute="leading" constant="8" id="kLP-Wt-g6K"/>
@@ -91,7 +92,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pfT-rf-pTc">
-                                <rect key="frame" x="0.0" y="20" width="375" height="297"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="247"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="ceX-Da-jkx" appends="YES" id="JgX-S9-UAd"/>

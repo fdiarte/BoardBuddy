@@ -148,4 +148,24 @@ class DataManager {
             return nil
         }
     }
+    
+    func encodePlayerLeftInfo(playerLeftInfo: PlayerLeftInfo) -> Data? {
+        do {
+            let encodePlayerLeftInfo = try JSONEncoder().encode(playerLeftInfo)
+            return encodePlayerLeftInfo
+        } catch {
+            print("Couldnt encode player left info")
+            return nil
+        }
+    }
+    
+    func decodePlayerLeftInfo(from data: Data) -> PlayerLeftInfo? {
+        do {
+            let decodePlayerLeftInfo = try JSONDecoder().decode(PlayerLeftInfo.self, from: data)
+            return decodePlayerLeftInfo
+        } catch {
+            print("Couldnt decode player left info")
+            return nil
+        }
+    }
 }

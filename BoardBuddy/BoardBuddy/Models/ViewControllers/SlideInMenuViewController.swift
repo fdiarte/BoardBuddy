@@ -82,29 +82,32 @@ class SlideInMenuViewController: UIViewController, UICollectionViewDelegate, UIC
         let viewController = storyboard.instantiateViewController(withIdentifier: "entryScreen")
         self.present(viewController, animated: true, completion: nil)
         
+        let matchEnd = MatchEndedController.shared.createMatchEnd()
+        MPCManager.shared.sendMatchEnded(matchEnded: matchEnd)
         MPCManager.shared.stopSession()
     }
                                                                    
     func leaveMatch() {
         
-        guard var players = players else { return }
+        guard let players = players else { return }
         var currentPlayer: Player?
         
-        for (index,player) in players.enumerated() {
+        for player in players {
             if player.deviceName == UIDevice.current.name {
                 currentPlayer = player
-                players.remove(at: index)
             }
         }
         
         guard let player = currentPlayer else { return }
  
-        MPCManager.shared.playerDisconnected(player: player)
-        MPCManager.shared.sendPlayers(players: players)
+        let playerLeftInfo = PlayerLeftController.shared.createPlayerLeft(player: player)
+        MPCManager.shared.sendPlayerLeftInfo(playerLeftInfo: playerLeftInfo)
         
         let storyboard = UIStoryboard(name: "EntryScreen", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "entryScreen")
-        self.present(viewController, animated: true, completion: nil)
+        self.present(viewController, animated: true) {
+            MPCManager.shared.playerDisconnected(player: player)
+        }
     }
     
     func createLeaveMatchAlert() {
