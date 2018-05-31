@@ -35,7 +35,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tk3-RE-yMd">
-                                        <rect key="frame" x="0.0" y="330" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="356" width="375" height="44"/>
                                         <color key="backgroundColor" red="0.1529411765" green="0.80784313730000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="AXl-4T-JmA"/>
@@ -73,6 +73,7 @@
                                     <constraint firstAttribute="trailing" secondItem="nZL-lW-yAe" secondAttribute="trailing" constant="90" id="2fn-VC-ebD"/>
                                     <constraint firstItem="KUj-S9-NrN" firstAttribute="leading" secondItem="UJQ-uv-jTf" secondAttribute="leading" constant="8" id="39c-gY-Kvh"/>
                                     <constraint firstItem="l1y-af-QMU" firstAttribute="top" secondItem="UJQ-uv-jTf" secondAttribute="top" constant="8" id="5QO-WI-flj"/>
+                                    <constraint firstAttribute="bottom" secondItem="tk3-RE-yMd" secondAttribute="bottom" id="5ss-lQ-vqK"/>
                                     <constraint firstItem="tk3-RE-yMd" firstAttribute="leading" secondItem="UJQ-uv-jTf" secondAttribute="leading" id="6by-Yh-2ks"/>
                                     <constraint firstAttribute="trailing" secondItem="Juf-yF-aNd" secondAttribute="trailing" constant="8" id="7dI-Ei-CcJ"/>
                                     <constraint firstAttribute="trailing" secondItem="KUj-S9-NrN" secondAttribute="trailing" constant="8" id="GIl-y6-NEF"/>
@@ -83,7 +84,6 @@
                                     <constraint firstAttribute="height" constant="400" id="d0h-Ir-Fve"/>
                                     <constraint firstAttribute="trailing" secondItem="tk3-RE-yMd" secondAttribute="trailing" id="hG4-fi-Kkf"/>
                                     <constraint firstItem="l1y-af-QMU" firstAttribute="leading" secondItem="UJQ-uv-jTf" secondAttribute="leading" constant="8" id="iLD-P2-DYh"/>
-                                    <constraint firstItem="tk3-RE-yMd" firstAttribute="top" secondItem="nZL-lW-yAe" secondAttribute="bottom" constant="40" id="ibb-BO-qd1"/>
                                     <constraint firstItem="nZL-lW-yAe" firstAttribute="top" secondItem="KUj-S9-NrN" secondAttribute="bottom" constant="5" id="ika-YJ-M45"/>
                                     <constraint firstItem="Juf-yF-aNd" firstAttribute="leading" secondItem="UJQ-uv-jTf" secondAttribute="leading" constant="8" id="kLP-Wt-g6K"/>
                                     <constraint firstItem="KUj-S9-NrN" firstAttribute="top" secondItem="zXh-6Q-ds4" secondAttribute="bottom" constant="10" id="mpY-y2-CRE"/>
