@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,10 +35,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tk3-RE-yMd">
-                                        <rect key="frame" x="0.0" y="360" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="330" width="375" height="44"/>
                                         <color key="backgroundColor" red="0.1529411765" green="0.80784313730000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="AXl-4T-JmA"/>
+                                            <constraint firstAttribute="height" constant="44" id="AXl-4T-JmA"/>
                                         </constraints>
                                         <state key="normal" title="Request">
                                             <color key="titleColor" red="0.23529411759999999" green="0.28235294119999998" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -77,8 +76,6 @@
                                     <constraint firstItem="tk3-RE-yMd" firstAttribute="leading" secondItem="UJQ-uv-jTf" secondAttribute="leading" id="6by-Yh-2ks"/>
                                     <constraint firstAttribute="trailing" secondItem="Juf-yF-aNd" secondAttribute="trailing" constant="8" id="7dI-Ei-CcJ"/>
                                     <constraint firstAttribute="trailing" secondItem="KUj-S9-NrN" secondAttribute="trailing" constant="8" id="GIl-y6-NEF"/>
-                                    <constraint firstItem="nZL-lW-yAe" firstAttribute="top" secondItem="KUj-S9-NrN" secondAttribute="bottom" constant="5" id="H7Z-ga-pu0"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="tk3-RE-yMd" secondAttribute="bottom" constant="-8" id="LF5-br-mQv"/>
                                     <constraint firstItem="Juf-yF-aNd" firstAttribute="top" secondItem="l1y-af-QMU" secondAttribute="bottom" constant="8" id="NdD-21-Fy7"/>
                                     <constraint firstAttribute="trailing" secondItem="l1y-af-QMU" secondAttribute="trailing" constant="8" id="Npp-8k-Beg"/>
                                     <constraint firstItem="nZL-lW-yAe" firstAttribute="leading" secondItem="UJQ-uv-jTf" secondAttribute="leading" constant="90" id="QvB-ic-dBd"/>
@@ -86,6 +83,8 @@
                                     <constraint firstAttribute="height" constant="400" id="d0h-Ir-Fve"/>
                                     <constraint firstAttribute="trailing" secondItem="tk3-RE-yMd" secondAttribute="trailing" id="hG4-fi-Kkf"/>
                                     <constraint firstItem="l1y-af-QMU" firstAttribute="leading" secondItem="UJQ-uv-jTf" secondAttribute="leading" constant="8" id="iLD-P2-DYh"/>
+                                    <constraint firstItem="tk3-RE-yMd" firstAttribute="top" secondItem="nZL-lW-yAe" secondAttribute="bottom" constant="40" id="ibb-BO-qd1"/>
+                                    <constraint firstItem="nZL-lW-yAe" firstAttribute="top" secondItem="KUj-S9-NrN" secondAttribute="bottom" constant="5" id="ika-YJ-M45"/>
                                     <constraint firstItem="Juf-yF-aNd" firstAttribute="leading" secondItem="UJQ-uv-jTf" secondAttribute="leading" constant="8" id="kLP-Wt-g6K"/>
                                     <constraint firstItem="KUj-S9-NrN" firstAttribute="top" secondItem="zXh-6Q-ds4" secondAttribute="bottom" constant="10" id="mpY-y2-CRE"/>
                                     <constraint firstItem="zXh-6Q-ds4" firstAttribute="top" secondItem="Juf-yF-aNd" secondAttribute="bottom" constant="8" id="xNT-8I-jxo"/>

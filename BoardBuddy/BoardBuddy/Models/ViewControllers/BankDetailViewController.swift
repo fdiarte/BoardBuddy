@@ -41,7 +41,7 @@ class BankDetailViewController: UIViewController, UITextFieldDelegate {
     
     @objc func keyboardWillShow() {
         view.addGestureRecognizer(singleTap)
-        view.frame.origin.y = -175
+        view.frame.origin.y = -315
     }
     
     @objc func keyboardWillHide() {
@@ -61,7 +61,8 @@ class BankDetailViewController: UIViewController, UITextFieldDelegate {
     @IBAction func requestMoneyButtonPressed(_ sender: Any) {
         print("request funds from bank button pressed")
         guard let moneyRequested = moneyAmountTextField.text, !moneyRequested.isEmpty, let money = Int(moneyRequested) else { return }
-        
+        moneyAmountTextField.text = ""
+        moneyAmountTextField.resignFirstResponder()
         createWithdrawlAlert(amountToWithdrawl: money)
     }
     
@@ -73,6 +74,8 @@ class BankDetailViewController: UIViewController, UITextFieldDelegate {
         print("pay bank button pressed")
         guard let moneyToPay = moneyAmountTextField.text, !moneyToPay.isEmpty, let money = Int(moneyToPay) else { return }
         payBankerAlert(amountToPay: money)
+        moneyAmountTextField.text = ""
+        moneyAmountTextField.resignFirstResponder()
     }
     
     @IBAction func doneButtonPressed(_ sender: Any) {
@@ -80,7 +83,7 @@ class BankDetailViewController: UIViewController, UITextFieldDelegate {
     }
     
     func createWithdrawlAlert(amountToWithdrawl: Int) {
-        let alert = UIAlertController(title: "Are you sure you want to withdrawl $\(amountToWithdrawl) from the bank?", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Are you sure you want to withdraw $\(amountToWithdrawl) from the bank?", message: nil, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let withdrawlAction = UIAlertAction(title: "Withdrawl", style: .default) { (_) in
             
