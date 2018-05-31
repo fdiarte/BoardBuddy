@@ -39,9 +39,13 @@ class BankDetailViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    @objc func keyboardWillShow() {
+    @objc func keyboardWillShow(notification: NSNotification) {
         view.addGestureRecognizer(singleTap)
-        view.frame.origin.y = -315
+        if let keyboardFrame: NSValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            view.frame.origin.y = -keyboardHeight
+        }
     }
     
     @objc func keyboardWillHide() {
