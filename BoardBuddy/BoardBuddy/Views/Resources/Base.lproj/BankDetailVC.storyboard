@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,43 +36,43 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0b-m1-yX7">
-                                        <rect key="frame" x="0.0" y="270" width="375" height="40"/>
-                                        <color key="backgroundColor" red="0.15294117647058825" green="0.80784313725490198" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="262" width="375" height="44"/>
+                                        <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="rln-6s-gGo"/>
+                                            <constraint firstAttribute="height" constant="44" id="rln-6s-gGo"/>
                                         </constraints>
                                         <color key="tintColor" red="0.23529411759999999" green="0.28235294119999998" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Request Money"/>
+                                        <state key="normal" title="Withdraw"/>
                                         <connections>
                                             <action selector="requestMoneyButtonPressed:" destination="wdR-2c-SpO" eventType="touchUpInside" id="zUS-zT-jzy"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBG-rR-zdA">
-                                        <rect key="frame" x="0.0" y="310" width="375" height="40"/>
-                                        <color key="backgroundColor" red="1" green="0.8980392157" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="306" width="375" height="44"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="pb4-Cc-wuM"/>
+                                            <constraint firstAttribute="height" constant="44" id="pb4-Cc-wuM"/>
                                         </constraints>
-                                        <color key="tintColor" red="0.23529411759999999" green="0.28235294119999998" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Purchase"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Pay"/>
                                         <connections>
                                             <action selector="payBankButtonPressed:" destination="wdR-2c-SpO" eventType="touchUpInside" id="7s3-wx-paV"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3TQ-OH-1z6">
-                                        <rect key="frame" x="90" y="230" width="195" height="30"/>
+                                        <rect key="frame" x="90" y="222" width="195" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="cc-number"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount to Request/Purchase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hN-A8-LgO">
-                                        <rect key="frame" x="8" y="204" width="359" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount to Withdraw / Pay" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hN-A8-LgO">
+                                        <rect key="frame" x="8" y="196" width="359" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.96862745100000003" green="1" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KxL-xI-sc7">
-                                        <rect key="frame" x="111" y="37" width="152" height="152"/>
+                                        <rect key="frame" x="111" y="32" width="152" height="152"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="152" id="MQE-Jk-Et3"/>
                                             <constraint firstAttribute="width" constant="152" id="Mla-Hf-FJh"/>
@@ -89,13 +88,13 @@
                                     <constraint firstItem="k2N-PB-KaD" firstAttribute="leading" secondItem="b1U-6S-Wbv" secondAttribute="leading" constant="8" id="LYL-dw-NoY"/>
                                     <constraint firstItem="KxL-xI-sc7" firstAttribute="centerX" secondItem="b1U-6S-Wbv" secondAttribute="centerX" id="N9C-Yc-rTh"/>
                                     <constraint firstItem="n0b-m1-yX7" firstAttribute="top" secondItem="3TQ-OH-1z6" secondAttribute="bottom" constant="10" id="O1D-dK-BoF"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="hBG-rR-zdA" secondAttribute="bottom" constant="-8" id="XA4-Od-DVh"/>
-                                    <constraint firstItem="KxL-xI-sc7" firstAttribute="top" secondItem="k2N-PB-KaD" secondAttribute="bottom" constant="5" id="XLq-sQ-OFe"/>
+                                    <constraint firstItem="KxL-xI-sc7" firstAttribute="top" secondItem="k2N-PB-KaD" secondAttribute="bottom" id="XLq-sQ-OFe"/>
                                     <constraint firstAttribute="trailing" secondItem="k2N-PB-KaD" secondAttribute="trailing" constant="8" id="byL-jA-Qk6"/>
                                     <constraint firstAttribute="trailing" secondItem="2hN-A8-LgO" secondAttribute="trailing" constant="8" id="cZR-YM-Oxm"/>
                                     <constraint firstAttribute="trailing" secondItem="n0b-m1-yX7" secondAttribute="trailing" id="cjV-AZ-nx2"/>
                                     <constraint firstAttribute="trailing" secondItem="hBG-rR-zdA" secondAttribute="trailing" id="daQ-m0-GTL"/>
                                     <constraint firstItem="hBG-rR-zdA" firstAttribute="top" secondItem="n0b-m1-yX7" secondAttribute="bottom" id="f3p-bV-XRU"/>
+                                    <constraint firstItem="2hN-A8-LgO" firstAttribute="top" secondItem="KxL-xI-sc7" secondAttribute="bottom" constant="12" id="g5y-SM-bbv"/>
                                     <constraint firstAttribute="height" constant="350" id="hMu-NZ-ADa"/>
                                     <constraint firstItem="hBG-rR-zdA" firstAttribute="leading" secondItem="b1U-6S-Wbv" secondAttribute="leading" id="nVa-Q6-rwF"/>
                                     <constraint firstItem="3TQ-OH-1z6" firstAttribute="leading" secondItem="b1U-6S-Wbv" secondAttribute="leading" constant="90" id="nem-mw-gwb"/>

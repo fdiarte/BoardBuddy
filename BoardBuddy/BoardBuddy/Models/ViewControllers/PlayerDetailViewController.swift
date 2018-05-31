@@ -43,7 +43,7 @@ class PlayerDetailViewController: UIViewController {
     
     @objc func keyboardWillShow() {
         view.addGestureRecognizer(singleTap)
-        view.frame.origin.y = -185
+        view.frame.origin.y = -265
     }
 
     @objc func keyboardWillHide() {
@@ -62,6 +62,10 @@ class PlayerDetailViewController: UIViewController {
         guard let moneyRequestString = moneyRequestTextField.text else { return }
         guard let moneyRequest = Int(moneyRequestString) else { return }
         guard let players = players else { return }
+        
+        moneyRequestTextField.text = ""
+        moneyRequestTextField.resignFirstResponder()
+        
         var playerReqestingFunds: Player?
         
         for player in players {
@@ -85,7 +89,7 @@ class PlayerDetailViewController: UIViewController {
         guard let player = player else { return }
         guard let image = UIImage(data: player.imageData) else { return }
         nameLabel.text = player.displayName
-        moneyLabel.text = "\(player.moneyAmount)"
+        moneyLabel.text = "$\(player.moneyAmount)"
         boardPieceImageView.image = image
         boardPieceImageView.tintColor = Colors.mintCreme
     }
